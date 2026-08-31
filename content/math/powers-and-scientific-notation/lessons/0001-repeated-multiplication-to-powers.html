@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用 10–15 分钟理解幂：把相同因数的重复乘法写成简洁形式，并辨认底数和指数。">
+  <title>第一课：重复乘法的秘密缩写｜知径</title>
+  <link rel="stylesheet" href="../assets/course.css">
+  <script src="../assets/lesson.js" defer></script>
+</head>
+<body data-lesson-id="powers-0001">
+  <a class="skip-link" href="#lesson-main">跳到课程内容</a>
+
+  <div class="lesson-shell">
+    <header class="lesson-header">
+      <p class="eyebrow">知径 · 数学拓展 · 第一课</p>
+      <h1>重复乘法的<br>秘密缩写</h1>
+      <p class="lede">若干个相同因数连乘时，数学家会用一种短短的写法把它收好。今天只做一件事：读懂这份“压缩包”。</p>
+      <div class="lesson-meta" aria-label="课程信息">
+        <span class="pill">⏱ 10–15 分钟</span>
+        <span class="pill">🎯 一个核心目标</span>
+        <span class="pill">🧠 拓展难度</span>
+      </div>
+    </header>
+
+    <noscript>
+      <section class="callout warning spaced-top">
+        <strong>当前浏览器没有运行互动功能。</strong>你仍可使用
+        <a href="../printable/0001-powers-practice.html">独立可打印课程</a>完成同一学习目标。
+      </section>
+    </noscript>
+
+    <div class="progress-wrap screen-only">
+      <div class="progress-label">
+        <span data-progress-label>0/6 项互动任务已完成</span>
+        <span>活动进度不等于掌握</span>
+      </div>
+      <progress data-progress aria-label="本课互动任务进度" max="100" value="0">0%</progress>
+    </div>
+
+    <main id="lesson-main">
+      <section class="lesson-section">
+        <span class="section-kicker">今天的胜利条件</span>
+        <h2>你将能读懂这样的写法：<span class="math-expression" role="img" aria-label="五的四次方">5<sup>4</sup></span></h2>
+        <div class="goal-box">
+          课程结束时，你能把 <strong>5 × 5 × 5 × 5</strong> 写成
+          <strong class="math-expression" role="img" aria-label="五的四次方">5<sup>4</sup></strong>，还能解释 5 和 4 各自负责什么。
+        </div>
+      </section>
+
+      <section class="lesson-section quiz-card" data-quiz data-quiz-id="diagnostic" data-checkpoint data-checkpoint-id="diagnostic">
+        <span class="section-kicker">学习站 1 · 热身诊断</span>
+        <h2>先数一数相同的数</h2>
+        <p class="quiz-prompt">在 <strong>4 × 4 × 4</strong> 中，4 一共作为因数出现了几次？</p>
+        <div class="choice-grid" role="group" aria-label="热身题选项">
+          <button class="choice" type="button" data-choice data-correct="false" data-hint="先用手指逐个点过每一个 4；乘号不算因数。">两个</button>
+          <button class="choice" type="button" data-choice data-correct="true" data-success="正确：这里有三个相同的因数 4。">三个</button>
+          <button class="choice" type="button" data-choice data-correct="false" data-hint="4 是重复的数，不等于它出现的次数。请逐个点数。">四个</button>
+          <button class="choice" type="button" data-choice data-correct="false" data-hint="只数写出来的 4，不需要先计算乘积。">六个</button>
+        </div>
+        <p class="feedback" data-feedback aria-live="polite"></p>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 2 · 核心讲解</span>
+        <h2>相同因数连乘，可以写成一个“幂”</h2>
+        <p>先把每个因数看成一张蓝色数字卡：四张卡都写着 5。</p>
+        <div class="equation-stage" role="img" aria-label="五乘五乘五乘五，等于五的四次方">
+          <div class="equation" aria-hidden="true">
+            <span class="factor">5</span><span class="multiply">×</span>
+            <span class="factor">5</span><span class="multiply">×</span>
+            <span class="factor">5</span><span class="multiply">×</span>
+            <span class="factor">5</span>
+            <span class="multiply">=</span>
+            <span class="power">5<sup>4</sup></span>
+          </div>
+        </div>
+        <p><strong><span class="math-expression" role="img" aria-label="五的四次方">5<sup>4</sup></span> 读作“五的四次方”</strong>。右上角的 4 记录的是因数 5 的个数。</p>
+
+        <div class="two-column">
+          <article class="term-card">
+            <h3><strong>底数 5</strong></h3>
+            <p>告诉我们：反复作为因数的是哪个数。这里每个因数都是 5。</p>
+          </article>
+          <article class="term-card">
+            <h3><strong>指数 4</strong></h3>
+            <p>告诉我们：底数作为因数一共出现几次。这里有四个 5。</p>
+          </article>
+        </div>
+        <p><small>定义依据：<a href="https://openstax.org/books/prealgebra-2e/pages/2-1-use-the-language-of-algebra">OpenStax《Prealgebra 2e》§2.1</a>。</small></p>
+
+        <div class="callout warning spaced-top">
+          <strong>最容易踩的坑：</strong>指数数的是<strong>因数的个数</strong>，不是乘号的个数。四个 5 之间只有三个乘号，但指数仍然是 4。
+        </div>
+      </section>
+
+      <section class="lesson-section" data-power-lab data-checkpoint data-checkpoint-id="power-lab">
+        <span class="section-kicker">学习站 3 · 动手实验</span>
+        <h2>造一台“幂压缩机”</h2>
+        <p>选择一个底数，再决定它要作为因数出现几次。只观察“重复乘法”和“幂”这两种写法怎样对应。</p>
+
+        <div class="lab-controls screen-only">
+          <div class="control-group">
+            <label for="base-select">重复作为因数的数（底数）</label>
+            <select id="base-select" data-base>
+              <option value="2">2</option>
+              <option value="3" selected>3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="exponent-range">因数个数（指数）：<output data-exponent-label for="exponent-range">3</output></label>
+            <input id="exponent-range" data-exponent type="range" min="2" max="5" step="1" value="3">
+          </div>
+        </div>
+
+        <div class="lab-result" aria-live="polite" aria-atomic="true">
+          <p class="lab-caption">展开的重复乘法</p>
+          <div class="equation" role="img" data-factors aria-label="三个因数三相乘">3 × 3 × 3</div>
+          <p class="lab-caption">压缩成幂</p>
+          <div class="equation power" role="img" data-power aria-label="三的三次方">3<sup>3</sup></div>
+        </div>
+
+        <div class="action-row screen-only">
+          <button class="primary-button" type="button" data-lab-complete aria-disabled="true">我观察过至少两个不同例子</button>
+        </div>
+        <p class="feedback" data-lab-feedback aria-live="polite">请改变一次底数或指数，再完成这项活动。</p>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">一个关键区别</span>
+        <h2>幂不等于“底数 × 指数”</h2>
+        <div class="two-column">
+          <article class="term-card">
+            <h3><span class="math-expression" role="img" aria-label="三的四次方">3<sup>4</sup></span> 的真正含义</h3>
+            <div class="equation-stage" role="img" aria-label="四个因数三相乘，也就是三乘三乘三乘三">
+              <div class="equation" aria-hidden="true">3 × 3 × 3 × 3</div>
+            </div>
+          </article>
+          <article class="term-card">
+            <h3>错误理解：直接写 3 × 4</h3>
+            <div class="equation-stage" role="img" aria-label="错误写法，三乘四">
+              <div class="equation" aria-hidden="true">3 × 4</div>
+            </div>
+          </article>
+        </div>
+        <p>右上角的小数字不是“再乘这个数字”，而是“底数要写成几个相同因数”。</p>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 4–6 · 练习与即时反馈</span>
+        <h2>找到底数，数清指数</h2>
+        <div class="quiz-list">
+          <article class="quiz-card" data-quiz data-quiz-id="notation" data-checkpoint data-checkpoint-id="quiz-notation">
+            <p class="quiz-prompt">① 3 × 3 × 3 × 3 应该压缩成哪一个幂？</p>
+            <div class="choice-grid" role="group" aria-label="第一道练习选项">
+              <button class="choice" type="button" aria-label="三的四次方" data-choice data-correct="true" data-success="正确：底数是 3，3 一共出现四次。">3⁴</button>
+              <button class="choice" type="button" aria-label="四的三次方" data-choice data-correct="false" data-hint="底数和指数交换了。先找重复出现的数。">4³</button>
+              <button class="choice" type="button" aria-label="三的三次方" data-choice data-correct="false" data-hint="再数一数，题目里一共有四个 3。">3³</button>
+              <button class="choice" type="button" aria-label="四的四次方" data-choice data-correct="false" data-hint="重复出现的是 3，不是 4。">4⁴</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+
+          <article class="quiz-card" data-quiz data-quiz-id="base" data-checkpoint data-checkpoint-id="quiz-base">
+            <p class="quiz-prompt">② 把 2 × 2 × 2 写成幂时，哪个数应该成为底数？</p>
+            <div class="choice-grid" role="group" aria-label="第二道练习选项">
+              <button class="choice" type="button" data-choice data-correct="true" data-success="正确：反复作为因数的是 2，所以底数是 2。">数字二</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="3 是因数个数，将成为指数。">数字三</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="底数来自重复的因数，不需要先算乘积。">数字六</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="逐个看三个因数，它们都是 2。">数字八</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+
+          <article class="quiz-card" data-quiz data-quiz-id="exponent" data-checkpoint data-checkpoint-id="quiz-exponent">
+            <p class="quiz-prompt">③ 在 <span class="math-expression" role="img" aria-label="七的三次方">7<sup>3</sup></span> 中，右上角的 3 告诉我们什么？</p>
+            <div class="choice-grid" role="group" aria-label="第三道练习选项">
+              <button class="choice" type="button" data-choice data-correct="true" data-success="正确：指数 3 表示有三个相同因数 7。">三个因数</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="底数是左下方较大的 7。">底数是三</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="指数说明因数个数，不直接说明答案。">答案是三</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="指数数三个因数 7，不是数乘号；三个因数之间只有两个乘号。">乘号三个</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lesson-section" data-checkpoint data-checkpoint-id="mastery">
+        <span class="section-kicker">学习站 7 · 掌握检查</span>
+        <h2>不用特殊符号，直接填写底数和指数</h2>
+        <p>活动进度只说明“做过”，下面两道新题都正确，才说明今天的核心目标已经掌握。</p>
+
+        <form class="retrieval-form" data-mastery-stage data-milestone-id="mastery-practice" data-success="第一题正确。现在用一道新题再检查一次。" data-hint="先找重复出现的是哪个数，再数这个因数出现几次。">
+          <h3>第一步：自己压缩</h3>
+          <p><strong>6 × 6 × 6 × 6 × 6</strong></p>
+          <div class="two-column">
+            <div class="control-group">
+              <label for="practice-base">底数是多少？</label>
+              <input id="practice-base" type="number" inputmode="numeric" min="0" max="20" data-correct="6" autocomplete="off">
+            </div>
+            <div class="control-group">
+              <label for="practice-exponent">指数是多少？</label>
+              <input id="practice-exponent" type="number" inputmode="numeric" min="0" max="20" data-correct="5" autocomplete="off">
+            </div>
+          </div>
+          <div class="action-row">
+            <button class="primary-button" type="submit">检查第一题</button>
+          </div>
+          <p class="feedback" data-feedback aria-live="polite"></p>
+        </form>
+
+        <div class="spaced-top" data-transfer-panel hidden>
+          <form class="retrieval-form" data-mastery-stage data-milestone-id="mastery-transfer" data-success="新题也正确：你能找出底数和指数，不是靠记住上一题。" data-hint="这是一道新题：重复的是哪个数？它作为因数出现几次？">
+            <h3>第二步：换一道新题复核</h3>
+            <p><strong>9 × 9 × 9</strong></p>
+            <div class="two-column">
+              <div class="control-group">
+                <label for="transfer-base">底数是多少？</label>
+                <input id="transfer-base" type="number" inputmode="numeric" min="0" max="20" data-correct="9" autocomplete="off">
+              </div>
+              <div class="control-group">
+                <label for="transfer-exponent">指数是多少？</label>
+                <input id="transfer-exponent" type="number" inputmode="numeric" min="0" max="20" data-correct="3" autocomplete="off">
+              </div>
+            </div>
+            <div class="action-row">
+              <button class="primary-button" type="submit">检查新题</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="callout success spaced-top" role="status" data-mastery-status hidden>
+          <strong>掌握检查通过。</strong>你已经能从新的重复乘法中找出底数和指数。最后再把含义讲给别人听。
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">20 秒教给别人</span>
+        <h2>说得清，才是真的会</h2>
+        <p>请对家长或老师完成这句话：</p>
+        <div class="callout success">
+          “在 <span class="math-expression" role="img" aria-label="八的三次方">8<sup>3</sup></span> 中，8 是 ______，它告诉我们 ______；3 是 ______，它告诉我们 ______。”
+        </div>
+        <p><strong>成人核对标准：</strong>孩子能说出“8 是底数，表示重复的因数；3 是指数，表示有三个因数 8”。把孩子的原话告诉教学 Agent，再决定是否进入下一课“10 的幂与零”。</p>
+        <p><strong>明天的 30 秒复习：</strong>不看速查卡，把 4 × 4 × 4 × 4 写成幂，再解释右上角数字的意义。</p>
+        <div class="action-row screen-only">
+          <a class="secondary-button" href="../reference/0001-powers-quick-reference.html">打开一页速查卡</a>
+          <a class="secondary-button" href="../printable/0001-powers-practice.html">打开可打印课程</a>
+        </div>
+      </section>
+
+      <section class="lesson-section source-list">
+        <span class="section-kicker">继续探索</span>
+        <h2>权威来源与课程依据</h2>
+        <p>本单元的定义、课程边界与后续科学记数法均以核验后的资源清单为依据：</p>
+        <ul>
+          <li><a href="../RESOURCES.md">查看经过核验的资源清单</a></li>
+          <li><a href="../MISSION.md">查看本单元的学习使命</a></li>
+        </ul>
+        <p><strong>本课推荐给陪学者的主要来源：</strong><a href="https://openstax.org/books/prealgebra-2e/pages/2-1-use-the-language-of-algebra">OpenStax《Prealgebra 2e》§2.1</a>，用于核验重复乘法、底数和指数的正式定义。课程阶段依据见资源清单中的 Common Core 官方标准。</p>
+      </section>
+    </main>
+
+    <footer class="lesson-footer">
+      <strong>有任何一步不清楚，都可以继续问教学 Agent。</strong>
+      <p>建议问题：“为什么 <span class="math-expression" role="img" aria-label="三的四次方">3<sup>4</sup></span> 不是 3 × 4？”或“指数为什么要写在右上角？”</p>
+      <button class="secondary-button screen-only" type="button" data-reset-progress>重置本课保存在本机的进度</button>
+    </footer>
+  </div>
+</body>
+</html>

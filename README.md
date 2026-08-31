@@ -74,22 +74,35 @@
 
 ## 预期目录
 
-目录按需创建，初始化阶段不要求一次建全：
+目录按真实需求渐进创建，不要求一次建全：
 
 ```text
 content/
 └── <subject>/
     └── <unit-slug>/
-        ├── unit.md        # 元数据、教学设计与共享内容
-        ├── web/           # 互动网页
-        ├── printable/     # 可打印材料及答案
-        └── assets/        # 该单元专用图片、数据等资源
+        ├── unit.md          # 元数据、教学设计与共享内容
+        ├── MISSION.md       # 该主题的真实学习使命
+        ├── RESOURCES.md     # 经核验的知识与实践来源
+        ├── NOTES.md         # 教学偏好与工作备注
+        ├── lessons/         # 编号的互动 HTML 课程
+        ├── reference/       # 可快速查阅和打印的参考卡
+        ├── printable/       # 独立的可打印材料及答案
+        ├── assets/          # 多节课程共用的组件与样式
+        └── learning-records/ # 有学习证据后再创建
 templates/                 # 知识单元与审查模板
-skills/                    # 本项目维护的可复用 Agent Skills
+.agents/
+└── skills/                # 项目级 Agent Skills
 tools/                     # 构建、检查与转换工具
+skills-lock.json           # 第三方 Skills 的来源与内容锁定
 ```
 
 路径使用稳定的英文 `kebab-case` 名称，面向学习者的标题与正文使用自然中文。尚未存在的目录应在首次真正需要时创建。
+
+## 已安装的 Agent Skill
+
+- [`teach`](./.agents/skills/teach/SKILL.md)：通过 `/teach <学习主题>` 启动一个可跨会话持续推进的教学工作区，生成短小的互动 HTML 课程、参考资料和学习记录。来源：[mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/teach)。
+
+`teach` 是仅由用户显式调用的 Skill，命令名称是 `/teach`，不是 `/tech`。在本仓库中，每个 `content/<subject>/<unit-slug>/` 都是一个独立教学工作区，分别维护自己的使命、资源、课程和学习记录。
 
 ## 协作入口
 
@@ -99,4 +112,4 @@ tools/                     # 构建、检查与转换工具
 
 ## 当前状态
 
-仓库处于初始化阶段。下一步应从一个真实学习需求选择首个知识单元，用完整的“诊断—讲解—练习—反馈”闭环验证内容模型，再决定是否扩展模板、工具或 Skills。
+仓库已完成初始化，并建立首个数学知识单元 [“幂与科学记数法”](./content/math/powers-and-scientific-notation/unit.md)。当前正在用 [第一课“重复乘法的秘密缩写”](./content/math/powers-and-scientific-notation/lessons/0001-repeated-multiplication-to-powers.html)验证“诊断—讲解—练习—反馈”闭环；学习者完成互动与讲述后，再依据反馈进入下一课。
