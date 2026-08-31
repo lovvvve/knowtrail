@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用 10–15 分钟发现 10 的幂与末尾零之间的位值规律。">
+  <title>第二课：10 的幂与零｜知径</title>
+  <link rel="stylesheet" href="../assets/course.css">
+  <script src="../assets/lesson.js" defer></script>
+</head>
+<body data-lesson-id="powers-0002" data-lesson-version="1">
+  <a class="skip-link" href="#lesson-main">跳到课程内容</a>
+
+  <div class="lesson-shell">
+    <header class="lesson-header">
+      <p class="eyebrow">知径 · 数学拓展 · 第二课</p>
+      <h1>10 的幂<br>藏着几个零？</h1>
+      <p class="lede">把几个 10 连乘后，乘积总像“1 带着一队零”。今天要找出指数、因数个数和零的个数之间的关系。</p>
+      <div class="lesson-meta" aria-label="课程信息">
+        <span class="pill">⏱ 10–15 分钟</span>
+        <span class="pill">🎯 10 的幂与位值</span>
+        <span class="pill">🔗 前置：第一课</span>
+      </div>
+    </header>
+
+    <noscript>
+      <section class="callout warning spaced-top">
+        <strong>当前浏览器没有运行互动功能。</strong>你仍可使用
+        <a href="../printable/0002-powers-of-ten-practice.html">第二课独立可打印课程</a>完成同一学习目标。
+      </section>
+    </noscript>
+
+    <div class="progress-wrap screen-only">
+      <div class="progress-label">
+        <span data-progress-label>0/6 项互动任务已完成</span>
+        <span>活动进度不等于掌握</span>
+      </div>
+      <progress data-progress aria-label="第二课互动任务进度" max="100" value="0">0%</progress>
+    </div>
+
+    <main id="lesson-main">
+      <section class="lesson-section">
+        <span class="section-kicker">今天的胜利条件</span>
+        <h2>看到 <span class="math-expression" role="img" aria-label="十的四次方">10<sup>4</sup></span>，就能解释为什么它等于 10 000</h2>
+        <div class="goal-box">
+          课程结束时，你能在指数 2 到 6 的范围内，根据 10 的幂右上角的数字写出“1 后面有几个零”，还能用位值说清理由。
+        </div>
+      </section>
+
+      <section class="lesson-section quiz-card" data-quiz data-quiz-id="prerequisite" data-checkpoint data-checkpoint-id="prerequisite">
+        <span class="section-kicker">学习站 1 · 前置诊断</span>
+        <h2>先确认你会用幂压缩</h2>
+        <p class="quiz-prompt">10 × 10 × 10 应该写成哪个幂？</p>
+        <div class="choice-grid" role="group" aria-label="前置诊断选项">
+          <button class="choice" type="button" aria-label="十的三次方" data-choice data-correct="true" data-success="正确：重复的因数是 10，一共出现三次，所以写成十的三次方。">10³</button>
+          <button class="choice" type="button" aria-label="三的十次方" data-choice data-correct="false" data-hint="底数和指数交换了。底数应是重复出现的 10。">3¹⁰</button>
+          <button class="choice" type="button" aria-label="十的二次方" data-choice data-correct="false" data-hint="请逐个数题目中的因数 10，一共有三个。">10²</button>
+          <button class="choice" type="button" aria-label="三的三次方" data-choice data-correct="false" data-hint="底数来自重复的因数，因此不是 3。">3³</button>
+        </div>
+        <p class="feedback" data-feedback aria-live="polite"></p>
+        <p><small>如果这一步仍不清楚，请先回到<a href="./0001-repeated-multiplication-to-powers.html">第一课“重复乘法的秘密缩写”</a>复习底数和指数。</small></p>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 2 · 核心讲解</span>
+        <h2>每多乘一个 10，位值就扩大十倍</h2>
+        <div class="equation-stage" role="img" aria-label="十乘十乘十，等于十的三次方，也等于一千">
+          <div class="equation" aria-hidden="true">
+            <span class="factor">10</span><span class="multiply">×</span>
+            <span class="factor">10</span><span class="multiply">×</span>
+            <span class="factor">10</span>
+            <span class="multiply">=</span>
+            <span class="power">10<sup>3</sup></span>
+            <span class="multiply">=</span>
+            <span>1 000</span>
+          </div>
+        </div>
+        <p>从 1 开始，每乘一个 10，数字 1 就在位值表中向左移动一个数位，空出的个位补一个 0。乘三个 10 后，1 的后面正好有三个 0。</p>
+
+        <div class="table-wrap" role="region" aria-label="10 的幂对照表，可横向滚动" tabindex="0">
+          <table class="number-table">
+            <caption class="sr-only">指数、10 的幂、数值和零的个数对照表</caption>
+            <thead>
+              <tr>
+                <th scope="col">幂</th>
+                <th scope="col">重复乘法</th>
+                <th scope="col">数值</th>
+                <th scope="col">零的个数</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="math-expression" role="img" aria-label="十的二次方">10<sup>2</sup></span></td><td>10 × 10</td><td>100</td><td>2</td></tr>
+              <tr><td><span class="math-expression" role="img" aria-label="十的三次方">10<sup>3</sup></span></td><td>三个 10 相乘</td><td>1 000</td><td>3</td></tr>
+              <tr><td><span class="math-expression" role="img" aria-label="十的四次方">10<sup>4</sup></span></td><td>四个 10 相乘</td><td>10 000</td><td>4</td></tr>
+              <tr><td><span class="math-expression" role="img" aria-label="十的五次方">10<sup>5</sup></span></td><td>五个 10 相乘</td><td>100 000</td><td>5</td></tr>
+              <tr><td><span class="math-expression" role="img" aria-label="十的六次方">10<sup>6</sup></span></td><td>六个 10 相乘</td><td>1 000 000</td><td>6</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout success spaced-top">
+          <strong>今天的规律：</strong>当指数是 2 到 6 的正整数时，10 的幂右上角是几，数值就是“1 后面跟着几个 0”。
+        </div>
+        <p><small>定义与后续科学记数法依据：<a href="https://openstax.org/books/prealgebra-2e/pages/10-5-integer-exponents-and-scientific-notation">OpenStax《Prealgebra 2e》§10.5</a>。</small></p>
+      </section>
+
+      <section class="lesson-section" data-ten-lab data-checkpoint data-checkpoint-id="ten-lab">
+        <span class="section-kicker">学习站 3 · 位值实验</span>
+        <h2>拖动指数，观察零队伍</h2>
+        <p>先看指数 2 的例子，再拖动滑块换一个指数。注意三个地方是否总是出现同一个数。</p>
+
+        <div class="lab-controls screen-only">
+          <div class="control-group">
+            <label for="ten-exponent-range">指数：<output data-ten-exponent-label for="ten-exponent-range">2</output></label>
+            <input id="ten-exponent-range" data-ten-exponent type="range" min="2" max="6" step="1" value="2">
+          </div>
+        </div>
+
+        <div class="lab-result">
+          <p class="lab-caption">重复乘法</p>
+          <div class="equation" role="img" data-ten-factors aria-label="两个因数 10 相乘">10 × 10</div>
+          <p class="lab-caption">压缩成幂</p>
+          <div class="equation power" role="img" data-ten-power aria-label="十的二次方">10<sup>2</sup></div>
+          <p class="lab-caption">数值</p>
+          <div class="equation" role="img" data-ten-value aria-label="数字 1 后面有两个零">100</div>
+          <div class="zero-strip" role="img" data-zero-strip aria-label="一个 1 后面跟着两个零">
+            <span class="leading-digit" aria-hidden="true">1</span>
+            <span class="zero-digit" aria-hidden="true">0</span>
+            <span class="zero-digit" aria-hidden="true">0</span>
+          </div>
+          <p class="lab-caption">零的个数：<strong data-zero-count>2</strong></p>
+        </div>
+        <p class="sr-only" data-ten-lab-announcement aria-live="polite"></p>
+
+        <div class="action-row screen-only">
+          <button class="primary-button" type="button" data-ten-lab-complete aria-disabled="true" disabled>我观察过至少两个不同指数</button>
+        </div>
+        <p class="feedback" data-ten-lab-feedback aria-live="polite">请拖动一次指数滑块，再完成这项活动。</p>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">一个重要边界</span>
+        <h2>“指数等于零的个数”只在底数是 10 时这样用</h2>
+        <div class="two-column">
+          <article class="term-card">
+            <h3>底数是 10</h3>
+            <p><span class="math-expression" role="img" aria-label="十的四次方">10<sup>4</sup></span> 是四个 10 相乘，结果中 1 后面有四个 0。</p>
+          </article>
+          <article class="term-card">
+            <h3>底数不是 10</h3>
+            <p><span class="math-expression" role="img" aria-label="二的四次方">2<sup>4</sup></span> 仍表示四个因数 2，但不能直接写成“1 后面四个 0”。</p>
+          </article>
+        </div>
+        <div class="callout warning spaced-top">
+          <strong>别把规律用错地方：</strong>在本课指数 2 到 6 的正整数范围内，指数先表示因数个数；“同样多个零”是底数 10 与十进位值带来的特别规律。
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 4–6 · 练习与即时反馈</span>
+        <h2>从幂找零，也从零找幂</h2>
+        <div class="quiz-list">
+          <article class="quiz-card" data-quiz data-quiz-id="ten-value" data-checkpoint data-checkpoint-id="quiz-ten-value">
+            <p class="quiz-prompt">① <span class="math-expression" role="img" aria-label="十的四次方">10<sup>4</sup></span> 的数值是哪一个？</p>
+            <div class="choice-grid" role="group" aria-label="第一道练习选项">
+              <button class="choice" type="button" aria-label="一万" data-choice data-correct="true" data-success="正确：指数 4 对应四个因数 10，结果是 1 后面四个零。">10 000</button>
+              <button class="choice" type="button" aria-label="一千" data-choice data-correct="false" data-hint="1 后面只有三个零，对应的是十的三次方。">1 000</button>
+              <button class="choice" type="button" aria-label="四十" data-choice data-correct="false" data-hint="指数不是把 10 直接乘以 4。">40</button>
+              <button class="choice" type="button" aria-label="十万" data-choice data-correct="false" data-hint="这里有五个零，比指数 4 多了一个。">100 000</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+
+          <article class="quiz-card" data-quiz data-quiz-id="reverse-ten-power" data-checkpoint data-checkpoint-id="quiz-reverse-ten-power">
+            <p class="quiz-prompt">② 100 000 是 1 后面五个零，应该写成哪个 10 的幂？</p>
+            <div class="choice-grid" role="group" aria-label="第二道练习选项">
+              <button class="choice" type="button" aria-label="十的五次方" data-choice data-correct="true" data-success="正确：五个零对应十的五次方。">10⁵</button>
+              <button class="choice" type="button" aria-label="十的四次方" data-choice data-correct="false" data-hint="请再数一遍 1 后面的零，一共有五个。">10⁴</button>
+              <button class="choice" type="button" aria-label="五的十次方" data-choice data-correct="false" data-hint="底数仍然是 10，零的个数用来确定指数。">5¹⁰</button>
+              <button class="choice" type="button" aria-label="十的六次方" data-choice data-correct="false" data-hint="十的六次方需要六个零。">10⁶</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+
+          <article class="quiz-card" data-quiz data-quiz-id="ten-boundary" data-checkpoint data-checkpoint-id="quiz-ten-boundary">
+            <p class="quiz-prompt">③ 能不能把“指数是几，就在 1 后写几个零”直接用在 <span class="math-expression" role="img" aria-label="二的四次方">2<sup>4</sup></span> 上？</p>
+            <div class="choice-grid" role="group" aria-label="第三道练习选项">
+              <button class="choice" type="button" data-choice data-correct="true" data-success="正确：指数仍数因数，但添零规律依赖底数 10。">不能；添零规律要看底数 10</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="并非所有底数的幂都会得到 1 后面添零。">可以；所有幂都按指数添零</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="指数与底数谁大谁小，不决定是否添零。">可以；指数比底数大就添零</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="2 可以作为底数；错在把 10 的特别规律套给了 2。">不能；数字 2 不可以作底数</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 7 · 书面检查</span>
+        <h2>先从幂写数，再从数找指数</h2>
+        <p>两道方向不同的新题都正确，说明你会双向转换；本课是否掌握，还要看下一站能否解释原因。</p>
+
+        <form class="retrieval-form" data-mastery-stage data-milestone-id="mastery-practice" data-success="第一题正确。现在换一个方向再检查。" data-hint="指数 5 表示五个因数 10；从 1 开始，每乘一个 10 就补一个零。">
+          <h3>第一步：从幂写出数值</h3>
+          <p><span class="math-expression" role="img" aria-label="十的五次方">10<sup>5</sup></span></p>
+          <div class="two-column">
+            <div class="control-group">
+              <label for="practice-zero-count">1 后面有几个零？</label>
+              <input id="practice-zero-count" type="text" inputmode="numeric" data-correct="5" autocomplete="off">
+            </div>
+            <div class="control-group">
+              <label for="practice-ten-value">完整数值是多少？</label>
+              <input id="practice-ten-value" type="text" inputmode="numeric" data-correct="100000" autocomplete="off">
+            </div>
+          </div>
+          <div class="action-row">
+            <button class="primary-button" type="submit">检查第一题</button>
+          </div>
+          <p class="feedback" data-feedback aria-live="polite"></p>
+        </form>
+
+        <div class="spaced-top" data-transfer-panel hidden>
+          <form class="retrieval-form" data-mastery-stage data-milestone-id="mastery-transfer" data-success="新方向也正确：你能根据零的个数找回指数。" data-hint="逐个数 1 后面的零；这个数就是 10 的幂的指数。">
+            <h3>第二步：从数值找回幂</h3>
+            <p><strong>1 000 000</strong></p>
+            <div class="two-column">
+              <div class="control-group">
+                <label for="transfer-zero-count">1 后面有几个零？</label>
+                <input id="transfer-zero-count" type="text" inputmode="numeric" data-correct="6" autocomplete="off">
+              </div>
+              <div class="control-group">
+                <label for="transfer-ten-exponent">它是 10 的几次方？只填指数。</label>
+                <input id="transfer-ten-exponent" type="text" inputmode="numeric" data-correct="6" autocomplete="off">
+              </div>
+            </div>
+            <div class="action-row">
+              <button class="primary-button" type="submit">检查新题</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="callout success spaced-top" role="status" data-mastery-status hidden>
+          <strong>书面检查通过。</strong>你已经能双向连接 10 的幂、指数和零的个数；完成下一站的口头解释后，才算达到本课完整目标。
+        </div>
+      </section>
+
+      <section class="lesson-section" data-checkpoint data-checkpoint-id="mastery">
+        <span class="section-kicker">学习站 8 · 20 秒教给别人</span>
+        <h2>解释规律，而不只背答案</h2>
+        <p>请对家长或老师回答：</p>
+        <div class="callout success">
+          “为什么 <span class="math-expression" role="img" aria-label="十的四次方">10<sup>4</sup></span> 的数值中，1 后面正好有四个零？”
+        </div>
+        <details>
+          <summary>陪学者核对标准（请等孩子说完再打开）</summary>
+          <p>孩子能说出“指数 4 表示四个因数 10；从 1 开始，每乘一个 10，位值扩大十倍并多一个零，所以最后有四个零”。请把孩子的原话告诉教学 Agent，再决定是否进入科学记数法的准备课。</p>
+        </details>
+        <div class="spaced-top" data-teachback-panel hidden>
+          <form class="retrieval-form" data-teachback-form data-milestone-id="mastery-explanation" data-success="完整目标已核对：书面转换和口头解释都已完成。" data-hint="请先让孩子独立解释，再由陪学者按上面的两点核对。">
+            <label class="check-row" for="adult-teachback-check">
+              <input id="adult-teachback-check" type="checkbox">
+              <span>陪学者确认：孩子既说出了“四个因数 10”，也解释了“每乘一个 10，位值扩大十倍”。</span>
+            </label>
+            <div class="action-row">
+              <button class="primary-button" type="submit">记录本机核对结果</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </form>
+        </div>
+        <p><small>这里只在本机记录“陪学者已核对”，不保存或上传孩子的原话。</small></p>
+        <p><strong>明天的 30 秒复习：</strong>不看表格，写出 <span class="math-expression" role="img" aria-label="十的六次方">10<sup>6</sup></span> 的数值，并解释每一个零从哪里来。</p>
+        <div class="action-row screen-only">
+          <a class="secondary-button" href="./0001-repeated-multiplication-to-powers.html">返回第一课</a>
+          <a class="secondary-button" href="../reference/0002-powers-of-ten-quick-reference.html">打开第二课速查卡</a>
+          <a class="secondary-button" href="../printable/0002-powers-of-ten-practice.html">打开第二课可打印课程</a>
+        </div>
+      </section>
+
+      <section class="lesson-section source-list">
+        <span class="section-kicker">继续探索</span>
+        <h2>权威来源与课程依据</h2>
+        <ul>
+          <li><a href="../RESOURCES.md">查看经过核验的资源清单</a></li>
+          <li><a href="../MISSION.md">查看本单元的学习使命</a></li>
+        </ul>
+        <p><strong>本课主要来源：</strong><a href="https://openstax.org/books/prealgebra-2e/pages/10-5-integer-exponents-and-scientific-notation">OpenStax《Prealgebra 2e》§10.5</a>用于核验 10 的整数次幂；<a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-7-rules-and-style-conventions-expressing-values#7103">NIST SP 811 §7.10.3</a>用于说明以 10 的幂表达大数的书写理由。</p>
+      </section>
+    </main>
+
+    <footer class="lesson-footer">
+      <strong>本课仍没有进入科学记数法。</strong>
+      <p>建议问题：“为什么这个添零规律依赖底数 10？”或“十进位值和乘 10 有什么关系？”</p>
+      <button class="secondary-button screen-only" type="button" data-reset-progress>重置第二课保存在本机的进度</button>
+    </footer>
+  </div>
+</body>
+</html>

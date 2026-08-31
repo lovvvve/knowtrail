@@ -324,6 +324,21 @@ progress::-moz-progress-bar {
   font-weight: 800;
 }
 
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-weight: 700;
+}
+
+.check-row input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.18rem;
+  accent-color: var(--primary);
+}
+
 select,
 input[type="number"],
 input[type="text"] {
@@ -357,6 +372,59 @@ input[type="range"] {
 .lab-caption {
   margin: 0;
   color: var(--muted);
+}
+
+.zero-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-block: 0.35rem;
+}
+
+.zero-digit,
+.leading-digit {
+  display: inline-grid;
+  min-width: 2.15rem;
+  min-height: 2.4rem;
+  padding: 0.2rem;
+  place-items: center;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid #aebbd5;
+  border-radius: 0.55rem;
+  font-family: "Cambria Math", Cambria, Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 900;
+}
+
+.leading-digit {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.number-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.number-table th,
+.number-table td {
+  padding: 0.65rem 0.75rem;
+  text-align: center;
+  border: 1px solid #aebbd5;
+}
+
+.number-table th {
+  color: var(--primary-dark);
+  background: var(--surface-soft);
 }
 
 .quiz-list {
@@ -545,6 +613,23 @@ input[aria-invalid="true"] {
   display: none !important;
 }
 
+@media (max-width: 520px) {
+  .choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .zero-strip {
+    gap: 0.18rem;
+  }
+
+  .zero-digit,
+  .leading-digit {
+    min-width: 1.65rem;
+    min-height: 2rem;
+    font-size: 1.2rem;
+  }
+}
+
 @media (min-width: 680px) {
   .two-column,
   .lab-controls,
@@ -628,12 +713,21 @@ input[aria-invalid="true"] {
   .equation-stage,
   .term-card,
   .lab-result,
-  .quiz-card {
+  .quiz-card,
+  .number-table th {
+    color: #000;
     background: #fff;
     border-color: #555;
   }
 
+  .number-table th,
+  .number-table td {
+    border-color: #555;
+  }
+
   .factor,
+  .leading-digit,
+  .zero-digit,
   .choice.is-correct,
   .choice.is-wrong {
     color: #000;

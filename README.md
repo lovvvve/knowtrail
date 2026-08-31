@@ -112,4 +112,4 @@ skills-lock.json           # 第三方 Skills 的来源与内容锁定
 
 ## 当前状态
 
-仓库已完成初始化，并建立首个数学知识单元 [“幂与科学记数法”](./content/math/powers-and-scientific-notation/unit.md)。当前正在用 [第一课“重复乘法的秘密缩写”](./content/math/powers-and-scientific-notation/lessons/0001-repeated-multiplication-to-powers.html)验证“诊断—讲解—练习—反馈”闭环；学习者完成互动与讲述后，再依据反馈进入下一课。
+仓库已完成初始化，并建立首个数学知识单元 [“幂与科学记数法”](./content/math/powers-and-scientific-notation/unit.md)。目前已编写 [第一课“重复乘法的秘密缩写”](./content/math/powers-and-scientific-notation/lessons/0001-repeated-multiplication-to-powers.html)和 [第二课“10 的幂与零”](./content/math/powers-and-scientific-notation/lessons/0002-powers-of-ten-and-zeros.html)，用于验证“诊断—讲解—练习—反馈”闭环；课程文件可以预先准备，但学习路径仍需依据学习者的实际表现推进。
