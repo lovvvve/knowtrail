@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用 10–15 分钟正式认识科学记数法：在真实的天文数量中转换、比较和解释大数。">
+  <title>第四课：大数的科学记数法｜知径</title>
+  <link rel="stylesheet" href="../assets/course.css">
+  <script src="../assets/lesson.js" defer></script>
+</head>
+<body data-lesson-id="powers-0004" data-lesson-version="1">
+  <a class="skip-link" href="#lesson-main">跳到课程内容</a>
+
+  <div class="lesson-shell">
+    <header class="lesson-header">
+      <p class="eyebrow">知径 · 数学拓展 · 第四课</p>
+      <h1>科学记数法<br>宇宙数字的通用写法</h1>
+      <p class="lede">你在第三课练的拆数本领，其实有个正式名字——科学记数法。今天用真实的天文数字来写、来比、来解释。</p>
+      <div class="lesson-meta" aria-label="课程信息">
+        <span class="pill">⏱ 10–15 分钟</span>
+        <span class="pill">🎯 科学记数法</span>
+        <span class="pill">🔗 前置：第三课</span>
+      </div>
+    </header>
+
+    <noscript>
+      <section class="callout warning spaced-top">
+        <strong>当前浏览器没有运行互动功能。</strong>你仍可使用
+        <a href="../printable/0004-scientific-notation-practice.html">第四课独立可打印课程</a>完成同一学习目标。
+      </section>
+    </noscript>
+
+    <div class="progress-wrap screen-only">
+      <div class="progress-label">
+        <span data-progress-label>0/6 项互动任务已完成</span>
+        <span>活动进度不等于掌握</span>
+      </div>
+      <progress data-progress aria-label="第四课互动任务进度" max="100" value="0">0%</progress>
+    </div>
+
+    <main id="lesson-main">
+      <section class="lesson-section">
+        <span class="section-kicker">今天的胜利条件</span>
+        <h2>能把 150 000 000 千米写成 <span class="math-expression" role="img" aria-label="一点五乘十的八次方千米">1.5 × 10<sup>8</sup></span> 千米，还能比较两个这样的数谁大</h2>
+        <div class="goal-box">
+          课程结束时，你能用科学记数法书写真实的天文大数，能先比指数、再比开头的数来比较大小，还能解释科学家为什么喜欢这种写法。
+        </div>
+      </section>
+
+      <section class="lesson-section quiz-card" data-quiz data-quiz-id="prerequisite-split" data-checkpoint data-checkpoint-id="prerequisite-split">
+        <span class="section-kicker">学习站 1 · 前置诊断</span>
+        <h2>先确认你会规范拆数</h2>
+        <p class="quiz-prompt">68 000 的规范拆分是哪一个？</p>
+        <div class="choice-grid" role="group" aria-label="前置诊断选项">
+          <button class="choice" type="button" aria-label="六十八乘十的三次方" data-choice data-correct="false" data-hint="68 × 10³ 的值没错，但 68 不小于 10，不规范。">68 × 10³</button>
+          <button class="choice" type="button" aria-label="六点八乘十的三次方" data-choice data-correct="false" data-hint="6.8 × 10³ 只有 6 800。请重新数跳格数。">6.8 × 10³</button>
+          <button class="choice" type="button" aria-label="零点六八乘十的五次方" data-choice data-correct="false" data-hint="0.68 比 1 小，小数点跳过头了一格。">0.68 × 10⁵</button>
+          <button class="choice" type="button" aria-label="六点八乘十的四次方" data-choice data-correct="true" data-success="正确：小数点向左跳四格，6.8 在 1 和 10 之间。">6.8 × 10⁴</button>
+        </div>
+        <p class="feedback" data-feedback aria-live="polite"></p>
+        <p><small>如果这一步不熟练，请先回到<a href="./0003-split-big-numbers-with-ten-powers.html">第三课“移动小数点表示大数”</a>复习。</small></p>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 2 · 核心讲解</span>
+        <h2>它叫科学记数法，指数还能继续长大</h2>
+        <p>把一个数写成 <strong>a × 10ⁿ</strong>，并让开头的数 a 大于等于 1 且小于 10——这种写法的正式名字叫<strong>科学记数法</strong>。你在第三课已经会写了，今天多学两件事。</p>
+        <p><strong>第一件事：指数超过 6，规律照样有效。</strong>指数数的是因数 10 的个数，所以 10⁷ 是 1 后面七个零，10⁸ 是 1 后面八个零。地球到太阳的距离大约是 150 000 000 千米（一亿五千万千米），写成科学记数法：</p>
+        <div class="equation-stage" role="img" aria-label="一亿五千万等于一点五乘十的八次方，小数点向左跳了八格">
+          <div class="equation" aria-hidden="true">
+            <span>150 000 000<span class="point-digit">.</span></span>
+            <span class="multiply">→</span>
+            <span class="factor">1.5</span><span class="multiply">×</span>
+            <span class="power">10<sup>8</sup></span>
+          </div>
+        </div>
+        <p><strong>第二件事：规范写法会“报出”位数。</strong>1.5 × 10⁸ 的小数点要向右跳 8 格，所以它是 <strong>8 + 1 = 9 位数</strong>。规范科学记数法里，指数是几，数值就是（指数 + 1）位的整数。</p>
+        <div class="table-wrap" role="region" aria-label="真实大数与科学记数法对照表，可横向滚动" tabindex="0">
+          <table class="number-table">
+            <caption class="sr-only">真实数量、普通写法、科学记数法和位数对照表</caption>
+            <thead>
+              <tr>
+                <th scope="col">真实数量</th>
+                <th scope="col">普通写法</th>
+                <th scope="col">科学记数法</th>
+                <th scope="col">位数</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>地球赤道直径</td><td>约 13 000 千米</td><td><span class="math-expression" role="img" aria-label="一点三乘十的四次方">1.3 × 10<sup>4</sup></span></td><td>5</td></tr>
+              <tr><td>地球到月球</td><td>约 380 000 千米</td><td><span class="math-expression" role="img" aria-label="三点八乘十的五次方">3.8 × 10<sup>5</sup></span></td><td>6</td></tr>
+              <tr><td>太阳直径</td><td>约 1 400 000 千米</td><td><span class="math-expression" role="img" aria-label="一点四乘十的六次方">1.4 × 10<sup>6</sup></span></td><td>7</td></tr>
+              <tr><td>地球到太阳</td><td>约 150 000 000 千米</td><td><span class="math-expression" role="img" aria-label="一点五乘十的八次方">1.5 × 10<sup>8</sup></span></td><td>9</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><small>天文数据来源：<a href="https://science.nasa.gov/moon/facts/">NASA 月球资料</a>、<a href="https://science.nasa.gov/sun/facts/">NASA 太阳资料</a>、<a href="https://science.nasa.gov/earth/facts/">NASA 地球资料</a>；这里都取了方便书写的近似值。</small></p>
+        <div class="callout success spaced-top">
+          <strong>比大小的方法：</strong>两个规范的科学记数法数（单位相同）比大小时，<strong>先比指数</strong>——指数大一位，位数就多一位；<strong>指数相同，再比开头的数</strong>。
+        </div>
+        <div class="callout warning spaced-top">
+          <strong>别忘了单位：</strong>只有单位相同的数量才能直接这样比。千米和米混在一起时，先统一单位。
+        </div>
+      </section>
+
+      <section class="lesson-section" data-compare-lab data-checkpoint data-checkpoint-id="compare-lab" data-compare-rounds='[
+        {"left":{"coef":"3.8","exp":"5","unit":"千米","label":"地球到月球"},"right":{"coef":"1.5","exp":"8","unit":"千米","label":"地球到太阳"},"answer":"right","success":"正确：先比指数，8 比 5 大。1.5 × 10⁸ 是九位数，3.8 × 10⁵ 只有六位。","hint":"别只比开头的 3.8 和 1.5。先比指数：指数大一位，位数就多一位。"},
+        {"left":{"coef":"2.7","exp":"6"},"right":{"coef":"9.3","exp":"5"},"answer":"left","success":"正确：指数 6 大于指数 5。2 700 000 是七位数，930 000 只有六位。","hint":"9.3 虽然比 2.7 大，但要先比指数：6 和 5 谁大？"},
+        {"left":{"coef":"4.5","exp":"6"},"right":{"coef":"9","exp":"6"},"answer":"right","success":"正确：指数相同，这时才比开头的数：9 比 4.5 大。","hint":"两个指数一样大，这时才轮到比开头的数。"},
+        {"left":{"coef":"6","exp":"7"},"right":{"coef":"8.8","exp":"6"},"answer":"left","success":"正确：指数 7 大于指数 6，60 000 000 是八位数。","hint":"先看指数再看开头的数：7 和 6 谁大？"}
+      ]'>
+        <span class="section-kicker">学习站 3 · 比大小实验</span>
+        <h2>谁更大？先比指数再出手</h2>
+        <p>每一题点击更大的那个数。答对后读一读解释，再进入下一题。</p>
+        <p class="lab-caption" data-compare-counter>第 1/4 题</p>
+        <div class="choice-grid" role="group" aria-label="比大小选项">
+          <button class="choice compare-card" type="button" data-compare-card data-side="left"></button>
+          <button class="choice compare-card" type="button" data-compare-card data-side="right"></button>
+        </div>
+        <div class="action-row screen-only">
+          <button class="primary-button" type="button" data-compare-next hidden>下一题</button>
+        </div>
+        <p class="feedback" data-compare-feedback aria-live="polite">点击更大的那个数。</p>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 4–6 · 练习与即时反馈</span>
+        <h2>写一写，数一数，比一比</h2>
+        <div class="quiz-list">
+          <article class="quiz-card" data-quiz data-quiz-id="notation-earth" data-checkpoint data-checkpoint-id="quiz-notation-earth">
+            <p class="quiz-prompt">① 地球的赤道直径大约是 13 000 千米。它的科学记数法是哪一个？</p>
+            <div class="choice-grid" role="group" aria-label="第一道练习选项">
+              <button class="choice" type="button" aria-label="一点三乘十的三次方" data-choice data-correct="false" data-hint="1.3 × 10³ 只有 1 300。请重新数跳格数。">1.3 × 10³</button>
+              <button class="choice" type="button" aria-label="一点三乘十的四次方" data-choice data-correct="true" data-success="正确：小数点向左跳四格，1.3 在 1 和 10 之间。">1.3 × 10⁴</button>
+              <button class="choice" type="button" aria-label="十三乘十的三次方" data-choice data-correct="false" data-hint="13 × 10³ 的值没错，但 13 不小于 10，不规范。">13 × 10³</button>
+              <button class="choice" type="button" aria-label="一点三乘十的五次方" data-choice data-correct="false" data-hint="1.3 × 10⁵ 是 130 000，比赤道直径大了十倍。">1.3 × 10⁵</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+
+          <article class="quiz-card" data-quiz data-quiz-id="notation-sun" data-checkpoint data-checkpoint-id="quiz-notation-sun">
+            <p class="quiz-prompt">② 地球到太阳的距离大约是 150 000 000 千米。它的科学记数法是哪一个？</p>
+            <div class="choice-grid" role="group" aria-label="第二道练习选项">
+              <button class="choice" type="button" aria-label="一点五乘十的七次方" data-choice data-correct="false" data-hint="1.5 × 10⁷ 只有 15 000 000。请逐格数一遍跳数。">1.5 × 10⁷</button>
+              <button class="choice" type="button" aria-label="十五乘十的七次方" data-choice data-correct="false" data-hint="15 × 10⁷ 的值没错，但 15 不小于 10，不规范。">15 × 10⁷</button>
+              <button class="choice" type="button" aria-label="一点五乘十的八次方" data-choice data-correct="true" data-success="正确：小数点从末尾向左跳八格，只剩 1 在小数点前。">1.5 × 10⁸</button>
+              <button class="choice" type="button" aria-label="一点五乘十的九次方" data-choice data-correct="false" data-hint="1.5 × 10⁹ 是十位数，150 000 000 只有九位。">1.5 × 10⁹</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+
+          <article class="quiz-card" data-quiz data-quiz-id="notation-compare" data-checkpoint data-checkpoint-id="quiz-notation-compare">
+            <p class="quiz-prompt">③ 为什么 2.7 × 10⁶ 比 9.3 × 10⁵ 大？</p>
+            <div class="choice-grid" role="group" aria-label="第三道练习选项">
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="2.7 比 9.3 小，只看开头的数会得出相反的结论。">开头的数 2.7 比 9.3 大，所以它更大</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="先后顺序反了：开头的数只在指数相同时才比。">先比开头的数，开头的数相同才比指数</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="两个数都能比较，规范写法正是为了方便比较。">科学记数法的数只能还原后才能比较</button>
+              <button class="choice" type="button" data-choice data-correct="true" data-success="正确：规范写法里位数等于指数加一，指数 6 的数是七位数，指数 5 的只有六位。">指数 6 的数位数更多，位数多的整数更大</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 7 · 书面检查</span>
+        <h2>先写太阳，再比大小</h2>
+        <p>两道方向不同的新题都正确，说明你会在真实情境中使用科学记数法；本课是否掌握，还要看下一站能否解释原因。</p>
+
+        <form class="retrieval-form" data-mastery-stage data-milestone-id="mastery-practice" data-success="第一题正确。现在用还原来比大小。" data-hint="在 1 400 000 末尾点上小数点，向左跳到小数点前只剩一个数字；跳的格数就是指数。">
+          <h3>第一步：太阳的直径大约是 1 400 000 千米，写成科学记数法</h3>
+          <p><strong>1 400 000</strong> = ？ × 10<sup>？</sup></p>
+          <div class="two-column">
+            <div class="control-group">
+              <label for="practice-coefficient">开头的数是多少？（可以带小数点）</label>
+              <input id="practice-coefficient" type="text" inputmode="decimal" data-correct="1.4" autocomplete="off">
+            </div>
+            <div class="control-group">
+              <label for="practice-exponent">10 的指数是几？只填指数。</label>
+              <input id="practice-exponent" type="text" inputmode="numeric" data-correct="6" autocomplete="off">
+            </div>
+          </div>
+          <div class="action-row">
+            <button class="primary-button" type="submit">检查第一题</button>
+          </div>
+          <p class="feedback" data-feedback aria-live="polite"></p>
+        </form>
+
+        <div class="spaced-top" data-transfer-panel hidden>
+          <form class="retrieval-form" data-mastery-stage data-milestone-id="mastery-transfer" data-success="正确：930 000 是六位数，2 700 000 是七位数——指数大一位，位数就多一位，所以 2.7 × 10⁶ 更大。" data-hint="把小数点分别向右跳 5 格和 6 格，位数不够就补 0。">
+            <h3>第二步：把两个数都还原，验证比大小的方法</h3>
+            <div class="two-column">
+              <div class="control-group">
+                <label for="transfer-smaller"><span class="math-expression" role="img" aria-label="九点三乘十的五次方">9.3 × 10<sup>5</sup></span> 的完整数值是多少？</label>
+                <input id="transfer-smaller" type="text" inputmode="numeric" data-correct="930000" autocomplete="off">
+              </div>
+              <div class="control-group">
+                <label for="transfer-bigger"><span class="math-expression" role="img" aria-label="二点七乘十的六次方">2.7 × 10<sup>6</sup></span> 的完整数值是多少？</label>
+                <input id="transfer-bigger" type="text" inputmode="numeric" data-correct="2700000" autocomplete="off">
+              </div>
+            </div>
+            <div class="action-row">
+              <button class="primary-button" type="submit">检查新题</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="callout success spaced-top" role="status" data-mastery-status hidden>
+          <strong>书面检查通过。</strong>你已经能在真实情境中书写科学记数法，并用还原验证比大小的方法；完成下一站的口头解释后，才算达到本课完整目标。
+        </div>
+      </section>
+
+      <section class="lesson-section" data-checkpoint data-checkpoint-id="mastery">
+        <span class="section-kicker">学习站 8 · 20 秒教给别人</span>
+        <h2>解释好处，而不只会写</h2>
+        <p>请对家长或老师回答：</p>
+        <div class="callout success">
+          “科学家为什么把地球到太阳的距离写成 <span class="math-expression" role="img" aria-label="一点五乘十的八次方">1.5 × 10<sup>8</sup></span> 千米，而不写 150 000 000 千米？”
+        </div>
+        <details>
+          <summary>陪学者核对标准（请等孩子说完再打开）</summary>
+          <p>孩子能说出两点好处：第一，写法短，一长串零容易写错、数错；第二，指数直接告诉我们数有多大（指数加一就是位数），两个数先比指数就能比大小。请把孩子的原话告诉教学 Agent，再决定是否结束本单元或补充练习。</p>
+        </details>
+        <div class="spaced-top" data-teachback-panel hidden>
+          <form class="retrieval-form" data-teachback-form data-milestone-id="mastery-explanation" data-success="完整目标已核对：书面使用和口头解释都已完成。" data-hint="请先让孩子独立解释，再由陪学者按上面的两点核对。">
+            <label class="check-row" for="adult-teachback-check">
+              <input id="adult-teachback-check" type="checkbox">
+              <span>陪学者确认：孩子既说出了“短、不容易数错零”，也说出了“指数报出大小（位数），方便比较”。</span>
+            </label>
+            <div class="action-row">
+              <button class="primary-button" type="submit">记录本机核对结果</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </form>
+        </div>
+        <p><small>这里只在本机记录“陪学者已核对”，不保存或上传孩子的原话。</small></p>
+        <p><strong>明天的 30 秒复习：</strong>不看表格，把太阳直径约 1 400 000 千米写成科学记数法，再说出它和 3.8 × 10⁵ 千米谁大、为什么。</p>
+        <div class="action-row screen-only">
+          <a class="secondary-button" href="./0003-split-big-numbers-with-ten-powers.html">返回第三课</a>
+          <a class="secondary-button" href="../reference/0004-scientific-notation-quick-reference.html">打开第四课速查卡</a>
+          <a class="secondary-button" href="../printable/0004-scientific-notation-practice.html">打开第四课可打印课程</a>
+        </div>
+      </section>
+
+      <section class="lesson-section source-list">
+        <span class="section-kicker">继续探索</span>
+        <h2>权威来源与课程依据</h2>
+        <ul>
+          <li><a href="../RESOURCES.md">查看经过核验的资源清单</a></li>
+          <li><a href="../MISSION.md">查看本单元的学习使命</a></li>
+        </ul>
+        <p><strong>本课主要来源：</strong><a href="https://openstax.org/books/prealgebra-2e/pages/10-5-integer-exponents-and-scientific-notation">OpenStax《Prealgebra 2e》§10.5</a>用于核验科学记数法的定义与规范条件；<a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-7-rules-and-style-conventions-expressing-values#7103">NIST SP 811 §7.10.3</a>用于说明大数宜用 10 的幂书写；天文数据来自 <a href="https://science.nasa.gov/moon/facts/">NASA 月球资料</a>、<a href="https://science.nasa.gov/sun/facts/">NASA 太阳资料</a>与<a href="https://science.nasa.gov/earth/facts/">NASA 地球资料</a>。</p>
+      </section>
+    </main>
+
+    <footer class="lesson-footer">
+      <strong>本课只处理大整数的科学记数法，不涉及很小的小数、负指数和四则运算。</strong>
+      <p>建议问题：“为什么规范写法里位数正好是指数加一？”或“还有哪些宇宙数字可以用科学记数法写？”</p>
+      <button class="secondary-button screen-only" type="button" data-reset-progress>重置第四课保存在本机的进度</button>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用 10–15 分钟发现“8.4 万”这种日常说法背后的数学写法：把大整数拆成 a × 10ⁿ。">
+  <title>第三课：移动小数点表示大数｜知径</title>
+  <link rel="stylesheet" href="../assets/course.css">
+  <script src="../assets/lesson.js" defer></script>
+</head>
+<body data-lesson-id="powers-0003" data-lesson-version="2">
+  <a class="skip-link" href="#lesson-main">跳到课程内容</a>
+
+  <div class="lesson-shell">
+    <header class="lesson-header">
+      <p class="eyebrow">知径 · 数学拓展 · 第三课</p>
+      <h1>你早就会说<br>“8.4 万”了</h1>
+      <p class="lede">大人常说“这辆车 8.4 万”。这句话里藏着一种数学写法：把一个大数拆成“小小的开头数 × 10 的幂”。今天把它变成你的本领。</p>
+      <div class="lesson-meta" aria-label="课程信息">
+        <span class="pill">⏱ 10–15 分钟</span>
+        <span class="pill">🎯 拆成 a × 10ⁿ</span>
+        <span class="pill">🔗 前置：第二课</span>
+      </div>
+    </header>
+
+    <noscript>
+      <section class="callout warning spaced-top">
+        <strong>当前浏览器没有运行互动功能。</strong>你仍可使用
+        <a href="../printable/0003-split-big-numbers-practice.html">第三课独立可打印课程</a>完成同一学习目标。
+      </section>
+    </noscript>
+
+    <div class="progress-wrap screen-only">
+      <div class="progress-label">
+        <span data-progress-label>0/7 项互动任务已完成</span>
+        <span>活动进度不等于掌握</span>
+      </div>
+      <progress data-progress aria-label="第三课互动任务进度" max="100" value="0">0%</progress>
+    </div>
+
+    <main id="lesson-main">
+      <section class="lesson-section">
+        <span class="section-kicker">今天的胜利条件</span>
+        <h2>看到 84 000，就能写出 <span class="math-expression" role="img" aria-label="八点四乘十的四次方">8.4 × 10<sup>4</sup></span>，并说清指数 4 从哪来</h2>
+        <div class="goal-box">
+          课程结束时，你能把像 84 000 这样的大整数拆成“一个 1 到 10 之间的数 × 10 的幂”，还能检查别人拆得规不规范。
+        </div>
+      </section>
+
+      <section class="lesson-section quiz-card" data-quiz data-quiz-id="prerequisite-power" data-checkpoint data-checkpoint-id="prerequisite-power">
+        <span class="section-kicker">学习站 1 · 前置诊断</span>
+        <h2>先确认你记得 10 的幂</h2>
+        <p class="quiz-prompt">100 000 应该写成哪个 10 的幂？</p>
+        <div class="choice-grid" role="group" aria-label="前置诊断一选项">
+          <button class="choice" type="button" aria-label="十的四次方" data-choice data-correct="false" data-hint="请再数一遍 1 后面的零，一共有五个。">10⁴</button>
+          <button class="choice" type="button" aria-label="十的五次方" data-choice data-correct="true" data-success="正确：1 后面有五个零，对应五个因数 10。">10⁵</button>
+          <button class="choice" type="button" aria-label="十的六次方" data-choice data-correct="false" data-hint="十的六次方是 1 000 000，有六个零。">10⁶</button>
+          <button class="choice" type="button" aria-label="五的十次方" data-choice data-correct="false" data-hint="底数应是 10，零的个数决定指数。">5¹⁰</button>
+        </div>
+        <p class="feedback" data-feedback aria-live="polite"></p>
+        <p><small>如果这一步不熟练，请先回到<a href="./0002-powers-of-ten-and-zeros.html">第二课“10 的幂与零”</a>复习。</small></p>
+      </section>
+
+      <section class="lesson-section quiz-card" data-quiz data-quiz-id="prerequisite-decimal" data-checkpoint data-checkpoint-id="prerequisite-decimal">
+        <span class="section-kicker">学习站 2 · 前置诊断</span>
+        <h2>再确认你认识带小数点的数</h2>
+        <p class="quiz-prompt">2.6 × 10 等于多少？</p>
+        <div class="choice-grid" role="group" aria-label="前置诊断二选项">
+          <button class="choice" type="button" aria-label="二点六零" data-choice data-correct="false" data-hint="在末尾添 0 不会让数变大；乘 10 要让每个数字的位值扩大十倍。">2.60</button>
+          <button class="choice" type="button" aria-label="二十点六" data-choice data-correct="false" data-hint="6 也要一起变大：6 个十分之一乘 10 变成 6 个一。">20.6</button>
+          <button class="choice" type="button" aria-label="二百六十" data-choice data-correct="false" data-hint="只乘一个 10，位值只扩大十倍，不是一百倍。">260</button>
+          <button class="choice" type="button" aria-label="二十六" data-choice data-correct="true" data-success="正确：每乘一个 10，每个数字的位值都扩大十倍，2 个一变成 2 个十，6 个十分之一变成 6 个一，得到 26。">26</button>
+        </div>
+        <p class="feedback" data-feedback aria-live="polite"></p>
+        <div class="callout spaced-top">
+          <strong>最小补习（如果你答错了）：</strong>2.6 表示 2 个一加 6 个十分之一。乘 10 后，每个数字的位值扩大十倍：2 个一变成 2 个十，6 个十分之一变成 6 个一，所以 2.6 × 10 = 26。看起来就像<strong>小数点向右跳了一格</strong>。如果“十分之一”这个说法完全没听过，请先暂停本课，告诉教学 Agent，我们先补小数的位值。
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 3 · 核心讲解</span>
+        <h2>“8.4 万”翻译成数学话，就是 8.4 × 10⁴</h2>
+        <p>中文里的“千”“万”“十万”“百万”，其实都是 10 的幂的名字：</p>
+        <div class="table-wrap" role="region" aria-label="中文数级与 10 的幂对照表，可横向滚动" tabindex="0">
+          <table class="number-table">
+            <caption class="sr-only">中文数级、数值和 10 的幂对照表</caption>
+            <thead>
+              <tr>
+                <th scope="col">中文说法</th>
+                <th scope="col">数值</th>
+                <th scope="col">10 的幂</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>一千</td><td>1 000</td><td><span class="math-expression" role="img" aria-label="十的三次方">10<sup>3</sup></span></td></tr>
+              <tr><td>一万</td><td>10 000</td><td><span class="math-expression" role="img" aria-label="十的四次方">10<sup>4</sup></span></td></tr>
+              <tr><td>十万</td><td>100 000</td><td><span class="math-expression" role="img" aria-label="十的五次方">10<sup>5</sup></span></td></tr>
+              <tr><td>一百万</td><td>1 000 000</td><td><span class="math-expression" role="img" aria-label="十的六次方">10<sup>6</sup></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>所以“7 千”写成数学话是 7 × 1 000 = <span class="math-expression" role="img" aria-label="七乘十的三次方">7 × 10<sup>3</sup></span>；“8.4 万”写成数学话是 8.4 × 10 000 = <span class="math-expression" role="img" aria-label="八点四乘十的四次方">8.4 × 10<sup>4</sup></span>。拆开写并没有改变数的大小，只是换了一种写法。</p>
+        <div class="equation-stage" role="img" aria-label="八万四千等于八点四万，等于八点四乘十的四次方">
+          <div class="equation" aria-hidden="true">
+            <span>84 000</span>
+            <span class="multiply">=</span>
+            <span>8.4 万</span>
+            <span class="multiply">=</span>
+            <span class="factor">8.4</span><span class="multiply">×</span>
+            <span class="power">10<sup>4</sup></span>
+          </div>
+        </div>
+        <p><strong>不靠“万”字也能拆</strong>——用小数点检查：</p>
+        <ol>
+          <li>整数的小数点藏在末尾：84 000 就是“84 000<strong>.</strong>”。</li>
+          <li>小数点每向左跳一格，开头的数就缩小到十分之一，所以要<strong>补乘一个 10</strong>，数的大小才不变。</li>
+          <li>一直跳到<strong>小数点前只剩一个数字</strong>为止：84 000 → 8.4，跳了 4 格，所以是 8.4 × 10⁴。</li>
+          <li>小数点后面末尾的 0 不用写：8.4000 就写成 8.4。</li>
+        </ol>
+        <div class="callout success spaced-top">
+          <strong>今天的规则：</strong>把大整数写成 <strong>a × 10ⁿ</strong> 时，开头的数 a 必须<strong>大于等于 1 且小于 10</strong>；小数点向左跳了几格，指数 n 就是几。
+        </div>
+        <p><small>规范形式依据：<a href="https://openstax.org/books/prealgebra-2e/pages/10-5-integer-exponents-and-scientific-notation">OpenStax《Prealgebra 2e》§10.5</a>——写成 a × 10ⁿ 时要求 1 ≤ a &lt; 10，转换时按位值移动小数点。</small></p>
+      </section>
+
+      <section class="lesson-section" data-split-lab data-checkpoint data-checkpoint-id="split-lab">
+        <span class="section-kicker">学习站 4 · 拆数实验</span>
+        <h2>让小数点跳格，亲手拆一个大数</h2>
+        <p>选一个大数，用按钮让小数点一格一格跳。注意每跳一格，等式右边会发生什么。</p>
+
+        <div class="lab-controls screen-only">
+          <div class="control-group">
+            <label for="split-number-select">要拆的大数</label>
+            <select id="split-number-select" data-split-number>
+              <option value="84000" selected>84 000</option>
+              <option value="7000">7 000</option>
+              <option value="560000">560 000</option>
+              <option value="3200000">3 200 000</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <span aria-hidden="true">小数点跳格</span>
+            <div class="action-row">
+              <button class="secondary-button" type="button" data-split-left>← 向左跳一格（补乘 10）</button>
+              <button class="secondary-button" type="button" data-split-right>向右跳一格 →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lab-result">
+          <p class="lab-caption">数字条与小数点</p>
+          <div class="zero-strip" role="img" data-split-strip aria-label="84 000，小数点在末尾，还没有跳格"></div>
+          <p class="lab-caption">等式</p>
+          <div class="equation" role="img" data-split-equation aria-label="84 000 还没有拆分">84 000 = 84 000</div>
+          <p class="feedback" data-split-status>小数点在整数末尾。请向左跳格，每跳一格补一个因数 10。</p>
+        </div>
+        <p class="sr-only" data-split-announcement aria-live="polite"></p>
+
+        <div class="action-row screen-only">
+          <button class="primary-button" type="button" data-split-complete aria-disabled="true" disabled>我已规范拆好两个不同的数</button>
+        </div>
+        <p class="feedback" data-split-feedback aria-live="polite">请把小数点向左跳，直到开头的数在 1 和 10 之间。</p>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">一个重要检查</span>
+        <h2>算得对，不等于拆得规范</h2>
+        <p>下面三种写法都等于 560 000——但只有一种符合“开头的数在 1 和 10 之间”的规则：</p>
+        <div class="two-column">
+          <article class="term-card">
+            <h3>✓ 5.6 × 10⁵</h3>
+            <p>5.6 大于等于 1、小于 10，规范。</p>
+          </article>
+          <article class="term-card">
+            <h3>✗ 56 × 10⁴</h3>
+            <p>56 不小于 10——小数点还差一格没跳完。</p>
+          </article>
+        </div>
+        <div class="two-column spaced-top">
+          <article class="term-card">
+            <h3>✗ 0.56 × 10⁶</h3>
+            <p>0.56 比 1 小——小数点跳过头了一格。</p>
+          </article>
+          <article class="term-card">
+            <h3>检查口诀</h3>
+            <p>先看开头的数是否在 1 和 10 之间，再数跳格数核对指数。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 5–7 · 练习与即时反馈</span>
+        <h2>自己拆，也帮别人检查</h2>
+        <div class="quiz-list">
+          <article class="quiz-card" data-quiz data-quiz-id="split-round" data-checkpoint data-checkpoint-id="quiz-split-round">
+            <p class="quiz-prompt">① 9 000 的规范拆分是哪一个？</p>
+            <div class="choice-grid" role="group" aria-label="第一道练习选项">
+              <button class="choice" type="button" aria-label="九乘十的四次方" data-choice data-correct="false" data-hint="9 × 10⁴ 是 90 000。请数一数小数点实际跳了几格。">9 × 10⁴</button>
+              <button class="choice" type="button" aria-label="九十乘十的二次方" data-choice data-correct="false" data-hint="90 × 10² 确实等于 9 000，但 90 不小于 10，不规范。">90 × 10²</button>
+              <button class="choice" type="button" aria-label="九乘十的三次方" data-choice data-correct="true" data-success="正确：9 在 1 和 10 之间；小数点向左跳三格，指数是 3。“9 千”说的就是它。">9 × 10³</button>
+              <button class="choice" type="button" aria-label="零点九乘十的四次方" data-choice data-correct="false" data-hint="0.9 × 10⁴ 也等于 9 000，但 0.9 比 1 小，跳过头了。">0.9 × 10⁴</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+
+          <article class="quiz-card" data-quiz data-quiz-id="split-mars" data-checkpoint data-checkpoint-id="quiz-split-mars">
+            <p class="quiz-prompt">② 火星的半径（从中心到表面的距离）大约是 3 400 千米。它的规范拆分是哪一个？</p>
+            <div class="choice-grid" role="group" aria-label="第二道练习选项">
+              <button class="choice" type="button" aria-label="三点四乘十的三次方" data-choice data-correct="true" data-success="正确：小数点向左跳三格，3.4 在 1 和 10 之间。“3.4 千”也是这个意思。">3.4 × 10³</button>
+              <button class="choice" type="button" aria-label="三点四乘十的四次方" data-choice data-correct="false" data-hint="3.4 × 10⁴ 是 34 000，比火星半径大了十倍。">3.4 × 10⁴</button>
+              <button class="choice" type="button" aria-label="三十四乘十的二次方" data-choice data-correct="false" data-hint="34 × 10² 的值没错，但 34 不小于 10，不规范。">34 × 10²</button>
+              <button class="choice" type="button" aria-label="四点三乘十的三次方" data-choice data-correct="false" data-hint="数字顺序不能变：3 400 的开头两位是 3 和 4。">4.3 × 10³</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+
+          <article class="quiz-card" data-quiz data-quiz-id="split-boundary" data-checkpoint data-checkpoint-id="quiz-split-boundary">
+            <p class="quiz-prompt">③ 56 × 10⁴ 也等于 560 000，为什么它不算规范拆分？</p>
+            <div class="choice-grid" role="group" aria-label="第三道练习选项">
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="等式两边是相等的，问题不在算错。">它算错了，56 × 10⁴ 不等于 560 000</button>
+              <button class="choice" type="button" data-choice data-correct="true" data-success="正确：规则要求开头的数大于等于 1 且小于 10，56 不满足。">56 不小于 10，开头的数必须在 1 和 10 之间</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="指数没有固定的最小要求，要看跳格数。">指数 4 太小，指数必须至少是 5</button>
+              <button class="choice" type="button" data-choice data-correct="false" data-hint="开头的数可以是小数，例如 5.6；问题在大小范围。">开头的数不允许带小数点，必须是整数</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lesson-section">
+        <span class="section-kicker">学习站 8 · 书面检查</span>
+        <h2>先正着拆，再反着还原</h2>
+        <p>两道方向不同的新题都正确，说明你会双向转换；本课是否掌握，还要看下一站能否解释原因。</p>
+
+        <form class="retrieval-form" data-mastery-stage data-milestone-id="mastery-practice" data-success="第一题正确。现在换一个方向再检查。" data-hint="先在 63 000 末尾点上小数点，向左跳到小数点前只剩一个数字；跳的格数就是指数。">
+          <h3>第一步：把 63 000 拆成规范形式</h3>
+          <p><strong>63 000</strong> = ？ × 10<sup>？</sup></p>
+          <div class="two-column">
+            <div class="control-group">
+              <label for="practice-coefficient">开头的数是多少？（可以带小数点）</label>
+              <input id="practice-coefficient" type="text" inputmode="decimal" data-correct="6.3" autocomplete="off">
+            </div>
+            <div class="control-group">
+              <label for="practice-exponent">10 的指数是几？只填指数。</label>
+              <input id="practice-exponent" type="text" inputmode="numeric" data-correct="4" autocomplete="off">
+            </div>
+          </div>
+          <div class="action-row">
+            <button class="primary-button" type="submit">检查第一题</button>
+          </div>
+          <p class="feedback" data-feedback aria-live="polite"></p>
+        </form>
+
+        <div class="spaced-top" data-transfer-panel hidden>
+          <form class="retrieval-form" data-mastery-stage data-milestone-id="mastery-transfer" data-success="新方向也正确：你能把 a × 10ⁿ 还原成大数。" data-hint="指数 5 表示乘五个 10；小数点每次向右跳一格，位数不够就补 0。">
+            <h3>第二步：把 <span class="math-expression" role="img" aria-label="四点七乘十的五次方">4.7 × 10<sup>5</sup></span> 还原成大数</h3>
+            <div class="two-column">
+              <div class="control-group">
+                <label for="transfer-jumps">小数点要向右跳几格？</label>
+                <input id="transfer-jumps" type="text" inputmode="numeric" data-correct="5" autocomplete="off">
+              </div>
+              <div class="control-group">
+                <label for="transfer-value">完整数值是多少？</label>
+                <input id="transfer-value" type="text" inputmode="numeric" data-correct="470000" autocomplete="off">
+              </div>
+            </div>
+            <div class="action-row">
+              <button class="primary-button" type="submit">检查新题</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="callout success spaced-top" role="status" data-mastery-status hidden>
+          <strong>书面检查通过。</strong>你已经能双向转换大数和 a × 10ⁿ；完成下一站的口头解释后，才算达到本课完整目标。
+        </div>
+      </section>
+
+      <section class="lesson-section" data-checkpoint data-checkpoint-id="mastery">
+        <span class="section-kicker">学习站 9 · 20 秒教给别人</span>
+        <h2>解释规则，而不只背步骤</h2>
+        <p>请对家长或老师回答：</p>
+        <div class="callout success">
+          “为什么 620 000 写成 <span class="math-expression" role="img" aria-label="六点二乘十的五次方">6.2 × 10<sup>5</sup></span> 是规范的，写成 <span class="math-expression" role="img" aria-label="六十二乘十的四次方">62 × 10<sup>4</sup></span> 就不算规范？”
+        </div>
+        <details>
+          <summary>陪学者核对标准（请等孩子说完再打开）</summary>
+          <p>孩子能说出两点：第一，两种写法都等于 620 000，问题不在算错；第二，规则要求开头的数在 1 和 10 之间，6.2 符合、62 不符合，而小数点向左跳了五格，所以指数是 5。请把孩子的原话告诉教学 Agent，再决定是否进入第四课。</p>
+        </details>
+        <div class="spaced-top" data-teachback-panel hidden>
+          <form class="retrieval-form" data-teachback-form data-milestone-id="mastery-explanation" data-success="完整目标已核对：书面转换和口头解释都已完成。" data-hint="请先让孩子独立解释，再由陪学者按上面的两点核对。">
+            <label class="check-row" for="adult-teachback-check">
+              <input id="adult-teachback-check" type="checkbox">
+              <span>陪学者确认：孩子既检查了“开头的数要在 1 和 10 之间”，也用跳格数（或乘 10 的个数）解释了指数 5。</span>
+            </label>
+            <div class="action-row">
+              <button class="primary-button" type="submit">记录本机核对结果</button>
+            </div>
+            <p class="feedback" data-feedback aria-live="polite"></p>
+          </form>
+        </div>
+        <p><small>这里只在本机记录“陪学者已核对”，不保存或上传孩子的原话。</small></p>
+        <p><strong>明天的 30 秒复习：</strong>不看提示，把 52 000 拆成规范形式，并解释指数是怎么来的。</p>
+        <div class="action-row screen-only">
+          <a class="secondary-button" href="./0002-powers-of-ten-and-zeros.html">返回第二课</a>
+          <a class="secondary-button" href="../reference/0003-split-big-numbers-quick-reference.html">打开第三课速查卡</a>
+          <a class="secondary-button" href="../printable/0003-split-big-numbers-practice.html">打开第三课可打印课程</a>
+        </div>
+      </section>
+
+      <section class="lesson-section source-list">
+        <span class="section-kicker">继续探索</span>
+        <h2>权威来源与课程依据</h2>
+        <ul>
+          <li><a href="../RESOURCES.md">查看经过核验的资源清单</a></li>
+          <li><a href="../MISSION.md">查看本单元的学习使命</a></li>
+        </ul>
+        <p><strong>本课主要来源：</strong><a href="https://openstax.org/books/prealgebra-2e/pages/10-5-integer-exponents-and-scientific-notation">OpenStax《Prealgebra 2e》§10.5</a>用于核验 a × 10ⁿ 的规范条件（1 ≤ a &lt; 10）与移动小数点的转换方法；火星数据来自 <a href="https://science.nasa.gov/mars/facts/">NASA 火星资料</a>（取便于书写的近似值）。</p>
+      </section>
+    </main>
+
+    <footer class="lesson-footer">
+      <strong>本课只拆大整数，不处理很小的小数，也不做科学记数法的运算。</strong>
+      <p>建议问题：“为什么小数点向左跳一格就要补乘一个 10？”或“‘万’和 10⁴ 为什么是同一件事？”</p>
+      <button class="secondary-button screen-only" type="button" data-reset-progress>重置第三课保存在本机的进度</button>
+    </footer>
+  </div>
+</body>
+</html>

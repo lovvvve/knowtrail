@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="移动小数点把大整数拆成 a × 10ⁿ 的一页速查卡：中文数级对照与跳格步骤。">
+  <title>移动小数点拆大数速查卡｜知径</title>
+  <link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+  <a class="skip-link" href="#reference-main">跳到速查内容</a>
+  <main id="reference-main" class="reference-shell">
+    <header class="lesson-header">
+      <p class="eyebrow">知径 · 第三课一页速查卡</p>
+      <h1>移动小数点拆大数</h1>
+      <p class="lede">“8.4 万”就是 8.4 × 10⁴：开头的数在 1 和 10 之间，跳几格指数就是几。</p>
+    </header>
+
+    <section class="reference-card">
+      <h2>一眼看懂</h2>
+      <div class="equation-stage" role="img" aria-label="八万四千等于八点四万，等于八点四乘十的四次方">
+        <div class="equation" aria-hidden="true">
+          <span>84 000</span>
+          <span class="multiply">=</span>
+          <span>8.4 万</span>
+          <span class="multiply">=</span>
+          <span class="factor">8.4</span><span class="multiply">×</span>
+          <span class="power">10<sup>4</sup></span>
+        </div>
+      </div>
+      <div class="two-column">
+        <article class="term-card">
+          <h3>开头的数 8.4</h3>
+          <p>必须大于等于 1 且小于 10：小数点前只留一个数字。</p>
+        </article>
+        <article class="term-card">
+          <h3>指数 4</h3>
+          <p>小数点向左跳了四格，每格补乘一个 10；“万”正是 10⁴。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reference-card">
+      <h2>中文数级就是 10 的幂</h2>
+      <div class="table-wrap" role="region" aria-label="中文数级对照表，可横向滚动" tabindex="0">
+        <table class="number-table">
+          <caption class="sr-only">中文数级、数值和 10 的幂</caption>
+          <thead>
+            <tr><th scope="col">中文说法</th><th scope="col">数值</th><th scope="col">10 的幂</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>一千</td><td>1 000</td><td><span class="math-expression" role="img" aria-label="十的三次方">10<sup>3</sup></span></td></tr>
+            <tr><td>一万</td><td>10 000</td><td><span class="math-expression" role="img" aria-label="十的四次方">10<sup>4</sup></span></td></tr>
+            <tr><td>十万</td><td>100 000</td><td><span class="math-expression" role="img" aria-label="十的五次方">10<sup>5</sup></span></td></tr>
+            <tr><td>一百万</td><td>1 000 000</td><td><span class="math-expression" role="img" aria-label="十的六次方">10<sup>6</sup></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="reference-card">
+      <h2>两个方向都能走</h2>
+      <div class="two-column">
+        <article class="term-card">
+          <h3>大数 → a × 10ⁿ</h3>
+          <ol>
+            <li>在整数末尾点上小数点。</li>
+            <li>向左跳格，直到小数点前只剩一个数字。</li>
+            <li>跳了几格，指数就是几；末尾多余的 0 不写。</li>
+          </ol>
+        </article>
+        <article class="term-card">
+          <h3>a × 10ⁿ → 大数</h3>
+          <ol>
+            <li>读出指数 n。</li>
+            <li>把小数点向右跳 n 格。</li>
+            <li>位数不够时补 0，再检查大小是否合理。</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section class="reference-card">
+      <h2>三个防错提醒</h2>
+      <ul>
+        <li>56 × 10⁴ 等于 560 000，但 56 不小于 10——还差一格没跳完，不规范。</li>
+        <li>0.56 × 10⁶ 也等于 560 000，但 0.56 比 1 小——跳过头了一格，不规范。</li>
+        <li>写乘号用 ×，不用字母 x；小数点后面末尾的 0 不用写。</li>
+      </ul>
+    </section>
+
+    <section class="reference-card">
+      <h2>30 秒自测</h2>
+      <ol>
+        <li>把 52 000 拆成规范形式。</li>
+        <li>把 <span class="math-expression" role="img" aria-label="四点七乘十的五次方">4.7 × 10<sup>5</sup></span> 还原成大数。</li>
+        <li>解释为什么 62 × 10⁴ 不是 620 000 的规范拆分。</li>
+      </ol>
+      <details class="screen-only">
+        <summary>检查答案</summary>
+        <ol>
+          <li><span class="math-expression" role="img" aria-label="五点二乘十的四次方">5.2 × 10<sup>4</sup></span>。</li>
+          <li>470 000。</li>
+          <li>它的值没有错，但 62 不小于 10；规范要求开头的数在 1 和 10 之间，应写成 <span class="math-expression" role="img" aria-label="六点二乘十的五次方">6.2 × 10<sup>5</sup></span>。</li>
+        </ol>
+      </details>
+      <div class="print-only">
+        <h3>自测答案</h3>
+        <ol>
+          <li><span class="math-expression" role="img" aria-label="五点二乘十的四次方">5.2 × 10<sup>4</sup></span>。</li>
+          <li>470 000。</li>
+          <li>它的值没有错，但 62 不小于 10；规范要求开头的数在 1 和 10 之间，应写成 <span class="math-expression" role="img" aria-label="六点二乘十的五次方">6.2 × 10<sup>5</sup></span>。</li>
+        </ol>
+      </div>
+    </section>
+
+    <footer class="lesson-footer screen-only">
+      <a href="../lessons/0003-split-big-numbers-with-ten-powers.html">返回第三课</a>
+      ·
+      <a href="../printable/0003-split-big-numbers-practice.html">打开第三课可打印课程</a>
+      ·
+      <a href="./0002-powers-of-ten-quick-reference.html">查看第二课速查卡</a>
+    </footer>
+  </main>
+</body>
+</html>

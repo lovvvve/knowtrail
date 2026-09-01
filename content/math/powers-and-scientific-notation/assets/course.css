@@ -383,6 +383,7 @@ input[type="range"] {
 }
 
 .zero-digit,
+.strip-digit,
 .leading-digit {
   display: inline-grid;
   min-width: 2.15rem;
@@ -396,6 +397,43 @@ input[type="range"] {
   font-family: "Cambria Math", Cambria, Georgia, serif;
   font-size: 1.45rem;
   font-weight: 900;
+}
+
+.point-digit {
+  display: inline-grid;
+  min-width: 1rem;
+  min-height: 2.4rem;
+  place-items: end center;
+  padding-bottom: 0.28rem;
+  color: var(--accent);
+  font-family: "Cambria Math", Cambria, Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.compare-card {
+  display: grid;
+  gap: 0.3rem;
+  justify-items: center;
+}
+
+.compare-value {
+  font-family: "Cambria Math", Cambria, Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-value sup {
+  color: var(--accent);
+}
+
+.compare-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .leading-digit {
@@ -623,10 +661,17 @@ input[aria-invalid="true"] {
   }
 
   .zero-digit,
+  .strip-digit,
   .leading-digit {
     min-width: 1.65rem;
     min-height: 2rem;
     font-size: 1.2rem;
+  }
+
+  .point-digit {
+    min-width: 0.8rem;
+    min-height: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -728,11 +773,16 @@ input[aria-invalid="true"] {
   .factor,
   .leading-digit,
   .zero-digit,
+  .strip-digit,
   .choice.is-correct,
   .choice.is-wrong {
     color: #000;
     background: #fff;
     border: 1px solid #000;
+  }
+
+  .point-digit {
+    color: #000;
   }
 
   a {
