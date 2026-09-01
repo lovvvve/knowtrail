@@ -52,9 +52,9 @@
         <h2>先确认你会用幂压缩</h2>
         <p class="quiz-prompt">10 × 10 × 10 应该写成哪个幂？</p>
         <div class="choice-grid" role="group" aria-label="前置诊断选项">
-          <button class="choice" type="button" aria-label="十的三次方" data-choice data-correct="true" data-success="正确：重复的因数是 10，一共出现三次，所以写成十的三次方。">10³</button>
           <button class="choice" type="button" aria-label="三的十次方" data-choice data-correct="false" data-hint="底数和指数交换了。底数应是重复出现的 10。">3¹⁰</button>
           <button class="choice" type="button" aria-label="十的二次方" data-choice data-correct="false" data-hint="请逐个数题目中的因数 10，一共有三个。">10²</button>
+          <button class="choice" type="button" aria-label="十的三次方" data-choice data-correct="true" data-success="正确：重复的因数是 10，一共出现三次，所以写成十的三次方。">10³</button>
           <button class="choice" type="button" aria-label="三的三次方" data-choice data-correct="false" data-hint="底数来自重复的因数，因此不是 3。">3³</button>
         </div>
         <p class="feedback" data-feedback aria-live="polite"></p>
@@ -163,8 +163,8 @@
           <article class="quiz-card" data-quiz data-quiz-id="ten-value" data-checkpoint data-checkpoint-id="quiz-ten-value">
             <p class="quiz-prompt">① <span class="math-expression" role="img" aria-label="十的四次方">10<sup>4</sup></span> 的数值是哪一个？</p>
             <div class="choice-grid" role="group" aria-label="第一道练习选项">
-              <button class="choice" type="button" aria-label="一万" data-choice data-correct="true" data-success="正确：指数 4 对应四个因数 10，结果是 1 后面四个零。">10 000</button>
               <button class="choice" type="button" aria-label="一千" data-choice data-correct="false" data-hint="1 后面只有三个零，对应的是十的三次方。">1 000</button>
+              <button class="choice" type="button" aria-label="一万" data-choice data-correct="true" data-success="正确：指数 4 对应四个因数 10，结果是 1 后面四个零。">10 000</button>
               <button class="choice" type="button" aria-label="四十" data-choice data-correct="false" data-hint="指数不是把 10 直接乘以 4。">40</button>
               <button class="choice" type="button" aria-label="十万" data-choice data-correct="false" data-hint="这里有五个零，比指数 4 多了一个。">100 000</button>
             </div>
@@ -174,10 +174,10 @@
           <article class="quiz-card" data-quiz data-quiz-id="reverse-ten-power" data-checkpoint data-checkpoint-id="quiz-reverse-ten-power">
             <p class="quiz-prompt">② 100 000 是 1 后面五个零，应该写成哪个 10 的幂？</p>
             <div class="choice-grid" role="group" aria-label="第二道练习选项">
-              <button class="choice" type="button" aria-label="十的五次方" data-choice data-correct="true" data-success="正确：五个零对应十的五次方。">10⁵</button>
               <button class="choice" type="button" aria-label="十的四次方" data-choice data-correct="false" data-hint="请再数一遍 1 后面的零，一共有五个。">10⁴</button>
               <button class="choice" type="button" aria-label="五的十次方" data-choice data-correct="false" data-hint="底数仍然是 10，零的个数用来确定指数。">5¹⁰</button>
               <button class="choice" type="button" aria-label="十的六次方" data-choice data-correct="false" data-hint="十的六次方需要六个零。">10⁶</button>
+              <button class="choice" type="button" aria-label="十的五次方" data-choice data-correct="true" data-success="正确：五个零对应十的五次方。">10⁵</button>
             </div>
             <p class="feedback" data-feedback aria-live="polite"></p>
           </article>
@@ -185,9 +185,9 @@
           <article class="quiz-card" data-quiz data-quiz-id="ten-boundary" data-checkpoint data-checkpoint-id="quiz-ten-boundary">
             <p class="quiz-prompt">③ 能不能把“指数是几，就在 1 后写几个零”直接用在 <span class="math-expression" role="img" aria-label="二的四次方">2<sup>4</sup></span> 上？</p>
             <div class="choice-grid" role="group" aria-label="第三道练习选项">
-              <button class="choice" type="button" data-choice data-correct="true" data-success="正确：指数仍数因数，但添零规律依赖底数 10。">不能；添零规律要看底数 10</button>
               <button class="choice" type="button" data-choice data-correct="false" data-hint="并非所有底数的幂都会得到 1 后面添零。">可以；所有幂都按指数添零</button>
               <button class="choice" type="button" data-choice data-correct="false" data-hint="指数与底数谁大谁小，不决定是否添零。">可以；指数比底数大就添零</button>
+              <button class="choice" type="button" data-choice data-correct="true" data-success="正确：指数仍数因数，但添零规律依赖底数 10。">不能；添零规律要看底数 10</button>
               <button class="choice" type="button" data-choice data-correct="false" data-hint="2 可以作为底数；错在把 10 的特别规律套给了 2。">不能；数字 2 不可以作底数</button>
             </div>
             <p class="feedback" data-feedback aria-live="polite"></p>
