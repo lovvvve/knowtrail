@@ -64,6 +64,16 @@
 
 ## 输出形态
 
+### 在线访问与 GitHub Pages
+
+- 站点地址：[知径在线课程](https://lovvvve.github.io/knowtrail/)。根目录 `index.html` 提供课程、纸笔材料和速查卡入口。
+- 首次启用：仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。此后推送到 `main` 自动部署，也可在 **Actions → Deploy GitHub Pages → Run workflow** 手动运行。
+- [部署工作流](./.github/workflows/pages.yml) 使用 GitHub 官方 Pages Actions；PR 只构建并检查内部链接，`main` 构建通过后才发布。
+- 本地运行 `python3 tools/build_site.py`，生成并验证 `_site/`；再运行 `python3 -m http.server 8000 --directory _site`，访问 `http://localhost:8000/` 预览。两条命令均只需 Python 3.9+ 标准库，无需安装前端依赖。
+- 构建保留课程相对路径，发布首页及课程目录中的静态资源；`NOTES.md`、学习记录、Skills 和仓库配置不进入站点产物。既有课程中的 Markdown 资料链接在发布副本中指向 GitHub 源文件；课程页增加返回首页入口。
+- `_site/` 是可重复生成的产物，不纳入 Git。新增知识单元后，在 `index.html` 更新课程索引；其 `lessons/`、`reference/`、`printable/`、`assets/` 中支持的静态文件会自动收集并检查链接。
+- 在线课程的互动完成标记仍仅保存在当前浏览器，与直接打开本地 HTML 的进度分开；没有账号、作答上传或跨设备同步。
+
 ### 互动网页（优先）
 
 网页互动应服务于学习目标，例如操作、预测、即时反馈、分步提示或可视化。页面需要兼顾儿童使用、键盘操作、移动设备和清晰反馈；纯装饰性动画不算有效互动。

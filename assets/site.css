@@ -1,0 +1,58 @@
+.home { margin: 0; color: #213b35; background: #f6f5ee; font: 17px/1.7 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+.home *, .site-return { box-sizing: border-box; }
+.home a { color: #155c4c; text-underline-offset: .25em; }
+.home a:hover { text-decoration-thickness: 2px; }
+.home :focus-visible, .site-return a:focus-visible { outline: 3px solid #bd621d; outline-offset: 5px; }
+.home .skip-link { position: absolute; left: 1rem; top: -5rem; padding: .6rem; background: white; z-index: 2; }
+.home .skip-link:focus { top: 1rem; }
+.home .masthead, .home main, .home .site-footer { width: min(1100px, calc(100% - 48px)); margin-inline: auto; }
+.home .masthead, .home .site-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding-block: 24px; }
+.home .masthead { border-bottom: 1px solid #cbd5c7; }
+.home .masthead a, .home .site-footer a { display: inline-block; padding-block: 8px; }
+.home .brand { font-size: 25px; font-weight: 850; text-decoration: none; }
+.home .brand span { font-size: 12px; letter-spacing: .16em; margin-left: 12px; }
+.home .intro { padding-block: clamp(45px, 8vw, 100px); }
+.home .eyebrow { margin: 0 0 14px; color: #546d5d; font-size: 13px; font-weight: 750; letter-spacing: .13em; }
+.home h1 { font-size: clamp(32px, 5.2vw, 58px); line-height: 1.4; letter-spacing: -.04em; margin: 0 0 24px; font-weight: 850; }
+.home .lead { font-size: 18px; color: #52685e; margin-bottom: 32px; }
+.home .button { display: inline-block; padding: 12px 24px; min-height: 48px; background: #205e4c; color: white; border-radius: 7px; text-decoration: none; font-weight: 750; }
+.home .button:hover { background: #154535; }
+.home .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-top: 1px solid #cbd5c7; padding-top: 20px; margin-bottom: 16px; }
+.home h2 { font-size: 24px; margin-block: .5rem; }
+.home .section-heading p { color: #52685e; font-size: 14px; }
+.home .units { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.home .unit { padding: clamp(22px, 4vw, 38px); border: 1px solid #cbd5c7; border-top: 5px solid #3c7960; border-radius: 12px; background: #fffef9; }
+.home .powers { border-top-color: #90662f; }
+.home h3 { font-size: 31px; line-height: 1.45; margin: 10px 0 18px; }
+.home .unit-description { min-height: 5.1em; }
+.home .meta { color: #54665a; font-size: 14px; margin-bottom: 24px; }
+.home details { margin-top: 26px; }
+.home summary { cursor: pointer; min-height: 44px; padding: 8px 0; font-weight: 700; }
+.home .lesson-list { margin: 0; padding-left: 22px; }
+.home .lesson-list li { padding: 8px 0; border-bottom: 1px solid #e0e6d9; }
+.home .lesson-list a { display: inline-block; min-height: 44px; padding-block: 8px; }
+.home .print-link { font-size: 13px; margin-left: 12px; white-space: nowrap; }
+.home .reference-link { display: inline-block; padding: 12px 0; margin-top: 12px; }
+.home .learning-note { margin-block: 36px 60px; padding: 24px 30px; border-left: 4px solid #90662f; background: #eeeede; }
+.home .learning-note p { max-width: 850px; }
+.home .site-footer { border-top: 1px solid #cbd5c7; color: #52685e; font-size: 14px; }
+.site-return { width: min(920px, calc(100% - 32px)); margin: 16px auto; font: 16px/1.5 system-ui, sans-serif; }
+.site-return a { display: inline-block; padding: 10px 0; min-height: 44px; color: #155c4c; text-underline-offset: .25em; }
+@media screen {
+  .reference-shell { overflow-wrap: anywhere; }
+}
+@media (max-width: 720px) {
+  .home .units { grid-template-columns: 1fr; }
+  .home .unit-description { min-height: 0; }
+  .home .brand span { display: block; margin-left: 0; }
+  .home .learning-note { padding: 20px; }
+}
+@media print {
+  .site-return, .home .skip-link, .home .masthead { display: none; }
+  .home { background: white; color: black; font-size: 11pt; }
+  .home .intro { padding-block: 12px; }
+  .home h1 { font-size: 24pt; }
+  .home .units { display: block; }
+  .home .unit { break-inside: avoid; margin-block: 16px; }
+  .home .button { color: black; background: white; border: 1px solid; }
+}
