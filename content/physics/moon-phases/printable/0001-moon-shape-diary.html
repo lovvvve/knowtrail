@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>纸笔课程 1 · 月亮的形状日记｜知径</title>
+<meta name="description" content="认识八种月相的独立纸笔课程：视频分镜、排序与连线练习、独立检查和答案页，适配 A4 黑白打印。">
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  .match-grid { display: grid; grid-template-columns: minmax(0, 1fr) 4rem minmax(0, 1fr); align-items: start; margin: .4rem 0; }
+  .match-grid ul { display: grid; gap: .45rem; margin: 0; padding: 0; list-style: none; }
+  .match-grid li { display: flex; align-items: center; gap: .5rem; min-height: 15mm; font-weight: 700; }
+  .match-left li { justify-content: flex-end; }
+  .match-grid .moon-icon { width: 14mm; }
+  .draw-row { display: flex; flex-wrap: wrap; gap: .6rem 2rem; margin: .4rem 0; }
+  .draw-row figure { display: grid; justify-items: center; gap: .3rem; margin: 0; font-weight: 700; }
+  .draw-row .draw-circle { width: 24mm; height: 24mm; }
+  .order-blank { font-weight: 700; }
+  .storyboard li { font-size: .95rem; }
+  @media print {
+    .paper-page .storyboard { gap: .35rem; }
+    .paper-page .storyboard li { padding: .35rem .5rem .35rem 2.3rem; font-size: 9.5pt; line-height: 1.45; }
+    .paper-page .storyboard li::before { top: .35rem; }
+    .paper-moons { grid-template-columns: repeat(8, 1fr); }
+    .paper-moons li { font-size: 9pt; }
+    .match-grid li { min-height: 13mm; }
+  }
+</style>
+<script src="../../../math/powers-and-scientific-notation/assets/lesson.js" defer></script>
+<script src="../assets/moon-model.js" defer></script>
+</head>
+<body data-lesson-id="moon-print-1"><a class="skip-link" href="#worksheet-main">跳到纸笔课程</a>
+<main id="worksheet-main" class="reference-shell">
+<nav class="course-nav" aria-label="单元课程"><a href="../lessons/0001-moon-shape-diary.html">01 月亮的形状日记</a><a href="../lessons/0002-half-always-lit.html">02 一半总是亮的</a><a href="../lessons/0003-when-to-find-the-moon.html">03 今晚去哪找月亮</a><a href="../reference/moon-phases-quick-reference.html">速查卡</a>
+</nav>
+<div class="screen-only">
+<p>本材料不看网页也能独立学完第 1 课。共 4 页：学习页、练习页、独立检查、答案。可只打印第 1–3 页，把第 4 页交给陪学者。月相图由页面脚本绘制，请先在浏览器中打开本页，再打印。</p>
+<button type="button" class="primary-button" data-print>打印 A4 材料</button>
+</div>
+<noscript>
+<p>月相图需要开启 JavaScript 才会显示。请在开启脚本的浏览器中打开本页，再用打印菜单打印。</p>
+</noscript>
+
+<section class="paper-page">
+<header>
+<p class="eyebrow">知径 · 月相 · 01 · 学习页 1 / 4</p>
+<h1>月亮的形状日记</h1>
+<p>目标：你能按顺序排出八种月相，说出四个主角——新月、上弦月、满月、下弦月——的名字，并看亮面在哪一边判断月亮正在越来越圆还是越来越缺。</p>
+</header>
+<h2>先热身</h2>
+<p>① 月亮的光是从哪里来的？____________　② 月亮看起来缺了一块，是月球真的变小了吗？____________</p>
+<p class="source-note">补救：关灯的房间里，镜子自己不会亮，被手电筒照到才反射出光；月亮也是被太阳照亮的。请大人用手电筒照一个球：球一直那么大，只是一半亮、一半暗。</p>
+<h2>看分镜：咕咕的月亮日记</h2>
+<p>这一页就是网页动画视频的内容。照着顺序读，把空填上。</p>
+<ol class="storyboard">
+<li>月亮自己不会发光。我们看到的月光，是 ______ 照到月亮上，又反射过来的光。</li>
+<li>咕咕每天晚上画下月亮，写上农历日期。初一：几乎看不到月亮，叫 ______。</li>
+<li>初三：太阳落山后，西边天空低处，右边亮着弯弯一条，叫 ______。</li>
+<li>初八前后：______ 边一半亮，叫上弦月。之后亮的部分越来越多，叫凸月。</li>
+<li>十五、十六前后：整个圆都亮了，叫 ______。</li>
+<li>满月以后：______ 边先变暗，亮面留在 ______ 边，越来越缺。</li>
+<li>廿三前后：左边一半亮，叫 ______。廿六前后：清晨东边低处，只剩左边弯弯一条，叫 ______。</li>
+<li>再过几天又回到新月。从新月到下一个新月，大约 ______ 天。</li>
+</ol>
+<h2>八种月相（按出现的先后）</h2>
+<ul class="paper-moons">
+<li><span class="moon-icon" data-moon="0"></span>★ 新月<br>初一</li>
+<li><span class="moon-icon" data-moon="45"></span>蛾眉月<br>初二–初六</li>
+<li><span class="moon-icon" data-moon="90"></span>★ 上弦月<br>初八前后</li>
+<li><span class="moon-icon" data-moon="135"></span>凸月<br>越来越圆</li>
+<li><span class="moon-icon" data-moon="180"></span>★ 满月<br>十五、十六前后</li>
+<li><span class="moon-icon" data-moon="225"></span>凸月<br>越来越缺</li>
+<li><span class="moon-icon" data-moon="270"></span>★ 下弦月<br>廿三前后</li>
+<li><span class="moon-icon" data-moon="315"></span>残月<br>廿五–廿九</li>
+</ul>
+<p><strong>★ 四个主角一定要会</strong>：新月、上弦月、满月、下弦月；蛾眉月、两种凸月、残月认得出就行（有的书把残月也叫蛾眉月）。</p>
+<p><strong>判断规则：</strong>在北半球，月亮高挂南边天空时，亮面在右边就越来越圆，亮面在左边就越来越缺。贴近地平线的月牙会歪，有时像一只小碗。</p>
+<footer>图中灰色是没被照亮、看不清的部分。下一页是练习。预计 12–15 分钟，可分两次完成。</footer>
+</section>
+
+<section class="paper-page">
+<header>
+<p class="eyebrow">知径 · 01 · 练习页 2 / 4</p>
+<h1>排一排，连一连</h1>
+</header>
+<h2>A · 排一排</h2>
+<p>下面 8 个月亮的顺序被打乱了。从新月开始数，在每个月亮下面写出它是第几个出现的（1–8）。</p>
+<ul class="paper-moons">
+<li><span class="moon-icon" data-moon="225"></span><span class="order-blank">第 ___ 个</span></li>
+<li><span class="moon-icon" data-moon="45"></span><span class="order-blank">第 ___ 个</span></li>
+<li><span class="moon-icon" data-moon="0"></span><span class="order-blank">第 ___ 个</span></li>
+<li><span class="moon-icon" data-moon="315"></span><span class="order-blank">第 ___ 个</span></li>
+<li><span class="moon-icon" data-moon="135"></span><span class="order-blank">第 ___ 个</span></li>
+<li><span class="moon-icon" data-moon="270"></span><span class="order-blank">第 ___ 个</span></li>
+<li><span class="moon-icon" data-moon="180"></span><span class="order-blank">第 ___ 个</span></li>
+<li><span class="moon-icon" data-moon="90"></span><span class="order-blank">第 ___ 个</span></li>
+</ul>
+<h2>B · 连一连</h2>
+<p>用线把左边的月亮和右边的名字连起来。</p>
+<div class="match-grid">
+<ul class="match-left">
+<li>① <span class="moon-icon" data-moon="270"></span>●</li>
+<li>② <span class="moon-icon" data-moon="45"></span>●</li>
+<li>③ <span class="moon-icon" data-moon="180"></span>●</li>
+<li>④ <span class="moon-icon" data-moon="135"></span>●</li>
+</ul>
+<div></div>
+<ul class="match-right">
+<li>● 满月</li>
+<li>● 凸月（越来越圆）</li>
+<li>● 下弦月</li>
+<li>● 蛾眉月</li>
+</ul>
+</div>
+<h2>B · 画一画</h2>
+<p>在圆里把<strong>暗的部分</strong>用铅笔涂灰，亮的部分留白。</p>
+<div class="draw-row">
+<figure><span class="draw-circle"></span><figcaption>蛾眉月</figcaption></figure>
+<figure><span class="draw-circle"></span><figcaption>下弦月</figcaption></figure>
+</div>
+<h2>想一想</h2>
+<p>蛾眉月和残月都是弯弯的一条，怎样分辨它们？写一句话。</p>
+<div class="write-line"></div>
+<div class="write-line"></div>
+<footer>下一页是独立检查：不看第 1–2 页，答案另页。</footer>
+</section>
+
+<section class="paper-page">
+<header>
+<p class="eyebrow">知径 · 01 · 独立检查 3 / 4</p>
+<h1>C 区 · 自己完成</h1>
+<p>不看前面的讲解和答案。</p>
+</header>
+<p>C1. 在圆里画出“上弦月”：把暗的部分涂灰。</p>
+<div class="draw-row"><figure><span class="draw-circle"></span><figcaption>上弦月</figcaption></figure></div>
+<p>C2. <span class="moon-icon small" data-moon="225"></span> 这个月亮正在越来越圆，还是越来越缺？____________</p>
+<p>C3. 农历廿三前后的月亮叫 ____________。</p>
+<p>C4. 给下面四个主角月相按出现的先后编号（从农历初一往后数，1–4）。</p>
+<ul class="paper-moons">
+<li><span class="moon-icon" data-moon="270"></span><span class="order-blank">___</span></li>
+<li><span class="moon-icon" data-moon="0"></span><span class="order-blank">___</span></li>
+<li><span class="moon-icon" data-moon="180"></span><span class="order-blank">___</span></li>
+<li><span class="moon-icon" data-moon="90"></span><span class="order-blank">___</span></li>
+</ul>
+<h2>C5 · 讲给陪学者听</h2>
+<p>看到一个月亮，怎样判断它正在越来越圆还是越来越缺？</p>
+<p>□ 陪学者确认：孩子没看提示，讲清了“亮面在右边越来越圆、在左边越来越缺（北半球，月亮高挂南边天空时）”，并举了一个例子。</p>
+<h2>选做 · 我的月亮观察格</h2>
+<p>和大人一起看真的月亮，画下来。夜里出门一定要有大人陪同；阴天看不到就写“阴天”。</p>
+<table class="observe-table">
+<thead><tr><th scope="col">公历日期</th><th scope="col">农历日期</th><th scope="col">几点</th><th scope="col">画下月亮</th><th scope="col">它叫什么</th></tr></thead>
+<tbody>
+<tr><td></td><td></td><td></td><td class="draw"><span class="draw-circle"></span></td><td></td></tr>
+<tr><td></td><td></td><td></td><td class="draw"><span class="draw-circle"></span></td><td></td></tr>
+</tbody>
+</table>
+<h2>反馈与下一步</h2>
+<p>本课：C1–C4 全对，C5 讲清楚，就可以进入第 2 课。有错时先分清是“亮面看反了”“名字记混了”还是“顺序记错了”，回到第 1 页对应的分镜补救，再换一题检查。全单元：隔两三天，完成三份纸笔版的 C 区，掌握标准见速查卡。</p>
+<footer>说不清的地方，回来告诉教学助手你画的月亮和想法。看过答案后再做的题不算独立掌握。</footer>
+</section>
+
+<section class="paper-page">
+<header>
+<p class="eyebrow">知径 · 01 · 答案页 4 / 4 · 可单独保管</p>
+<h1>答案与解释</h1>
+</header>
+<h2>热身与分镜</h2>
+<p>热身：① 反射的太阳光　② 没有变小，变的是我们看到的亮的部分。</p>
+<p>分镜：① 太阳　② 新月　③ 蛾眉月　④ 右　⑤ 满月　⑥ 右，左　⑦ 下弦月，残月　⑧ 29.5。</p>
+<h2>A · 排一排</h2>
+<p>从左到右依次是：第 6、2、1、8、4、7、5、3 个。</p>
+<h2>B · 连一连与画一画</h2>
+<p>① 下弦月　② 蛾眉月　③ 满月　④ 凸月（越来越圆）。</p>
+<p>蛾眉月：右边留一条细细的亮弯，其余涂灰。下弦月：左半边留白，右半边涂灰。</p>
+<p>想一想：看亮的弯在哪一边。右边亮是月初的蛾眉月（越来越圆），左边亮是月底的残月（越来越缺）。接受孩子自己的说法。</p>
+<h2>C · 独立检查</h2>
+<p>C1 右半边留白、左半边涂灰。　C2 越来越缺（亮面在左边）。　C3 下弦月。</p>
+<p>C4 从左到右：4、1、3、2（新月 → 上弦月 → 满月 → 下弦月）。</p>
+<p>C5 核对要点：讲到“看亮面在右边还是左边”，并能举例即可，措辞不限，不要求背诵。</p>
+<h2>怎样用错误帮助下一步</h2>
+<p>亮面看反了：把月亮图和第 1 页的判断规则放在一起，先说“亮面在哪边”，再下结论。名字记混：对着第 1 页的八张图读一遍名字，再重做 A 区。顺序记错：记住“先右边亮、越来越圆；满月后右边先暗、越来越缺”。补救后换一道新题核对。</p>
+<footer>依据：<a href="https://spaceplace.nasa.gov/moon-phases/en/">NASA Space Place · Moon Phases</a>、<a href="https://aa.usno.navy.mil/faq/moon_phases">USNO · Phases of the Moon</a>。访问：2026-10-10。农历日期为常见情况，实际可能差一两天。情境与题目为原创。<br>网页对应：<a href="../lessons/0001-moon-shape-diary.html">第 1 课</a> · <a href="../reference/moon-phases-quick-reference.html">单元速查卡</a>
+</footer>
+</section>
+</main>
+</body>
+</html>

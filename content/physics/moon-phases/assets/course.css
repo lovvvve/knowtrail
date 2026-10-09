@@ -1,0 +1,178 @@
+@import url("../../../math/arithmetic-parentheses/assets/course.css");
+@import url("../../../math/multi-digit-multiplication/assets/cartoon-video.css");
+
+:root {
+  --primary: #234e8c;
+  --primary-dark: #17365f;
+  --accent: #8a5300;
+  --focus: #17365f;
+  --surface-soft: #edf2fb;
+  --moon-lit: #fff1a8;
+  --moon-dark: #3d4456;
+  --moon-rim: #1b2234;
+}
+body { background: #f3f4f8; }
+.lesson-header { background: linear-gradient(150deg, #0d1733, #1d3766 62%, #3a5a92); }
+
+/* Moon pictures (moon-model.js). The dark part stays visible so a new moon is a dark disc, not nothing. */
+.moon-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.moon-dark { fill: var(--moon-dark); }
+.moon-lit { fill: var(--moon-lit); }
+.moon-rim { stroke: var(--moon-rim); stroke-width: 3; }
+.moon-icon { display: inline-block; width: 3.4rem; vertical-align: middle; }
+.moon-icon.large { width: 6.5rem; }
+.moon-icon.small { width: 2.2rem; }
+.moon-row { display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; align-items: flex-end; margin-block: .8rem; padding: 0; list-style: none; }
+.moon-row figure, .moon-row li { display: grid; justify-items: center; gap: .25rem; margin: 0; text-align: center; font-weight: 700; font-size: .95rem; }
+.moon-row .moon-icon { width: 3.6rem; }
+.choice .moon-icon { width: 3.2rem; margin-right: .5rem; }
+.choice-grid.three { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); }
+.choice-grid.moons { grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr)); }
+.choice.moon-choice { flex-direction: column; gap: .35rem; font-size: 1rem; font-family: inherit; }
+.choice.moon-choice .moon-icon { width: 3.6rem; margin: 0; }
+.safety { padding: 1rem 1.1rem; border: 3px solid #b3261e; border-radius: 12px; background: #fff3f1; }
+.safety strong:first-child { color: #8c1d18; }
+
+/* Orbit lab: top view next to "what you see from Earth". */
+.orbit-lab, .sky-lab, .sequence-game { margin-top: 1rem; }
+.orbit-views { display: grid; gap: 1rem; align-items: center; }
+.orbit-views svg { width: 100%; height: auto; border-radius: 14px; }
+.orbit-eye { display: grid; justify-items: center; gap: .3rem; margin: 0; padding: .9rem; background: #0f1a33; border-radius: 14px; color: #fff; font-weight: 800; }
+.orbit-eye [data-orbit-eye] { width: min(9rem, 40vw); }
+.orbit-space { fill: #0f1a33; }
+.orbit-sun circle { fill: #ffd23f; }
+.orbit-ray { stroke: #ffd23f; stroke-width: 4; opacity: .85; }
+.orbit-ray-head { fill: #ffd23f; }
+.orbit-text { fill: #e8edf7; font: 700 15px "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+.orbit-tick { fill: #9fb3d9; font: 700 13px "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+.orbit-path { fill: none; stroke: #6b7fa8; stroke-width: 2; stroke-dasharray: 5 6; }
+.earth-day { fill: #3b82c4; }
+.earth-night { fill: #0b1430; opacity: .6; }
+.earth-rim { fill: none; stroke: #9cc3ee; stroke-width: 2; }
+.orbit-observer { fill: #ff8a3d; stroke: #fff; stroke-width: 2; }
+.orbit-sight { stroke: #ff8a3d; stroke-width: 2.5; stroke-dasharray: 4 4; }
+.orbit-facing { fill: none; stroke: #ff8a3d; stroke-width: 3.5; stroke-dasharray: 5 4; }
+.orbit-mini { display: inline-block; width: 9rem; vertical-align: middle; }
+.orbit-mini-svg { display: block; width: 100%; height: auto; border-radius: 10px; }
+.orbit-mini-svg .moon-rim, .orbit-mini-svg .earth-rim { stroke-width: 1.5; }
+.choice .orbit-mini { width: 8rem; }
+.orbit-legend { display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; margin: .5rem 0 0; padding: 0; list-style: none; color: var(--muted); font-size: .92rem; }
+.orbit-legend .swatch { display: inline-block; width: 1.6rem; height: .3rem; margin-right: .35rem; vertical-align: middle; border-top: 3px dashed #c45f14; }
+.lab-row { display: grid; gap: .3rem; margin-top: .9rem; }
+.lab-row label { font-weight: 800; }
+.lab-row output { color: var(--primary-dark); }
+.lab-readout { min-height: 3.2em; margin: .7rem 0 0; padding: .7rem .9rem; background: var(--surface-soft); border-radius: 10px; font-weight: 700; }
+
+/* Sequence game: tap the phases in order. */
+.sequence-track { display: grid; grid-template-columns: repeat(auto-fill, minmax(4.6rem, 1fr)); gap: .5rem; margin: .8rem 0; padding: 0; list-style: none; counter-reset: slot; }
+.sequence-track li { position: relative; display: grid; justify-items: center; align-content: start; gap: .2rem; min-height: 6.3rem; padding: .55rem .3rem .4rem; border: 2px dashed #aab6cc; border-radius: 12px; background: #fff; counter-increment: slot; font-size: .85rem; font-weight: 800; text-align: center; }
+.sequence-track li::before { content: counter(slot); position: absolute; top: .2rem; left: .4rem; color: var(--muted); font-size: .75rem; }
+.sequence-track li.is-filled { border-style: solid; border-color: var(--primary); background: var(--surface-soft); }
+.sequence-track .moon-svg { width: 3rem; }
+.sequence-pool { display: flex; flex-wrap: wrap; gap: .6rem; }
+.moon-card { display: grid; place-items: center; width: 4.6rem; height: 4.6rem; padding: .45rem; border: 2px solid #aebbd5; border-radius: 14px; background: #fff; cursor: pointer; transition: transform 150ms ease; }
+.moon-card:hover { transform: translateY(-2px); }
+.moon-card.is-wrong { border-color: var(--error); background: var(--error-soft); animation: card-shake .35s ease-in-out 2; }
+@keyframes card-shake { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-5px); } }
+
+/* Sky lab: the sky facing south over one day. */
+.sky-lab svg { width: 100%; height: auto; border-radius: 14px; }
+.sky-bg { fill: #8ec9f2; transition: fill .4s ease; }
+.sky-bg.is-twilight { fill: #e7a76b; }
+.sky-bg.is-night { fill: #0f1a33; }
+.sky-stars { fill: #fff; transition: opacity .4s ease; }
+.sky-path { fill: none; stroke: #ffffff; stroke-width: 2; stroke-dasharray: 4 6; opacity: .55; }
+.sky-sun { fill: #ffd23f; stroke: #f6a623; stroke-width: 4; }
+.sky-ground { fill: #355e3b; }
+.sky-dir { fill: #fff; font: 800 18px "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+.sky-note { fill: #d7e5d8; font: 700 13px "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+.sky-quick { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .6rem; }
+.sky-quick button { min-height: 44px; }
+.tonight { display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; align-items: center; padding: 1rem; border-radius: 14px; background: #0f1a33; color: #fff; }
+.tonight [data-tonight-moon] { width: 5rem; }
+.tonight p { flex: 1 1 14rem; margin: 0; font-weight: 700; }
+
+/* Video stage for this unit: night colours and the owl guide, 咕咕. */
+.video-frame { background: #0f1a33; border-color: #17365f; }
+.vstage .video-moon .moon-rim { stroke-width: 4; }
+.vstage .label { font-weight: 850; paint-order: stroke; stroke: #0f1a33; stroke-width: 10px; stroke-linejoin: round; }
+.vstage .label.light { stroke: #fffdf6; }
+.vstage .sun-rays { animation: sun-spin 18s linear infinite; }
+.vstage .twinkle { animation: twinkle 1.6s ease-in-out infinite alternate; }
+.vstage .ow { animation: ow-bob 1.8s ease-in-out infinite alternate; }
+.vstage .ow-eye { animation: ow-blink 4.6s infinite; }
+.vstage .ow-head, .vstage .ow-wing, .vstage .ow-wing-back { transition: transform .45s ease; }
+.vstage .ow-beak-open { transform: scaleY(0); }
+.vstage .ow-exclaim, .vstage .ow-question { opacity: 0; transition: opacity .3s; }
+.is-playing .vstage .ow-beak-open { animation: ow-talk .3s ease-in-out infinite alternate; }
+.vstage[data-pose="wave"] .ow-wing { animation: ow-wave .55s ease-in-out infinite alternate; }
+.vstage[data-pose="point"] .ow-wing { transform: rotate(-120deg); }
+.vstage[data-pose="think"] .ow-head { transform: rotate(-9deg); }
+.vstage[data-pose="think"] .ow-question,
+.vstage[data-pose="surprised"] .ow-exclaim { opacity: 1; }
+.vstage[data-pose="surprised"] .ow-eye { animation: none; transform: scale(1.3); }
+.vstage[data-pose="cheer"] .ow { animation: ow-jump .45s ease-in-out infinite alternate; }
+.vstage[data-pose="cheer"] .ow-wing { transform: rotate(-150deg); }
+.vstage[data-pose="cheer"] .ow-wing-back { transform: rotate(150deg); }
+@keyframes ow-bob { to { transform: translateY(-8px); } }
+@keyframes ow-blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
+@keyframes ow-talk { from { transform: scaleY(.15); } to { transform: scaleY(1); } }
+@keyframes ow-wave { from { transform: rotate(-150deg); } to { transform: rotate(-105deg); } }
+@keyframes ow-jump { to { transform: translateY(-26px); } }
+@keyframes sun-spin { to { transform: rotate(360deg); } }
+@keyframes twinkle { from { opacity: .35; } to { opacity: 1; } }
+
+.glossary { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1rem; margin: .6rem 0; }
+.glossary dt { font-weight: 850; color: var(--primary-dark); }
+.glossary dd { margin: 0; }
+@media (max-width: 520px) { .glossary { grid-template-columns: 1fr; } .glossary dd { margin-bottom: .4rem; } }
+
+/* Paper */
+.observe-table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.observe-table th, .observe-table td { padding: .35rem .45rem; border: 1px solid #8a93a6; text-align: center; vertical-align: middle; }
+.observe-table td.draw { height: 18mm; }
+.draw-circle { display: inline-block; width: 15mm; height: 15mm; border: 1.5px solid #333; border-radius: 50%; }
+.paper-moons { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 6rem), 1fr)); gap: .5rem; margin: .5rem 0; padding: 0; list-style: none; }
+.paper-moons li { text-align: center; font-weight: 700; }
+.paper-moons .moon-icon { display: block; width: 16mm; margin: 0 auto .2rem; }
+.model-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr)); gap: .6rem; margin: .6rem 0; padding: 0; list-style: none; }
+.model-grid li { display: grid; justify-items: center; gap: .25rem; padding: .5rem; border: 1px solid var(--line); border-radius: 12px; background: #fff; text-align: center; font-size: .92rem; }
+.model-grid .orbit-mini { width: 100%; max-width: 10rem; }
+
+@media (min-width: 720px) {
+  .orbit-views { grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moon-card.is-wrong { animation: none; }
+}
+
+@media print {
+  :root { --moon-lit: #fff; --moon-dark: #9a9a9a; --moon-rim: #000; }
+  body { background: #fff; }
+  .paper-moons { grid-template-columns: repeat(8, 1fr); gap: .2rem; }
+  .paper-moons li { font-size: 9.5pt; }
+  .paper-moons .moon-icon { width: 13mm; }
+  .model-grid { grid-template-columns: repeat(4, 1fr); gap: .3rem; }
+  .model-grid li { padding: .25rem; border-color: #555; font-size: 9pt; break-inside: avoid; }
+  .model-grid .orbit-mini { max-width: 30mm; }
+  .model-grid .moon-icon.small { width: 9mm; }
+  .paper-page .number-table { min-width: 0; font-size: 9.5pt; }
+  .paper-page .number-table th, .paper-page .number-table td { padding: .15rem .4rem; }
+  .paper-page .glossary { gap: .1rem .8rem; font-size: 9.5pt; line-height: 1.45; }
+  .paper-page .rule h3 { margin-bottom: .2rem; }
+  .reference-shell .paper-page li { margin-bottom: .2rem; }
+  .moon-svg, .orbit-mini-svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .orbit-space { fill: #fff; stroke: #000; stroke-width: 1.5; }
+  .orbit-ray { stroke: #000; }
+  .orbit-ray-head { fill: #000; }
+  .orbit-path { stroke: #555; }
+  .earth-day { fill: #d8d8d8; }
+  .earth-night { fill: #555; }
+  .earth-rim { stroke: #000; }
+  .safety { border-color: #000; background: #fff; }
+  .safety strong:first-child { color: #000; }
+  .orbit-lab, .sky-lab, .sequence-game, .tonight { display: none !important; }
+  .observe-table th, .observe-table td { border-color: #333; }
+  .paper-moons li { break-inside: avoid; }
+}

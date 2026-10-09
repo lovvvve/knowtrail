@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第1课 · 月亮的形状日记：认识八种月相｜知径</title>
+<meta name="description" content="跟猫头鹰咕咕看卡通动画，按顺序认出一个月里的八种月相，说出名字，并从亮面在哪一边判断月亮正在越来越圆还是越来越缺。提供离线练习与独立打印版。">
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  #m1-stage .soft { fill: #cfe0ff; }
+  #m1-stage .gold { fill: #ffd23f; }
+  #m1-stage .pale { fill: #fff1a8; }
+  #m1-stage .grow { fill: #9fd8ff; }
+  #m1-stage .shrink { fill: #ffb4a8; }
+  .moon-exercise { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .7rem; }
+  .moon-exercise label { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .4rem; font-weight: 700; }
+  .moon-exercise .moon-icon { width: 3rem; }
+  .moon-exercise select { width: auto; min-width: 8.5rem; }
+  .quiz-prompt .moon-icon { margin-right: .5rem; }
+  .moon-row { align-items: flex-start; gap: .8rem; }
+  .moon-row li { width: 5.2rem; padding: .3rem .1rem; border: 2px solid transparent; border-radius: 10px; }
+  .moon-row li.main-phase { border-color: var(--primary); background: var(--surface-soft); }
+  .moon-row .source-note { line-height: 1.35; }
+</style>
+<script src="../../../math/powers-and-scientific-notation/assets/lesson.js" defer></script>
+<script src="../assets/moon-model.js" defer></script>
+<script src="../../../math/multi-digit-multiplication/assets/cartoon-video.js" defer></script>
+</head>
+<body data-lesson-id="moon-0001" data-lesson-version="1"><a class="skip-link" href="#lesson-main">跳到课程内容</a>
+<div class="lesson-shell">
+<nav class="course-nav" aria-label="单元课程"><a href="0001-moon-shape-diary.html" aria-current="page">01 月亮的形状日记</a><a href="0002-half-always-lit.html">02 一半总是亮的</a><a href="0003-when-to-find-the-moon.html">03 今晚去哪找月亮</a><a href="../reference/moon-phases-quick-reference.html">速查卡</a>
+</nav>
+<header class="lesson-header">
+<p class="eyebrow">知径 · 月相 · 第 1 / 3 课</p>
+<h1>月亮的<br>形状日记</h1>
+<p class="lede">月亮有时弯弯的，有时圆圆的。今天跟猫头鹰咕咕记一个月的月亮日记：认出每一种样子，排好它们的顺序，再学会一眼看出月亮是在变圆还是在变缺。</p>
+<div class="lesson-meta"><span class="pill">12–15 分钟</span><span class="pill">核心</span><span class="pill">含 2 分钟动画</span>
+</div>
+</header>
+<noscript>
+<p class="callout">互动功能、动画视频和月相图都需要开启 JavaScript。可以先阅读下面的“视频文字稿”，或使用<a href="../printable/0001-moon-shape-diary.html">独立打印课程</a>（打印前请在开启脚本的浏览器中打开，月相图才会显示）。</p>
+</noscript>
+<div class="progress-wrap screen-only">
+<div class="progress-label"><span data-progress-label>0/10 项互动任务已完成</span><span>活动进度不等于掌握</span>
+</div><progress data-progress max="100" value="0" aria-label="互动任务进度">0%</progress>
+</div>
+<main id="lesson-main">
+<section class="lesson-section"><span class="section-kicker">今天的目标</span>
+<h2>认出月亮的八种样子</h2>
+<p class="goal-box">你能按顺序排出八种月相，说出四个主角——新月、上弦月、满月、下弦月——的名字，并看亮面在哪一边判断月亮正在越来越圆还是越来越缺。</p>
+<p>本课只认形状和顺序。月亮<strong>为什么</strong>会这样变，第 2 课用手电筒和球来找答案；<strong>什么时候、去哪里</strong>找月亮，第 3 课再学。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">01 · 诊断</span>
+<h2>先想两个问题</h2>
+<p>凭你现在的想法选一选，选错了也没关系，提示会帮你想清楚。</p>
+<div class="quiz-list">
+<article class="quiz-card" data-quiz data-quiz-id="diagnostic-light" data-checkpoint data-checkpoint-id="diagnostic-light">
+<p class="quiz-prompt">1. 月亮的光是从哪里来的？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="月亮不是火球，自己不会发光。想一想：没被照到的那一部分，看起来是什么颜色？">月亮自己会发光</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！月亮自己不发光，我们看到的月光，是太阳照到月亮上又反射过来的光。">反射了太阳的光</button>
+<button class="choice" type="button" data-choice data-hint="星星离我们太远了，光太弱。照亮月亮的，是离它近得多、亮得多的那颗星——太阳。">星星把它照亮的</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+<article class="quiz-card" data-quiz data-quiz-id="diagnostic-size" data-checkpoint data-checkpoint-id="diagnostic-size">
+<p class="quiz-prompt">2. 一个月里，月亮看起来有时缺了一块。月亮本身真的变小了吗？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="月球是一个很大的石头球，不会一个月变小一次。缺掉的那一块其实还在，只是没被照亮，太暗看不清。">月球真的变小了</button>
+<button class="choice" type="button" data-choice data-hint="云会飘走，可月亮的样子是一天一天按顺序变的，晴朗的夜里也一样。所以不是云遮的。">云彩遮住了一块</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！月球一直是那么大的圆球，变的是我们能看到的亮的部分有多少。">亮的部分在变化</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+</div>
+<details>
+<summary>最小补救：月光从哪里来？月亮会变小吗？</summary>
+<p>关了灯的房间里，镜子自己不会亮；用手电筒照它，它才把光反射出来。月亮也一样，它是被太阳照亮的。</p>
+<p>在暗一点的房间里，请大人用手电筒照一个球：球一直那么大，只是朝着手电筒的一半亮、背着手电筒的一半暗。月亮“缺”的那一块，其实还在那里。</p>
+<p>如果只是选得太快，就再读一遍题目重新选。</p>
+</details>
+</section>
+
+<section class="lesson-section" id="video"><span class="section-kicker">02 · 动画视频</span>
+<h2>看咕咕记月亮日记（约 2 分钟）</h2>
+<p>边看边想：月亮的亮面先出现在哪一边？满月以后会怎样？视频中途会停下来问你一个问题。</p>
+<figure class="cartoon-video" data-cartoon-video aria-labelledby="video-title">
+<figcaption id="video-title" class="sr-only">动画视频：咕咕的月亮日记——一个月里的八种月相</figcaption>
+<div class="video-frame" data-video-frame tabindex="0" role="group" aria-label="动画画面。按空格键播放或暂停，按左右方向键切换上一幕、下一幕。">
+<svg id="m1-stage" class="video-stage vstage" data-video-stage viewBox="0 0 1280 720" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="m1-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1430"/><stop offset="1" stop-color="#22386a"/></linearGradient>
+<marker id="m1-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffd23f"/></marker>
+<marker id="m1-arrow-pale" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#fff1a8"/></marker>
+</defs>
+<rect width="1280" height="720" fill="url(#m1-sky)"/>
+<g class="twinkle"><g transform="translate(320 60)"><g data-prop="star"></g></g><g transform="translate(1210 120)"><g data-prop="star"></g></g><g transform="translate(90 200)"><g data-prop="star"></g></g></g>
+<g class="twinkle" style="animation-delay:-.8s"><g transform="translate(1180 560)"><g data-prop="star"></g></g><g transform="translate(260 330)"><g data-prop="star"></g></g><g transform="translate(1240 330)"><g data-prop="star"></g></g></g>
+<path d="M0,640 C240,600 480,630 760,615 C1000,600 1150,630 1280,610 L1280,720 L0,720 Z" fill="#14243f"/>
+<path d="M0,700 C80,690 200,692 310,702" fill="none" stroke="#4a3426" stroke-width="22" stroke-linecap="round"/>
+<g transform="translate(170 690)"><g data-character="owl"></g></g>
+
+<g class="vl pop" data-from="intro" data-until="intro">
+<rect x="430" y="170" width="760" height="270" rx="36" fill="#fffaf0" stroke="#8a5300" stroke-width="6"/>
+<text x="810" y="290" text-anchor="middle" font-size="92" font-weight="900" fill="#17365f">咕咕的月亮日记</text>
+<text x="810" y="385" text-anchor="middle" font-size="50" font-weight="800" fill="#8a5300">月相 · 第 1 课</text>
+</g>
+
+<g class="vl" data-from="ask" data-until="ask">
+<g transform="translate(520 290) scale(1.4)"><g data-prop="moon" data-label="40"></g></g>
+<g transform="translate(780 290) scale(1.4)"><g data-prop="moon" data-label="90"></g></g>
+<g transform="translate(1040 290) scale(1.4)"><g data-prop="moon" data-label="180"></g></g>
+<text class="label pale" x="780" y="520" text-anchor="middle" font-size="110">？</text>
+</g>
+
+<g class="vl" data-from="light" data-until="light">
+<g transform="translate(450 210) scale(.85)"><g data-prop="sun"></g></g>
+<g transform="translate(980 230) scale(1.3)"><g data-prop="moon" data-label="180"></g></g>
+<path d="M570,216 L878,228" stroke="#ffd23f" stroke-width="8" stroke-linecap="round" marker-end="url(#m1-arrow)"/>
+<path class="vl" data-from="light" data-until="light" data-delay="4" d="M960,405 C820,480 560,520 320,480" fill="none" stroke="#fff1a8" stroke-width="7" stroke-dasharray="16 12" marker-end="url(#m1-arrow-pale)"/>
+<text class="label gold" x="450" y="372" text-anchor="middle" font-size="44">太阳自己发光</text>
+<text class="label pale" x="980" y="372" text-anchor="middle" font-size="44">月亮反射阳光</text>
+</g>
+
+<g class="vl pop" data-from="diary" data-until="diary">
+<rect x="470" y="110" width="660" height="450" rx="24" fill="#fffaf0" stroke="#8a5300" stroke-width="6"/>
+<text x="800" y="195" text-anchor="middle" font-size="60" font-weight="900" fill="#17365f">咕咕的月亮日记</text>
+<path d="M520,240 H1080 M520,520 H1080" stroke="#d8c7a6" stroke-width="3"/>
+<text x="800" y="300" text-anchor="middle" font-size="40" font-weight="800" fill="#8a5300">每天：画下月亮 ＋ 写农历日期</text>
+<circle cx="650" cy="420" r="58" fill="none" stroke="#8a93a6" stroke-width="5" stroke-dasharray="14 10"/>
+<circle cx="800" cy="420" r="58" fill="none" stroke="#8a93a6" stroke-width="5" stroke-dasharray="14 10"/>
+<circle cx="950" cy="420" r="58" fill="none" stroke="#8a93a6" stroke-width="5" stroke-dasharray="14 10"/>
+</g>
+
+<g class="vl pop" data-from="d01" data-until="d26"><g transform="translate(400 70) scale(.45)"><g data-prop="moon" data-label="0"></g></g></g>
+<g class="vl pop" data-from="d03" data-until="d26"><g transform="translate(495 70) scale(.45)"><g data-prop="moon" data-label="30"></g></g></g>
+<g class="vl pop" data-from="d08" data-until="d26"><g transform="translate(590 70) scale(.45)"><g data-prop="moon" data-label="90"></g></g></g>
+<g class="vl pop" data-from="d12" data-until="d26"><g transform="translate(685 70) scale(.45)"><g data-prop="moon" data-label="138"></g></g></g>
+<g class="vl pop" data-from="d15" data-until="d26"><g transform="translate(780 70) scale(.45)"><g data-prop="moon" data-label="180"></g></g></g>
+<g class="vl pop" data-from="d19" data-until="d26"><g transform="translate(875 70) scale(.45)"><g data-prop="moon" data-label="223"></g></g></g>
+<g class="vl pop" data-from="d23" data-until="d26"><g transform="translate(970 70) scale(.45)"><g data-prop="moon" data-label="270"></g></g></g>
+<g class="vl pop" data-from="d26" data-until="d26"><g transform="translate(1065 70) scale(.45)"><g data-prop="moon" data-label="309"></g></g></g>
+
+<g class="vl" data-from="d01" data-until="d01">
+<g transform="translate(680 300) scale(2.2)"><g data-prop="moon" data-label="0"></g></g>
+<text class="label pale" x="680" y="535" text-anchor="middle" font-size="76">新月</text>
+<g transform="translate(1110 330)"><g data-prop="calendar" data-label="初一"></g></g>
+<text class="label soft" x="1110" y="470" text-anchor="middle" font-size="34">几乎看不到</text>
+</g>
+<g class="vl" data-from="d03" data-until="d03">
+<g transform="translate(680 300) scale(2.2)"><g data-prop="moon" data-label="30"></g></g>
+<text class="label pale" x="680" y="535" text-anchor="middle" font-size="76">蛾眉月</text>
+<g transform="translate(1110 330)"><g data-prop="calendar" data-label="初三"></g></g>
+<text class="label soft" x="1110" y="470" text-anchor="middle" font-size="34">傍晚·西边低处</text>
+</g>
+<g class="vl" data-from="d08" data-until="d08">
+<g transform="translate(680 300) scale(2.2)"><g data-prop="moon" data-label="90"></g></g>
+<text class="label pale" x="680" y="535" text-anchor="middle" font-size="76">上弦月</text>
+<g transform="translate(1110 330)"><g data-prop="calendar" data-label="初八"></g></g>
+<text class="label soft" x="1110" y="470" text-anchor="middle" font-size="34">右边一半亮</text>
+</g>
+<g class="vl" data-from="d12" data-until="d12">
+<g transform="translate(680 300) scale(2.2)"><g data-prop="moon" data-label="138"></g></g>
+<text class="label pale" x="680" y="535" text-anchor="middle" font-size="76">凸月</text>
+<g transform="translate(1110 330)"><g data-prop="calendar" data-label="十二"></g></g>
+<text class="label soft" x="1110" y="470" text-anchor="middle" font-size="34">左边缺一块</text>
+</g>
+<g class="vl" data-from="d15" data-until="d15">
+<g transform="translate(680 300) scale(2.2)"><g data-prop="moon" data-label="180"></g></g>
+<text class="label pale" x="680" y="535" text-anchor="middle" font-size="76">满月</text>
+<g transform="translate(1110 330)"><g data-prop="calendar" data-label="十五"></g></g>
+<text class="label soft" x="1110" y="470" text-anchor="middle" font-size="34">整个圆都亮</text>
+</g>
+<text class="vl label grow" data-from="d03" data-until="d12" x="680" y="605" text-anchor="middle" font-size="40">越来越圆</text>
+
+<g class="vl" data-from="ask-after" data-until="ask-after">
+<g transform="translate(600 300) scale(2)"><g data-prop="moon" data-label="180"></g></g>
+<path d="M752,300 H872" stroke="#fff1a8" stroke-width="8" stroke-linecap="round" marker-end="url(#m1-arrow-pale)"/>
+<circle cx="1010" cy="300" r="110" fill="none" stroke="#fff1a8" stroke-width="6" stroke-dasharray="18 14"/>
+<text class="label pale" x="1010" y="338" text-anchor="middle" font-size="110">？</text>
+<text class="label pale" x="800" y="530" text-anchor="middle" font-size="56">满月以后……</text>
+</g>
+
+<g class="vl" data-from="d19" data-until="d19">
+<g transform="translate(680 300) scale(2.2)"><g data-prop="moon" data-label="223"></g></g>
+<text class="label pale" x="680" y="535" text-anchor="middle" font-size="76">凸月</text>
+<g transform="translate(1110 330)"><g data-prop="calendar" data-label="十九"></g></g>
+<text class="label soft" x="1110" y="470" text-anchor="middle" font-size="34">右边开始变暗</text>
+</g>
+<g class="vl" data-from="d23" data-until="d23">
+<g transform="translate(680 300) scale(2.2)"><g data-prop="moon" data-label="270"></g></g>
+<text class="label pale" x="680" y="535" text-anchor="middle" font-size="76">下弦月</text>
+<g transform="translate(1110 330)"><g data-prop="calendar" data-label="廿三"></g></g>
+<text class="label soft" x="1110" y="470" text-anchor="middle" font-size="34">左边一半亮</text>
+</g>
+<g class="vl" data-from="d26" data-until="d26">
+<g transform="translate(680 300) scale(2.2)"><g data-prop="moon" data-label="309"></g></g>
+<text class="label pale" x="680" y="535" text-anchor="middle" font-size="76">残月</text>
+<g transform="translate(1110 330)"><g data-prop="calendar" data-label="廿六"></g></g>
+<text class="label soft" x="1110" y="470" text-anchor="middle" font-size="34">清晨·东边低处</text>
+</g>
+<text class="vl label shrink" data-from="d19" data-until="d26" x="680" y="605" text-anchor="middle" font-size="40">越来越缺</text>
+
+<g class="vl" data-from="cycle" data-until="cycle">
+<circle cx="700" cy="330" r="210" fill="none" stroke="#6b7fa8" stroke-width="4" stroke-dasharray="10 12"/>
+<g class="vl pop" data-from="cycle" data-until="cycle"><g transform="translate(700 120) scale(.6)"><g data-prop="moon" data-label="0"></g></g></g>
+<g class="vl pop" data-from="cycle" data-until="cycle" data-delay=".6"><g transform="translate(848.5 181.5) scale(.6)"><g data-prop="moon" data-label="45"></g></g></g>
+<g class="vl pop" data-from="cycle" data-until="cycle" data-delay="1.2"><g transform="translate(910 330) scale(.6)"><g data-prop="moon" data-label="90"></g></g></g>
+<g class="vl pop" data-from="cycle" data-until="cycle" data-delay="1.8"><g transform="translate(848.5 478.5) scale(.6)"><g data-prop="moon" data-label="135"></g></g></g>
+<g class="vl pop" data-from="cycle" data-until="cycle" data-delay="2.4"><g transform="translate(700 540) scale(.6)"><g data-prop="moon" data-label="180"></g></g></g>
+<g class="vl pop" data-from="cycle" data-until="cycle" data-delay="3"><g transform="translate(551.5 478.5) scale(.6)"><g data-prop="moon" data-label="225"></g></g></g>
+<g class="vl pop" data-from="cycle" data-until="cycle" data-delay="3.6"><g transform="translate(490 330) scale(.6)"><g data-prop="moon" data-label="270"></g></g></g>
+<g class="vl pop" data-from="cycle" data-until="cycle" data-delay="4.2"><g transform="translate(551.5 181.5) scale(.6)"><g data-prop="moon" data-label="315"></g></g></g>
+<g class="vl pop" data-from="cycle" data-until="cycle" data-delay="5">
+<text class="label pale" x="700" y="330" text-anchor="middle" font-size="62">约 29.5 天</text>
+<text class="label soft" x="700" y="385" text-anchor="middle" font-size="38">转回新月</text>
+</g>
+</g>
+
+<g class="vl" data-from="rule" data-until="rule">
+<text class="label soft" x="760" y="95" text-anchor="middle" font-size="40">北半球 · 月亮高挂南边天空时</text>
+<rect x="380" y="130" width="360" height="430" rx="28" fill="#172a52" stroke="#6b7fa8" stroke-width="4"/>
+<g transform="translate(560 290) scale(1.5)"><g data-prop="moon" data-label="135"></g></g>
+<text class="label pale" x="560" y="455" text-anchor="middle" font-size="44">亮面在右边</text>
+<text class="label grow" x="560" y="525" text-anchor="middle" font-size="56">越来越圆</text>
+<g class="vl" data-from="rule" data-until="rule" data-delay="4.5">
+<rect x="780" y="130" width="360" height="430" rx="28" fill="#2a1f3d" stroke="#6b7fa8" stroke-width="4"/>
+<g transform="translate(960 290) scale(1.5)"><g data-prop="moon" data-label="225"></g></g>
+<text class="label pale" x="960" y="455" text-anchor="middle" font-size="44">亮面在左边</text>
+<text class="label shrink" x="960" y="525" text-anchor="middle" font-size="56">越来越缺</text>
+</g>
+</g>
+
+<g class="vl" data-from="recap" data-until="recap">
+<text class="label pale" x="780" y="150" text-anchor="middle" font-size="52">这些样子，叫作月相</text>
+<g transform="translate(390 320) scale(.75)"><g data-prop="moon" data-label="0"></g></g>
+<g transform="translate(500 320) scale(.75)"><g data-prop="moon" data-label="45"></g></g>
+<g transform="translate(610 320) scale(.75)"><g data-prop="moon" data-label="90"></g></g>
+<g transform="translate(720 320) scale(.75)"><g data-prop="moon" data-label="135"></g></g>
+<g transform="translate(830 320) scale(.75)"><g data-prop="moon" data-label="180"></g></g>
+<g transform="translate(940 320) scale(.75)"><g data-prop="moon" data-label="225"></g></g>
+<g transform="translate(1050 320) scale(.75)"><g data-prop="moon" data-label="270"></g></g>
+<g transform="translate(1160 320) scale(.75)"><g data-prop="moon" data-label="315"></g></g>
+<text class="label pale" font-size="30" text-anchor="middle" y="410"><tspan x="390">新月</tspan><tspan x="500">蛾眉月</tspan><tspan x="610">上弦月</tspan><tspan x="720">凸月</tspan><tspan x="830">满月</tspan><tspan x="940">凸月</tspan><tspan x="1050">下弦月</tspan><tspan x="1160">残月</tspan></text>
+<text class="label grow" x="720" y="450" text-anchor="middle" font-size="22">越来越圆</text>
+<text class="label shrink" x="940" y="450" text-anchor="middle" font-size="22">越来越缺</text>
+<text class="vl label pale" data-from="recap" data-until="recap" data-delay="4" x="780" y="545" text-anchor="middle" font-size="48">今晚抬头看看，它是哪一种？</text>
+</g>
+</svg>
+<button class="video-start" type="button" data-video-start aria-label="播放动画视频"><span>▶ 播放动画视频</span></button>
+</div>
+<p class="video-caption" data-video-caption aria-live="polite"></p>
+<div class="video-prompt" data-video-prompt="after-full" hidden>
+<article class="quiz-card" data-quiz data-quiz-id="video-after-full" data-checkpoint data-checkpoint-id="video-after-full">
+<p class="quiz-prompt">视频暂停了：满月以后，亮的部分会怎样变？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！满月以后，右边先开始变暗，亮的部分越来越少，最后又回到新月。">越来越少</button>
+<button class="choice" type="button" data-choice data-hint="满月时整个圆都亮了，已经不能再多了。想一想，日记接下来该怎么画？">越来越多</button>
+<button class="choice" type="button" data-choice data-hint="月亮每天都在变。满月过后几天，你见过的月亮还是整个圆吗？">一直不变</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+<button class="primary-button spaced-top" type="button" data-video-continue hidden>继续播放 ▶</button>
+</article>
+</div>
+<div class="video-controls">
+<button class="primary-button" type="button" data-video-play>▶ 播放</button>
+<button class="secondary-button" type="button" data-video-prev>◀ 上一幕</button>
+<button class="secondary-button" type="button" data-video-next>下一幕 ▶</button>
+<input type="range" min="0" max="137" step="0.1" value="0" data-video-seek aria-label="视频进度">
+<span class="video-time" data-video-time>0:00 / 2:17</span>
+<label>速度 <select data-video-speed><option value="0.75">慢一点</option><option value="1" selected>正常</option><option value="1.25">快一点</option></select></label>
+<button class="secondary-button" type="button" data-video-voice aria-pressed="false">🔈 朗读：关</button>
+</div>
+<p class="video-voice-note" data-video-voice-note></p>
+<ol class="video-chapters" data-video-chapters aria-label="视频章节"></ol>
+<details class="video-transcript">
+<summary>视频文字稿（不看动画也能读）</summary>
+<ol data-video-shots>
+<li data-shot="intro" data-duration="7" data-chapter="开场" data-pose="wave">嗨，我是猫头鹰咕咕。我夜里醒着，最喜欢看月亮。</li>
+<li data-shot="ask" data-duration="8" data-pose="think">可月亮每天都不一样：有时弯弯的，有时半个，有时圆圆的。这是怎么回事？</li>
+<li data-shot="light" data-duration="10" data-chapter="月光从哪来" data-pose="point">先说个秘密：月亮自己不会发光。我们看到的月光，是太阳照到月亮上，又反射过来的光。</li>
+<li data-shot="diary" data-duration="8" data-chapter="记日记" data-pose="point">我决定记一本月亮日记：每天晚上画下月亮，再写上农历日期。</li>
+<li data-shot="d01" data-duration="8" data-pose="think">农历初一：我找了一整晚，几乎看不到月亮。这叫新月。</li>
+<li data-shot="d03" data-duration="9" data-pose="point">初三：太阳落山后，西边天空低处有弯弯的一条，右边亮。这叫蛾眉月。</li>
+<li data-shot="d08" data-duration="9" data-chapter="越来越圆" data-pose="point">初八前后：右边一半亮了，像半个圆。这叫上弦月。</li>
+<li data-shot="d12" data-duration="8" data-pose="point">十二：亮的部分越来越多，只有左边还缺一块。这叫凸月。</li>
+<li data-shot="d15" data-duration="8" data-pose="cheer">十五、十六前后：整个圆都亮了，这是满月！</li>
+<li data-shot="ask-after" data-duration="6" data-pose="think" data-prompt="after-full">满月以后，亮的部分会怎样变？先停下来想一想。</li>
+<li data-shot="d19" data-duration="9" data-chapter="越来越缺" data-pose="point">十九：右边开始变暗，亮的部分留在左边。这也叫凸月，不过它在越来越缺。</li>
+<li data-shot="d23" data-duration="8" data-pose="point">廿三前后：只剩左边一半亮。这叫下弦月。</li>
+<li data-shot="d26" data-duration="9" data-pose="point">廿六：天快亮时，东边低处只剩左边弯弯的一条。这叫残月。</li>
+<li data-shot="cycle" data-duration="10" data-pose="surprised">再过几天，月亮又看不见了，新月回来了！从新月到下一个新月，大约 29.5 天。</li>
+<li data-shot="rule" data-duration="11" data-chapter="小结" data-pose="point">记住：在北半球，月亮高挂南边天空时，亮面在右边就越来越圆，亮面在左边就越来越缺。</li>
+<li data-shot="recap" data-duration="9" data-pose="wave">月亮一直是个圆球，变的只是我们看到的亮面。这些样子叫月相。今晚抬头看看吧！</li>
+</ol>
+</details>
+</figure>
+<p class="source-note">动画由本页代码实时绘制，不联网、不上传。可以拖动进度条、点章节重看某一段；选“慢一点”或“朗读”（设备有离线中文语音时可用）。视频里的农历日期是常见情况，实际可能差一两天。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">03 · 讲解</span>
+<h2>一个月里的八种月相</h2>
+<p>月亮在一个月里的这些不同样子，叫作<strong>月相</strong>。下面按出现的先后排好了，左边是农历初一，右边快到月底。</p>
+<ul class="moon-row" aria-label="八种月相，按出现的先后排列；标星的是四个主角">
+<li class="main-phase"><span class="moon-icon" data-moon="0"></span>★ 新月<span class="source-note">主角 · 初一</span></li>
+<li><span class="moon-icon" data-moon="45"></span>蛾眉月<span class="source-note">初二–初六</span></li>
+<li class="main-phase"><span class="moon-icon" data-moon="90"></span>★ 上弦月<span class="source-note">主角 · 初八前后</span></li>
+<li><span class="moon-icon" data-moon="135"></span>凸月<span class="source-note">越来越圆<br>初十–十四</span></li>
+<li class="main-phase"><span class="moon-icon" data-moon="180"></span>★ 满月<span class="source-note">主角 · 十五、十六前后</span></li>
+<li><span class="moon-icon" data-moon="225"></span>凸月<span class="source-note">越来越缺<br>十八–廿一</span></li>
+<li class="main-phase"><span class="moon-icon" data-moon="270"></span>★ 下弦月<span class="source-note">主角 · 廿三前后</span></li>
+<li><span class="moon-icon" data-moon="315"></span>残月<span class="source-note">廿五–廿九</span></li>
+</ul>
+<div class="rule-grid">
+<article class="rule">
+<h3>★ 四个主角（一定要会）</h3>
+<p>新月、上弦月、满月、下弦月。它们把一个月分成四段，名字和样子都要记住。</p>
+</article>
+<article class="rule">
+<h3>另外四个（认得出就行）</h3>
+<p>蛾眉月、两种凸月、残月，夹在主角中间。看到能认出来就好。有的书把残月也叫蛾眉月。</p>
+</article>
+</div>
+<p>有两种凸月：满月以前的叫“凸月（越来越圆）”，满月以后的叫“凸月（越来越缺）”。之后又回到新月，一圈大约 29.5 天。</p>
+<div class="rule-grid">
+<article class="rule">
+<h3>前半个月：越来越圆</h3>
+<p>亮面在<strong>右边</strong>：从细细的一条，到右边一半，再到整个圆。</p>
+</article>
+<article class="rule">
+<h3>后半个月：越来越缺</h3>
+<p>满月以后，<strong>右边</strong>先变暗，亮面留在<strong>左边</strong>：从一大半，到左边一半，再到细细的一条。</p>
+</article>
+</div>
+<p class="callout">这个规则说的是我们在北半球（比如上海），而且月亮高挂在南边天空的时候。月亮贴近地平线时会歪，有时像一只小碗。第 2 课会学一个任何时候都管用的规则：<strong>亮的一边总是朝着太阳</strong>。</p>
+<p>农历每月初一是新月那天，所以农历日期能帮你猜月相。表里的日期只是“前后”，实际可能差一两天。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">04 · 月相接龙</span>
+<h2>把一个月排回原样</h2>
+<p>下面 8 张卡片是一个月里的月亮，顺序被打乱了。先点<strong>几乎全暗的新月</strong>，再一张一张点出接下来的样子。放对了，卡片会进到上面的格子里，并显示名字。</p>
+<div class="sequence-game" data-sequence-game data-checkpoint data-checkpoint-id="sequence" data-success="排好了！前半个月亮面在右边，越来越圆；满月以后右边先变暗，亮面留在左边，越来越缺。">
+<ol class="sequence-track" data-sequence-track aria-label="已经排好的顺序">
+<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+</ol>
+<div class="sequence-pool" data-sequence-pool role="group" aria-label="打乱的月亮卡片">
+<button class="moon-card" type="button" data-moon-card="180" data-name="满月"></button>
+<button class="moon-card" type="button" data-moon-card="45" data-name="蛾眉月"></button>
+<button class="moon-card" type="button" data-moon-card="270" data-name="下弦月"></button>
+<button class="moon-card" type="button" data-moon-card="0" data-name="新月"></button>
+<button class="moon-card" type="button" data-moon-card="315" data-name="残月"></button>
+<button class="moon-card" type="button" data-moon-card="90" data-name="上弦月"></button>
+<button class="moon-card" type="button" data-moon-card="225" data-name="凸月"></button>
+<button class="moon-card" type="button" data-moon-card="135" data-name="凸月"></button>
+</div>
+<p class="feedback" data-sequence-feedback data-lab-feedback aria-live="polite"></p>
+<button class="primary-button" type="button" data-complete-checkpoint disabled aria-disabled="true" data-completed-label="已完成月相接龙 ✓">完成月相接龙</button>
+</div>
+<p class="source-note">每张卡片读出来的是它的形状，例如“右边亮着弯弯的一条”。排对之后，格子里才显示名字。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">05 · 找一找</span>
+<h2>认一认，比一比</h2>
+<div class="quiz-list">
+<article class="quiz-card" data-quiz data-quiz-id="find-first-quarter" data-checkpoint data-checkpoint-id="find-first-quarter">
+<p class="quiz-prompt">1. 哪一个是上弦月？</p>
+<div class="choice-grid moons">
+<button class="choice moon-choice" type="button" data-choice data-hint="这是左边一半亮，是满月以后、越来越缺时的下弦月。上弦月在前半个月，亮面在右边。"><span class="moon-icon" data-moon="270"></span><span>甲</span></button>
+<button class="choice moon-choice" type="button" data-choice data-hint="这只是弯弯的一条，还不到一半，是蛾眉月。上弦月右边亮了一半。"><span class="moon-icon" data-moon="45"></span><span>乙</span></button>
+<button class="choice moon-choice" type="button" data-choice data-correct="true" data-success="对！上弦月右边一半亮，在农历初八前后，之后会越来越圆。"><span class="moon-icon" data-moon="90"></span><span>丙</span></button>
+<button class="choice moon-choice" type="button" data-choice data-hint="整个圆都亮，是满月。上弦月只亮了一半。"><span class="moon-icon" data-moon="180"></span><span>丁</span></button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+<article class="quiz-card" data-quiz data-quiz-id="find-trend" data-checkpoint data-checkpoint-id="find-trend">
+<p class="quiz-prompt">2. <span class="moon-icon" data-moon="300"></span>这个月亮正在……</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="月亮每天都在变。先看亮面在哪一边。">一直不变</button>
+<button class="choice" type="button" data-choice data-hint="亮面在右边才是越来越圆。这个月亮的亮面在哪一边？">越来越圆</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！亮面在左边，是满月以后的月亮，会越来越缺，直到新月。">越来越缺</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+<article class="quiz-card" data-quiz data-quiz-id="find-day26" data-checkpoint data-checkpoint-id="find-day26">
+<p class="quiz-prompt">3. 农历廿六前后，月亮最可能是哪个样子？</p>
+<div class="choice-grid moons">
+<button class="choice moon-choice" type="button" data-choice data-correct="true" data-success="对！廿六前后是残月：左边只剩弯弯的一条，清晨在东边低处。"><span class="moon-icon" data-moon="315"></span><span>甲</span></button>
+<button class="choice moon-choice" type="button" data-choice data-hint="这是右边亮的弯月，是前半个月的蛾眉月。廿六在后半个月。"><span class="moon-icon" data-moon="45"></span><span>乙</span></button>
+<button class="choice moon-choice" type="button" data-choice data-hint="这是左边一半亮的下弦月，在廿三前后。再过三天，亮面会更少。"><span class="moon-icon" data-moon="270"></span><span>丙</span></button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+</div>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">06 · 练习</span>
+<h2>看图说名字</h2>
+<p>每题选一个答案。可以对照上面的八张图。</p>
+<form data-mastery-stage data-milestone-id="practice" data-checkpoint data-checkpoint-id="practice" data-hint="有错的空已经标红。先看亮面在右边还是左边，再看亮了多少：一条、一半、一大半，还是整个圆。" data-success="这组都对了！接下来合上讲解，用新题独立检查。">
+<div class="exercise moon-exercise"><label for="practice-1">1. <span class="moon-icon" data-moon="45"></span>这个月亮叫</label><select class="blank" id="practice-1" name="practice-1" required data-correct="蛾眉月"><option value="">请选择</option><option>新月</option><option>蛾眉月</option><option>上弦月</option><option>凸月</option><option>满月</option><option>下弦月</option><option>残月</option></select></div>
+<div class="exercise moon-exercise"><label for="practice-2">2. <span class="moon-icon" data-moon="270"></span>这个月亮叫</label><select class="blank" id="practice-2" name="practice-2" required data-correct="下弦月"><option value="">请选择</option><option>新月</option><option>蛾眉月</option><option>上弦月</option><option>凸月</option><option>满月</option><option>下弦月</option><option>残月</option></select></div>
+<div class="exercise moon-exercise"><label for="practice-3">3. <span class="moon-icon" data-moon="135"></span>这个月亮正在</label><select class="blank" id="practice-3" name="practice-3" required data-correct="越来越圆"><option value="">请选择</option><option>越来越圆</option><option>越来越缺</option></select></div>
+<div class="exercise moon-exercise"><label for="practice-4">4. 农历十五、十六前后，月亮叫</label><select class="blank" id="practice-4" name="practice-4" required data-correct="满月"><option value="">请选择</option><option>新月</option><option>蛾眉月</option><option>上弦月</option><option>凸月</option><option>满月</option><option>下弦月</option><option>残月</option></select></div>
+<button class="primary-button" type="submit">检查练习</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<details>
+<summary>再给一个线索</summary>
+<p>第 3 题：缺的一块在左边，亮面在右边。前半个月亮面在右边，所以它还在变圆。</p>
+</details>
+<details>
+<summary>做完后核对思路</summary>
+<p>四题依次为蛾眉月、下弦月、越来越圆、满月。蛾眉月和残月都是弯弯一条，区别在亮面：蛾眉月右边亮，残月左边亮。</p>
+</details>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">07 · 独立检查</span>
+<h2>合上讲解，再试新题</h2>
+<p>不看上面的八张图，自己判断。</p>
+<form data-mastery-stage data-milestone-id="independent" data-checkpoint data-checkpoint-id="independent" data-hint="有错的空已经标出。先看亮面在哪一边：右边亮是前半个月，左边亮是后半个月；再看亮了多少。" data-success="四题都对！最后，把判断方法讲给陪学者听。">
+<div class="exercise moon-exercise"><label for="independent-1">1. <span class="moon-icon" data-moon="315"></span>这个月亮叫</label><select class="blank" id="independent-1" name="independent-1" required data-correct="残月"><option value="">请选择</option><option>新月</option><option>蛾眉月</option><option>上弦月</option><option>凸月</option><option>满月</option><option>下弦月</option><option>残月</option></select></div>
+<div class="exercise moon-exercise"><label for="independent-2">2. <span class="moon-icon" data-moon="90"></span>这个月亮叫</label><select class="blank" id="independent-2" name="independent-2" required data-correct="上弦月"><option value="">请选择</option><option>新月</option><option>蛾眉月</option><option>上弦月</option><option>凸月</option><option>满月</option><option>下弦月</option><option>残月</option></select></div>
+<div class="exercise moon-exercise"><label for="independent-3">3. <span class="moon-icon" data-moon="225"></span>这个月亮正在</label><select class="blank" id="independent-3" name="independent-3" required data-correct="越来越缺"><option value="">请选择</option><option>越来越圆</option><option>越来越缺</option></select></div>
+<div class="exercise moon-exercise"><label for="independent-4">4. 农历初一，月亮叫</label><select class="blank" id="independent-4" name="independent-4" required data-correct="新月"><option value="">请选择</option><option>新月</option><option>蛾眉月</option><option>上弦月</option><option>凸月</option><option>满月</option><option>下弦月</option><option>残月</option></select></div>
+<button class="primary-button" type="submit">检查独立题</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<form class="retrieval-form spaced-top" data-teachback-form data-milestone-id="explanation" data-checkpoint data-checkpoint-id="explanation" data-hint="请先让孩子不看提示讲一遍，再由陪学者按下面两点核对后勾选。" data-success="讲清楚了！今天的目标完成。隔两三天用纸笔版 C 区再检查一次。">
+<div class="callout"><strong>讲给陪学者听：</strong>看到一个月亮，怎样判断它正在越来越圆还是越来越缺？</div>
+<label class="check-row"><input type="checkbox" name="explained">孩子独立讲到两点：① 在北半球、月亮高挂南边天空时，亮面在右边就越来越圆，亮面在左边就越来越缺；② 能举一个例子，比如上弦月右边一半亮，之后会变成凸月、满月。</label>
+<button class="primary-button" type="submit">陪学者确认</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<details>
+<summary>做完后核对思路</summary>
+<p>四题依次为残月、上弦月、越来越缺、新月。第 3 题的亮面在左边、右边缺了一块，是满月以后的凸月。</p>
+</details>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">08 · 反馈与下一步</span>
+<h2>错在哪里，就回到哪里</h2>
+<ul>
+<li><strong>上弦月和下弦月弄反</strong>：回看视频“越来越圆”“越来越缺”两段，只看亮面在哪一边。</li>
+<li><strong>两种凸月分不清</strong>：看缺的一块在哪边。缺在左边，亮面在右边，是越来越圆；缺在右边，是越来越缺。</li>
+<li><strong>蛾眉月和残月分不清</strong>：都是弯弯一条。右边亮是月初的蛾眉月，左边亮是月底的残月。</li>
+<li><strong>名字记混</strong>：打开<a href="../reference/moon-phases-quick-reference.html">速查卡</a>对着八张图读一遍，再玩一次月相接龙。</li>
+<li><strong>以为月亮真的变小了</strong>：回看视频“月光从哪来”一段。</li>
+</ul>
+<p>四个独立题全对，并且讲清判断方法，就可以进入<a href="0002-half-always-lit.html">第 2 课：一半总是亮的</a>。隔两三天，用<a href="../printable/0001-moon-shape-diary.html">纸笔版的 C 区新题</a>再检查一次；整个单元的掌握标准见<a href="../reference/moon-phases-quick-reference.html#mastery">速查卡</a>。</p>
+<p class="callout">今晚想看看真的月亮？请和大人一起，在纸笔版的观察格里画下它的样子，写上农历日期。夜里出门要有大人陪同；第 3 课会教你该在傍晚还是清晨去找。</p>
+<p>有哪里没看懂，回来告诉教学助手：“我在第 1 课，卡在……”，可以把你画的月亮描述出来。</p>
+<p class="source-note">推荐观看：国家中小学智慧教育平台<a href="https://basic.smartedu.cn/syncClassroom/classActivity?activityId=8bb5d63d-269b-436f-89bd-5e0b346246f4">“月相变化的规律”同步课（教科版三年级下册，旧版）</a>，微课约 14 分钟，可能需要登录。陪学者选读：紫金山天文台<a href="http://www.pmo.cas.cn/xwdt2019/kpdt2019/202203/t20220317_6399980.html">《历书科普问题解答》</a>（农历初一与“十五的月亮十六圆”）。</p>
+<p class="source-note">陪学者选读：<a href="https://spaceplace.nasa.gov/moon-phases/en/">NASA Space Place · Moon Phases</a>（月相名称与北半球的亮面朝向）、<a href="https://aa.usno.navy.mil/faq/moon_phases">美国海军天文台 · 月相问答</a>（月球总有一半被太阳照亮）。核验日期：2026-10-10；动画、情境和题目为原创，英文材料不要求孩子阅读。</p>
+</section>
+</main>
+<footer class="lesson-footer">
+<p>本机只保存活动完成标记；不上传作答。先会解释，再进入下一课。</p><a href="../printable/0001-moon-shape-diary.html">打开纸笔版</a> · <a href="../reference/moon-phases-quick-reference.html">查看速查卡</a> · <a href="0002-half-always-lit.html">下一课：一半总是亮的</a>
+</footer>
+<div class="action-row screen-only">
+<button type="button" class="secondary-button" data-reset-progress>清除本课活动进度</button>
+</div>
+</div>
+</body>
+</html>

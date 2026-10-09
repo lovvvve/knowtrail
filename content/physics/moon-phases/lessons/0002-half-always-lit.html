@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第2课 · 一半总是亮的：月相是怎么来的｜知径</title>
+<meta name="description" content="看猫头鹰咕咕的手电筒实验，用模型说明太阳总把月球照亮一半、月球绕地球转时我们看到的亮面在变，并弄清月相不是地球影子。提供离线练习与独立打印版。">
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  #m2-stage .title { font-weight: 900; }
+  #m2-stage .tag { font-weight: 800; }
+  #m2-stage .sight { stroke: #ff8a3d; stroke-width: 6; stroke-dasharray: 12 10; }
+  #m2-stage .observer { fill: #ff8a3d; stroke: #fff; stroke-width: 4; }
+  #m2-stage .orbit { fill: none; stroke: #9fb3d9; stroke-width: 4; stroke-dasharray: 14 14; opacity: .7; }
+  #m2-stage .ray { stroke: #ffd23f; stroke-width: 9; stroke-linecap: round; }
+  #m2-stage .beam { opacity: .75; }
+  #m2-stage .ghost { fill: none; stroke: #9fb3d9; stroke-width: 4; stroke-dasharray: 8 8; }
+  #lesson-main .exercise select { max-width: 18rem; }
+  #lesson-main .exercise .orbit-mini { display: block; margin: .4rem 0; }
+  .legend-dot { display: inline-block; width: .8rem; height: .8rem; margin-right: .35rem; border-radius: 50%; background: #ff8a3d; vertical-align: middle; }
+</style>
+<script src="../../../math/powers-and-scientific-notation/assets/lesson.js" defer></script>
+<script src="../assets/moon-model.js" defer></script>
+<script src="../../../math/multi-digit-multiplication/assets/cartoon-video.js" defer></script>
+</head>
+<body data-lesson-id="moon-0002" data-lesson-version="1"><a class="skip-link" href="#lesson-main">跳到课程内容</a>
+<div class="lesson-shell">
+<nav class="course-nav" aria-label="单元课程"><a href="0001-moon-shape-diary.html">01 月亮的形状日记</a><a href="0002-half-always-lit.html" aria-current="page">02 一半总是亮的</a><a href="0003-when-to-find-the-moon.html">03 今晚去哪找月亮</a><a href="../reference/moon-phases-quick-reference.html">速查卡</a>
+</nav>
+<header class="lesson-header">
+<p class="eyebrow">知径 · 月相 · 第 2 / 3 课</p>
+<h1>一半<br>总是亮的</h1>
+<p class="lede">月亮为什么会从弯弯一条变成圆圆一个？今天用手电筒和小球做个模型：太阳总把月球照亮一半，变的是我们能看到多少。</p>
+<div class="lesson-meta"><span class="pill">12–15 分钟</span><span class="pill">核心</span><span class="pill">含 2 分钟动画视频</span>
+</div>
+</header>
+<noscript>
+<p class="callout">互动功能、月亮图和动画视频需要开启 JavaScript。可以阅读下面的“视频文字稿”，或使用<a href="../printable/0002-half-always-lit.html">独立打印课程</a>完成同样的学习。</p>
+</noscript>
+<div class="progress-wrap screen-only">
+<div class="progress-label"><span data-progress-label>0/11 项互动任务已完成</span><span>活动进度不等于掌握</span>
+</div><progress data-progress max="100" value="0" aria-label="互动任务进度">0%</progress>
+</div>
+<main id="lesson-main">
+<section class="lesson-section"><span class="section-kicker">今天的目标</span>
+<h2>用模型讲清月相</h2>
+<p class="goal-box">你能用手电筒和球（或网页模型）演示：太阳总把月球照亮一半，月球绕地球转，我们看到的亮面多少在变；并说明月相不是地球影子挡出来的。</p>
+<p>先预测，再看模型。本课的图都是“从高处往下看”的俯视图：阳光从左边照来，地球在中间。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">01 · 诊断</span>
+<h2>先热热身</h2>
+<div class="quiz-list">
+<article class="quiz-card" data-quiz data-quiz-id="diagnostic-half" data-checkpoint data-checkpoint-id="diagnostic-half">
+<p class="quiz-prompt">在暗暗的房间里，手电筒照着一个球。球被照亮多少？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="光只能照到朝着手电筒的那一面，球的背面照不到。转到球的后面看一看。">全部被照亮</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！朝着手电筒的一半亮，背着手电筒的一半暗。月球被太阳照着，也是这样。">一半被照亮</button>
+<button class="choice" type="button" data-choice data-hint="正对手电筒的地方最亮，但旁边也照得到。整个朝着光的那一面都被照亮了，大约是球的一半。">只亮一小点</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+<article class="quiz-card" data-quiz data-quiz-id="diagnostic-first-quarter" data-checkpoint data-checkpoint-id="diagnostic-first-quarter">
+<p class="quiz-prompt">回想第 1 课：哪一个是上弦月？</p>
+<div class="choice-grid moons">
+<button class="choice moon-choice" type="button" data-choice data-hint="这是左边一半亮，是下弦月，出现在后半个月。上弦月在前半个月，亮面在右边。"><span class="moon-icon" data-moon="270"></span>甲</button>
+<button class="choice moon-choice" type="button" data-choice data-hint="这只亮着弯弯一条，是蛾眉月。上弦月亮了整整一半。"><span class="moon-icon" data-moon="45"></span>乙</button>
+<button class="choice moon-choice" type="button" data-choice data-hint="这是整个圆都亮的满月。上弦月只亮一半。"><span class="moon-icon" data-moon="180"></span>丙</button>
+<button class="choice moon-choice" type="button" data-choice data-correct="true" data-success="对！上弦月是右边一半亮，农历初八前后最常见。今天就来弄清它为什么只亮一半。"><span class="moon-icon" data-moon="90"></span>丁</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+</div>
+<details>
+<summary>最小补救：还不确定</summary>
+<p>拿一个球站到台灯或窗户边，慢慢转动它：朝着光的一面总是亮的，背着光的一面总是暗的，不管怎么转，亮的部分都是一半。</p>
+<p>如果记不清月相的样子，先回到<a href="0001-moon-shape-diary.html">第 1 课的讲解</a>看一看八种月相：前半个月右边亮、越来越圆，后半个月左边亮、越来越缺。</p>
+</details>
+</section>
+
+<section class="lesson-section" id="video"><span class="section-kicker">02 · 动画视频</span>
+<h2>看咕咕的手电筒实验（约 2 分钟）</h2>
+<p>边看边想：小球总有多少是亮的？月球转到不同位置，我们看到的亮面怎样变？视频中途会停下来问你一个问题。</p>
+<figure class="cartoon-video" data-cartoon-video aria-labelledby="video-title">
+<figcaption id="video-title" class="sr-only">动画视频：咕咕的手电筒实验——一半总是亮的</figcaption>
+<div class="video-frame" data-video-frame tabindex="0" role="group" aria-label="动画画面。按空格键播放或暂停，按左右方向键切换上一幕、下一幕。">
+<svg id="m2-stage" class="video-stage vstage" data-video-stage viewBox="0 0 1280 720" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="m2-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1430"/><stop offset="1" stop-color="#1d3766"/></linearGradient>
+<marker id="m2-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffd23f"/></marker>
+<marker id="m2-arrow-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#9fb3d9"/></marker>
+</defs>
+<rect width="1280" height="720" fill="url(#m2-sky)"/>
+<g transform="translate(330 70)"><g class="twinkle" data-prop="star"></g></g>
+<g transform="translate(620 40)"><g class="twinkle" style="animation-delay:-.6s" data-prop="star"></g></g>
+<g transform="translate(1240 300)"><g class="twinkle" style="animation-delay:-1.1s" data-prop="star"></g></g>
+<g transform="translate(1180 690)"><g class="twinkle" style="animation-delay:-.3s" data-prop="star"></g></g>
+<g transform="translate(40 60)"><g class="twinkle" style="animation-delay:-.9s" data-prop="star"></g></g>
+<g transform="translate(150 690)"><g data-character="owl"></g></g>
+
+<g class="vl pop" data-from="intro" data-until="intro">
+<rect x="400" y="170" width="820" height="270" rx="36" fill="#fffaf0" stroke="#17365f" stroke-width="6"/>
+<text class="title" x="810" y="290" text-anchor="middle" font-size="88" fill="#17365f">咕咕的手电筒实验</text>
+<text x="810" y="385" text-anchor="middle" font-size="46" font-weight="800" fill="#8a5300">月相 · 第 2 课 · 一半总是亮的</text>
+</g>
+
+<g class="vl" data-from="ask" data-until="ask">
+<g transform="translate(540 300)"><g data-prop="moon" data-label="45"></g></g>
+<g transform="translate(800 300)"><g data-prop="moon" data-label="90"></g></g>
+<g transform="translate(1060 300)"><g data-prop="moon" data-label="180"></g></g>
+<path d="M620,300 H710" stroke="#9fb3d9" stroke-width="8" marker-end="url(#m2-arrow-b)"/>
+<path d="M880,300 H970" stroke="#9fb3d9" stroke-width="8" marker-end="url(#m2-arrow-b)"/>
+<text class="label" x="800" y="500" text-anchor="middle" font-size="72" fill="#ffffff">为什么会变？</text>
+</g>
+
+<g class="vl" data-from="setup" data-until="half">
+<g transform="translate(430 400)"><g data-prop="flashlight"></g></g>
+<text class="label tag" x="430" y="490" text-anchor="middle" font-size="40" fill="#ffd23f">手电筒 = 太阳</text>
+</g>
+<g class="vl" data-from="setup" data-until="setup">
+<g transform="translate(1000 360)"><g data-prop="ball"></g></g>
+<text class="label tag" x="1000" y="290" text-anchor="middle" font-size="40" fill="#ffffff">小球 = 月球</text>
+<text class="label tag" x="200" y="350" text-anchor="middle" font-size="38" fill="#ffffff">咕咕的头 = 地球</text>
+</g>
+<g class="vl pop" data-from="setup" data-until="setup" data-delay="5">
+<rect x="560" y="590" width="560" height="76" rx="20" fill="#fff3f1" stroke="#b3261e" stroke-width="5"/>
+<text x="840" y="642" text-anchor="middle" font-size="36" font-weight="850" fill="#8c1d18">用 LED 手电筒 · 别照眼睛</text>
+</g>
+<g class="vl" data-from="half" data-until="half">
+<g transform="translate(1000 370) scale(2.6)"><g data-prop="moon-top"></g></g>
+<text x="958" y="386" text-anchor="middle" font-size="44" font-weight="900" fill="#3b2410">亮</text>
+<text x="1042" y="386" text-anchor="middle" font-size="44" font-weight="900" fill="#ffffff">暗</text>
+<text class="label" x="1000" y="560" text-anchor="middle" font-size="48" fill="#fff1a8">总有一半是亮的</text>
+</g>
+
+<g class="vl" data-from="shadow" data-until="eclipse">
+<rect x="800" y="300" width="480" height="120" fill="#000000" opacity=".55"/>
+</g>
+<g class="vl" data-from="top" data-until="eclipse">
+<path class="ray" d="M300,170 H430" marker-end="url(#m2-arrow)"/>
+<path class="ray" d="M300,260 H430" marker-end="url(#m2-arrow)"/>
+<path class="ray" d="M300,350 H430" marker-end="url(#m2-arrow)"/>
+<path class="ray" d="M300,440 H430" marker-end="url(#m2-arrow)"/>
+<text class="label" x="365" y="125" text-anchor="middle" font-size="40" fill="#ffd23f">阳光</text>
+<circle class="orbit" cx="800" cy="360" r="220"/>
+<g transform="translate(800 360)"><g data-prop="earth" data-label="night"></g></g>
+<text class="label" x="888" y="452" text-anchor="middle" font-size="32" fill="#ffffff">地球</text>
+</g>
+<g class="vl" data-from="top" data-until="top">
+<circle class="ghost" cx="580" cy="360" r="34"/>
+<circle class="ghost" cx="800" cy="580" r="34"/>
+<circle class="ghost" cx="1020" cy="360" r="34"/>
+<circle class="ghost" cx="800" cy="140" r="34"/>
+<path d="M558,425 A250,250 0 0 0 675,576" fill="none" stroke="#9fb3d9" stroke-width="8" marker-end="url(#m2-arrow-b)"/>
+<text class="label" x="560" y="650" text-anchor="middle" font-size="36" fill="#ffffff">月球绕着地球转</text>
+</g>
+
+<g class="vl pop" data-from="newpos" data-until="newans">
+<g transform="translate(580 360)"><g data-prop="moon-top"></g></g>
+<path class="sight" d="M735,360 H625"/>
+<circle class="observer" cx="742" cy="360" r="10"/>
+</g>
+<g class="vl pop" data-from="fq" data-until="fq">
+<g transform="translate(800 580)"><g data-prop="moon-top"></g></g>
+<path class="sight" d="M800,425 V535"/>
+<circle class="observer" cx="800" cy="418" r="10"/>
+</g>
+<g class="vl pop" data-from="full" data-until="full">
+<g transform="translate(1020 360)"><g data-prop="moon-top"></g></g>
+<path class="sight" d="M865,360 H975"/>
+<circle class="observer" cx="858" cy="360" r="10"/>
+</g>
+<g class="vl pop" data-from="lq" data-until="lq">
+<g transform="translate(800 140)"><g data-prop="moon-top"></g></g>
+<path class="sight" d="M800,295 V185"/>
+<circle class="observer" cx="800" cy="302" r="10"/>
+</g>
+<g class="vl pop" data-from="back" data-until="back">
+<g transform="translate(580 360)"><g data-prop="moon-top"></g></g>
+<text class="label" x="900" y="680" text-anchor="middle" font-size="44" fill="#fff1a8">转一圈约 29.5 天</text>
+</g>
+
+<g class="vl" data-from="newpos" data-until="lq">
+<rect x="1085" y="24" width="180" height="220" rx="18" fill="#0b1430" stroke="#9fb3d9" stroke-width="4"/>
+<text x="1175" y="230" text-anchor="middle" font-size="26" font-weight="800" fill="#ffffff">从地球上看</text>
+</g>
+<text class="vl" data-from="newpos" data-until="newpos" x="1175" y="160" text-anchor="middle" font-size="96" font-weight="900" fill="#ffd23f">?</text>
+<g class="vl pop" data-from="newans" data-until="newans">
+<g transform="translate(1175 118)"><g data-prop="moon" data-label="0"></g></g>
+<text class="label" x="1175" y="288" text-anchor="middle" font-size="36" fill="#fff1a8">新月</text>
+</g>
+<g class="vl pop" data-from="fq" data-until="fq">
+<g transform="translate(1175 118)"><g data-prop="moon" data-label="90"></g></g>
+<text class="label" x="1175" y="288" text-anchor="middle" font-size="36" fill="#fff1a8">上弦月</text>
+</g>
+<g class="vl pop" data-from="full" data-until="full">
+<g transform="translate(1175 118)"><g data-prop="moon" data-label="180"></g></g>
+<text class="label" x="1175" y="288" text-anchor="middle" font-size="36" fill="#fff1a8">满月</text>
+</g>
+<g class="vl pop" data-from="lq" data-until="lq">
+<g transform="translate(1175 118)"><g data-prop="moon" data-label="270"></g></g>
+<text class="label" x="1175" y="288" text-anchor="middle" font-size="36" fill="#fff1a8">下弦月</text>
+</g>
+
+<g class="vl pop" data-from="shadowq" data-until="shadow">
+<g transform="translate(800 580)"><g data-prop="moon-top"></g></g>
+</g>
+<text class="vl label" data-from="shadowq" data-until="shadowq" x="800" y="690" text-anchor="middle" font-size="42" fill="#ffffff">缺掉的是地球影子吗？</text>
+<g class="vl" data-from="shadow" data-until="shadow" data-delay="1">
+<text class="label" x="1100" y="468" text-anchor="middle" font-size="38" fill="#cfd8ea">地球的影子</text>
+</g>
+<g class="vl" data-from="shadow" data-until="shadow" data-delay="5">
+<text class="label" x="560" y="610" text-anchor="middle" font-size="42" fill="#ffd23f">碰不到影子！</text>
+<text class="label" x="1010" y="655" text-anchor="middle" font-size="34" fill="#ffffff">暗的半边：背着太阳</text>
+</g>
+<g class="vl pop" data-from="eclipse" data-until="eclipse">
+<g transform="translate(1020 360)"><g data-prop="moon-top"></g></g>
+<circle cx="1020" cy="360" r="34" fill="#b5452b" opacity=".55"/>
+<text class="label" x="1020" y="275" text-anchor="middle" font-size="36" fill="#ffffff">月食：月球钻进地球影子</text>
+<text class="label" x="1020" y="525" text-anchor="middle" font-size="34" fill="#fff1a8">只在满月前后，很少见</text>
+</g>
+
+<g class="vl rise" data-from="recap" data-until="recap" data-delay=".3">
+<rect x="400" y="70" width="840" height="170" rx="24" fill="#fffaf0" stroke="#8a5300" stroke-width="5"/>
+<text x="440" y="140" font-size="48" font-weight="900" fill="#8a5300">① 一半总是亮的</text>
+<text x="440" y="206" font-size="38" font-weight="800" fill="#172033">太阳总把月球朝着它的一半照亮</text>
+</g>
+<g class="vl rise" data-from="recap" data-until="recap" data-delay="3">
+<rect x="400" y="270" width="840" height="170" rx="24" fill="#fffaf0" stroke="#234e8c" stroke-width="5"/>
+<text x="440" y="340" font-size="48" font-weight="900" fill="#234e8c">② 看到多少在变</text>
+<text x="440" y="406" font-size="38" font-weight="800" fill="#172033">月球绕地球转，约 29.5 天转一圈</text>
+</g>
+<g class="vl rise" data-from="recap" data-until="recap" data-delay="5.5">
+<rect x="400" y="470" width="840" height="170" rx="24" fill="#fffaf0" stroke="#147a55" stroke-width="5"/>
+<text x="440" y="540" font-size="48" font-weight="900" fill="#147a55">③ 不是地球影子</text>
+<text x="440" y="606" font-size="38" font-weight="800" fill="#172033">暗的半边只是背着太阳</text>
+</g>
+</svg>
+<button class="video-start" type="button" data-video-start aria-label="播放动画视频"><span>▶ 播放动画视频</span></button>
+</div>
+<p class="video-caption" data-video-caption aria-live="polite"></p>
+<div class="video-prompt" data-video-prompt="new-moon" hidden>
+<article class="quiz-card" data-quiz data-quiz-id="video-new-moon" data-checkpoint data-checkpoint-id="video-new-moon">
+<p class="quiz-prompt">视频暂停了：月球转到地球和太阳中间，咕咕从地球上看，看到什么？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="整个圆都亮，要亮的一半全朝着地球。现在亮的一半朝着哪里？朝着太阳，也就是左边。">整个圆都亮</button>
+<button class="choice" type="button" data-choice data-hint="右边一半亮是上弦月，那时月球在地球的下边。现在月球在左边，挡在地球和太阳中间。">右边一半亮</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！亮的一半朝着太阳，正好背着地球，朝着我们的这一半全是暗的，这就是新月。">看不到亮面</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+<button class="primary-button spaced-top" type="button" data-video-continue hidden>继续播放 ▶</button>
+</article>
+</div>
+<div class="video-controls">
+<button class="primary-button" type="button" data-video-play>▶ 播放</button>
+<button class="secondary-button" type="button" data-video-prev>◀ 上一幕</button>
+<button class="secondary-button" type="button" data-video-next>下一幕 ▶</button>
+<input type="range" min="0" max="135" step="0.1" value="0" data-video-seek aria-label="视频进度">
+<span class="video-time" data-video-time>0:00 / 2:15</span>
+<label>速度 <select data-video-speed><option value="0.75">慢一点</option><option value="1" selected>正常</option><option value="1.25">快一点</option></select></label>
+<button class="secondary-button" type="button" data-video-voice aria-pressed="false">🔈 朗读：关</button>
+</div>
+<p class="video-voice-note" data-video-voice-note></p>
+<ol class="video-chapters" data-video-chapters aria-label="视频章节"></ol>
+<details class="video-transcript">
+<summary>视频文字稿（不看动画也能读）</summary>
+<ol data-video-shots>
+<li data-shot="intro" data-duration="7" data-chapter="开场" data-pose="wave">嗨，我是猫头鹰咕咕！上节课我们记了月亮日记，今天来做一个实验。</li>
+<li data-shot="ask" data-duration="8" data-pose="think">月亮为什么会从弯弯一条，慢慢变成圆圆一个？我们用手电筒找答案。</li>
+<li data-shot="setup" data-duration="10" data-chapter="搭模型" data-pose="point">手电筒当太阳，白色小球当月球，我的头当地球。要用 LED 手电筒，别照眼睛。</li>
+<li data-shot="half" data-duration="9" data-pose="point">手电筒照着小球：朝着光的一半亮，背着光的一半暗。小球总有一半是亮的。</li>
+<li data-shot="top" data-duration="9" data-chapter="从上往下看" data-pose="point">现在从高处往下看：阳光从左边照来，地球在中间，月球绕着地球转。</li>
+<li data-shot="newpos" data-duration="7" data-pose="think" data-prompt="new-moon">月球转到了地球和太阳中间。暂停想一想：咕咕从地球上看，看到什么？</li>
+<li data-shot="newans" data-duration="9" data-pose="point">亮的一半正好背着我们，朝着地球的这一半全是暗的，几乎看不到。这就是新月。</li>
+<li data-shot="fq" data-duration="10" data-chapter="转一圈" data-pose="point">月球转到下边，大约过了一个星期。我们只看到亮的一半里的一半：右边一半亮，是上弦月。</li>
+<li data-shot="full" data-duration="9" data-pose="cheer">再转到地球另一边，和太阳隔着地球相对。亮的一半全朝着我们，就是满月！</li>
+<li data-shot="lq" data-duration="9" data-pose="point">继续转到上边，又只看到一半亮，这回是左边一半：下弦月。</li>
+<li data-shot="back" data-duration="8" data-pose="wave">再转回地球和太阳中间，又是新月。月球转一圈，大约 29.5 天。</li>
+<li data-shot="shadowq" data-duration="8" data-chapter="是影子吗" data-pose="surprised">有人说：月亮缺掉的那块，是地球的影子挡住的。真是这样吗？</li>
+<li data-shot="shadow" data-duration="12" data-pose="point">地球的影子伸向右边，背对太阳。上弦月时月球在下边，碰不到影子；暗的那半边只是背着太阳。</li>
+<li data-shot="eclipse" data-duration="9" data-pose="think">月球真的钻进地球影子，叫月食。只在满月前后才可能发生，大多数月份都碰不上。</li>
+<li data-shot="recap" data-duration="11" data-chapter="小结" data-pose="wave">记住：太阳总把月球照亮一半；月球绕地球转，我们看到的亮面多少在变。下次见！</li>
+</ol>
+</details>
+</figure>
+<p class="source-note">动画由本页代码实时绘制，不联网、不上传。可以拖动进度条、点章节重看某一段；选“慢一点”或“朗读”（设备有离线中文语音时可用）。画面不按比例：真实的太阳比地球大得多、远得多。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">03 · 讲解</span>
+<h2>两个“一半”叠在一起</h2>
+<p>月球自己不发光。在任何时候，月球都有两个“一半”：</p>
+<ul class="step-list">
+<li><strong>朝着太阳的一半是亮的</strong>：太阳总把它照亮，不管月球转到哪里。</li>
+<li><strong>朝着地球的一半是我们能看到的</strong>：另一半永远背着我们。</li>
+</ul>
+<p>两个一半叠在一起的部分，就是我们看到的亮面。月球绕着地球转，两个一半叠得时多时少，月相就变了。</p>
+<div class="table-wrap">
+<table class="number-table">
+<caption class="sr-only">月球在四个位置时，从地球上看到的样子</caption>
+<thead><tr><th scope="col">俯视图（阳光从左边来）</th><th scope="col">从地球上看</th><th scope="col">月相</th><th scope="col">农历</th></tr></thead>
+<tbody>
+<tr><td><span class="orbit-mini" data-orbit-mini="0"></span></td><td><span class="moon-icon" data-moon="0"></span></td><td>新月：亮的一半全背着地球</td><td>初一</td></tr>
+<tr><td><span class="orbit-mini" data-orbit-mini="90"></span></td><td><span class="moon-icon" data-moon="90"></span></td><td>上弦月：看到右边一半亮</td><td>初八前后</td></tr>
+<tr><td><span class="orbit-mini" data-orbit-mini="180"></span></td><td><span class="moon-icon" data-moon="180"></span></td><td>满月：亮的一半全朝着地球</td><td>十五、十六前后</td></tr>
+<tr><td><span class="orbit-mini" data-orbit-mini="270"></span></td><td><span class="moon-icon" data-moon="270"></span></td><td>下弦月：看到左边一半亮</td><td>廿三前后</td></tr>
+</tbody>
+</table>
+</div>
+<p class="callout">一个到处都对的规则：<strong>亮的一边总是朝着太阳。</strong>第 1 课的“右边亮越来越圆”，是我们在北半球、月亮高挂南边天空时看到的样子。</p>
+<p class="source-note">俯视图不按比例：真实的太阳比地球大得多，也远得多，所以阳光照到地月附近时几乎是平行的。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">04 · 轨道模拟器</span>
+<h2>让月球绕地球走一个月</h2>
+<p>拖动日期，或按“后一天”。看左边的俯视图和右边“从地球上看”的样子。<strong>任务：找到新月、上弦月、满月、下弦月四个位置。</strong></p>
+<div class="orbit-lab" data-orbit-lab data-checkpoint data-checkpoint-id="orbit-lab">
+<div class="orbit-views">
+<svg data-orbit-svg role="img" aria-label="俯视轨道模型"></svg>
+<figure class="orbit-eye"><div data-orbit-eye></div><figcaption>从地球上看</figcaption></figure>
+</div>
+<ul class="orbit-legend">
+<li><span class="swatch" aria-hidden="true"></span>橙色虚线：月球朝着地球的一半（我们能看到的一半）</li>
+<li><span class="legend-dot" aria-hidden="true"></span>橙色圆点：站在地球上的你</li>
+<li>黄色箭头：阳光；月球上浅黄色的一半总朝着太阳</li>
+</ul>
+<div class="lab-row"><label for="orbit-day">日期：<output data-orbit-day-label>农历初一</output></label><input id="orbit-day" type="range" min="1" max="30" step="1" value="1" data-orbit-day></div>
+<div class="action-row">
+<button class="secondary-button" type="button" data-orbit-prev>◀ 前一天</button>
+<button class="secondary-button" type="button" data-orbit-next>后一天 ▶</button>
+<button class="secondary-button" type="button" data-orbit-play>▶ 连续走一个月</button>
+</div>
+<p class="lab-readout" data-orbit-readout aria-live="polite"></p>
+<p class="feedback" data-lab-feedback aria-live="polite">找到新月、上弦月、满月、下弦月四个位置后，就能完成这项活动。</p>
+<button class="primary-button" type="button" data-complete-checkpoint data-completed-label="已完成轨道模拟 ✓" disabled aria-disabled="true">完成轨道模拟</button>
+</div>
+<p class="source-note">留意：不管月球走到哪里，浅黄色的一半总朝着左边的太阳。变的只是橙色虚线那一半里，亮的有多少。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">05 · 动手做模型</span>
+<h2>在家用手电筒和球演示</h2>
+<div class="safety" role="note"><strong>安全提示：</strong>只用 LED 手电筒（或台灯），调到弱光，不要用手电筒照任何人的眼睛，也不要盯着灯光看。关灯前先把地面的东西收好，全程有大人在场。觉得刺眼就闭上眼睛转开。</div>
+<div data-checkpoint data-checkpoint-id="home-model">
+<p><strong>材料：</strong>LED 手电筒 1 个；白色小球 1 个（乒乓球或泡沫球），插在铅笔或筷子上。</p>
+<ol class="step-list">
+<li>大人把手电筒放在比你的头高一些的地方（例如书柜上），照向房间中间。房间调暗。</li>
+<li>你站在房间中间，手臂伸直，把球举在面前、比头稍高。球是月球，你的头是地球，手电筒是太阳。</li>
+<li>先面向手电筒，让球挡在你和手电筒之间：只看球，不看灯。这时看到的是“新月”。</li>
+<li>原地慢慢向左转，手臂跟着转。每转四分之一圈停一下，说出球上的亮面像哪种月相，直到转回原处。</li>
+</ol>
+<p><strong>看什么：</strong>球被照亮的总是一半；你转到不同位置，看到的亮面多少在变。转到背对手电筒时，如果你的头影子挡住了球，球会变暗——这就像月食。把球举高一点就避开了。</p>
+<p>没有材料或不方便关灯？用上面的轨道模拟器代替，同样算完成。</p>
+<button class="secondary-button" type="button" data-complete-checkpoint data-completed-label="已完成模型活动 ✓">我做过了（或用模拟器代替）</button>
+</div>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">06 · 找一找</span>
+<h2>用模型想一想</h2>
+<div class="quiz-list">
+<article class="quiz-card" data-quiz data-quiz-id="top-view-last-quarter" data-checkpoint data-checkpoint-id="quiz-top-view">
+<p class="quiz-prompt">月球在俯视图的这个位置时，从地球上看是哪一个？</p>
+<span class="orbit-mini" data-orbit-mini="270"></span>
+<div class="choice-grid moons">
+<button class="choice moon-choice" type="button" data-choice data-hint="右边一半亮是上弦月，那时月球在地球的下边。现在月球在上边，站在地球上的你看过去，亮的一半在哪一边？"><span class="moon-icon" data-moon="90"></span>甲</button>
+<button class="choice moon-choice" type="button" data-choice data-hint="全暗是新月，那时月球要在地球和太阳中间（左边）。现在月球在上边，能看到一部分亮面。"><span class="moon-icon" data-moon="0"></span>乙</button>
+<button class="choice moon-choice" type="button" data-choice data-correct="true" data-success="对！月球在上边时，我们看到亮的一半里的一半，在左边，这是下弦月。"><span class="moon-icon" data-moon="270"></span>丙</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+<article class="quiz-card" data-quiz data-quiz-id="not-shadow" data-checkpoint data-checkpoint-id="quiz-not-shadow">
+<p class="quiz-prompt">上弦月时，左边暗的那一半是因为？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！暗的那半边只是背着太阳，阳光照不到。地球影子在背对太阳的一侧，上弦月时月球碰不到它。">那半边背着太阳</button>
+<button class="choice" type="button" data-choice data-hint="地球的影子伸向背对太阳的一侧（俯视图的右边）。上弦月时月球在下边，离影子很远。回看视频“是影子吗”。">被地球影子挡住</button>
+<button class="choice" type="button" data-choice data-hint="云会遮住月亮，但云散了月相不会变。上弦月在晴朗的夜里也只亮一半。">被一片云遮住了</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+<article class="quiz-card" data-quiz data-quiz-id="full-position" data-checkpoint data-checkpoint-id="quiz-full-position">
+<p class="quiz-prompt">满月时，月球在哪里？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="那是新月的位置：亮的一半朝着太阳，正好背着我们。">太阳和地球的中间</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！满月时月球在地球背着太阳的一侧，亮的一半全朝着地球。">地球背着太阳那侧</button>
+<button class="choice" type="button" data-choice data-hint="月球绕着地球转，不会跑到太阳背后去。满月时，太阳和月球分别在地球的两边。">太阳的背后那一侧</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+</div>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">07 · 练习</span>
+<h2>位置和月相连起来</h2>
+<p>看俯视图：阳光从左边照来，地球在中间。每题选一个答案。</p>
+<form data-mastery-stage data-milestone-id="practice" data-checkpoint data-checkpoint-id="practice" data-hint="有错的题已经标出。想一想：月球朝着太阳的一半总是亮的；站在地球上看过去，亮的一半里能看到多少、在哪一边？不确定就回到轨道模拟器拖一拖。" data-success="都对了！接下来合上提示，用新题独立检查。">
+<div class="exercise"><label for="practice-1">1. 月球在这个位置时，月相是：</label>
+<span class="orbit-mini" data-orbit-mini="90"></span>
+<select id="practice-1" name="practice-1" required data-correct="上弦月" aria-label="练习第1题：月球在地球下边时的月相"><option value="">请选择</option><option>新月</option><option>蛾眉月</option><option>上弦月</option><option>凸月</option><option>满月</option><option>下弦月</option><option>残月</option></select></div>
+<div class="exercise"><label for="practice-2">2. 月球在这个位置时，月相是：</label>
+<span class="orbit-mini" data-orbit-mini="0"></span>
+<select id="practice-2" name="practice-2" required data-correct="新月" aria-label="练习第2题：月球在太阳和地球之间时的月相"><option value="">请选择</option><option>新月</option><option>蛾眉月</option><option>上弦月</option><option>凸月</option><option>满月</option><option>下弦月</option><option>残月</option></select></div>
+<div class="exercise"><label for="practice-3">3. 满月时，月球在地球的哪一边？</label>
+<select id="practice-3" name="practice-3" required data-correct="右边（地球背着太阳一侧）"><option value="">请选择</option><option>左边（太阳和地球之间）</option><option>下边</option><option>右边（地球背着太阳一侧）</option><option>上边</option></select></div>
+<div class="exercise"><label for="practice-4">4. 下弦月时，月球在地球的哪一边？</label>
+<select id="practice-4" name="practice-4" required data-correct="上边"><option value="">请选择</option><option>左边（太阳和地球之间）</option><option>下边</option><option>右边（地球背着太阳一侧）</option><option>上边</option></select></div>
+<button class="primary-button" type="submit">检查练习</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<details>
+<summary>再给一个线索</summary>
+<p>月球沿着俯视图逆时针走：左边（新月）→ 下边（上弦月）→ 右边（满月）→ 上边（下弦月）→ 回到左边。</p>
+</details>
+<details>
+<summary>做完后核对思路</summary>
+<p>四题依次为：上弦月、新月、右边（地球背着太阳一侧）、上边。月球在下边时，我们看到亮的一半里的右边一半；在左边时，亮的一半全背着我们。</p>
+</details>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">08 · 独立检查</span>
+<h2>合上提示，再试新题</h2>
+<p>不看上面的讲解和模拟器。俯视图里阳光仍从左边照来。</p>
+<form data-mastery-stage data-milestone-id="independent" data-checkpoint data-checkpoint-id="independent" data-hint="有错的题已经标出。先找朝着太阳的一半，再想站在地球上看过去能看到多少。" data-success="四题都对！最后，用模型讲给陪学者听。">
+<div class="exercise"><label for="independent-1">1. 月球在这个位置时，月相是：</label>
+<span class="orbit-mini" data-orbit-mini="180"></span>
+<select id="independent-1" name="independent-1" required data-correct="满月" aria-label="独立题第1题：月球在地球右边时的月相"><option value="">请选择</option><option>新月</option><option>蛾眉月</option><option>上弦月</option><option>凸月</option><option>满月</option><option>下弦月</option><option>残月</option></select></div>
+<div class="exercise"><label for="independent-2">2. 月球在这个位置时，月相是：</label>
+<span class="orbit-mini" data-orbit-mini="270"></span>
+<select id="independent-2" name="independent-2" required data-correct="下弦月" aria-label="独立题第2题：月球在地球上边时的月相"><option value="">请选择</option><option>新月</option><option>蛾眉月</option><option>上弦月</option><option>凸月</option><option>满月</option><option>下弦月</option><option>残月</option></select></div>
+<div class="exercise"><label for="independent-3">3. 上弦月时，月球在地球的哪一边？</label>
+<select id="independent-3" name="independent-3" required data-correct="下边"><option value="">请选择</option><option>左边（太阳和地球之间）</option><option>下边</option><option>右边（地球背着太阳一侧）</option><option>上边</option></select></div>
+<div class="exercise"><label for="independent-4">4. 月球被太阳照亮的部分有多少？</label>
+<select id="independent-4" name="independent-4" required data-correct="总是一半"><option value="">请选择</option><option>新月时一点也没有</option><option>总是一半</option><option>满月时全部都亮</option><option>每天都不一样</option></select></div>
+<button class="primary-button" type="submit">检查独立题</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<form class="retrieval-form spaced-top" data-teachback-form data-milestone-id="explanation" data-checkpoint data-checkpoint-id="explanation" data-hint="请先让孩子不看提示，用手电筒和球（或模拟器）边演示边讲一遍，再由陪学者按下面两点核对后勾选。" data-success="讲清楚了！今天的目标完成。隔两三天用纸笔版 C 区再检查一次。">
+<div class="callout"><strong>讲给陪学者听：</strong>用手电筒和球演示：为什么上弦月只亮一半？为什么不是地球的影子？</div>
+<label class="check-row"><input type="checkbox" name="explained">孩子独立讲到两点：① 太阳总把月球朝着它的一半照亮，上弦月时我们只看到亮的一半里的一半（右边）；② 地球影子在背对太阳的一侧，上弦月时月球碰不到它，暗的那半边只是背着太阳。</label>
+<button class="primary-button" type="submit">陪学者确认</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<details>
+<summary>做完后核对思路</summary>
+<p>四题依次为：满月、下弦月、下边、总是一半。第 2 题的月球在上边，站在地球上看过去，亮的一半里只看到左边那一半。新月时月球也有一半被照亮，只是那一半背着我们。</p>
+</details>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">拓展 · 选学，不计入掌握</span>
+<h2>为什么不是每个月都有月食？</h2>
+<p>每个满月，月球都在地球背着太阳的一侧，看起来该钻进地球的影子才对。可是月球绕地球转的轨道，和地球绕太阳转的轨道之间斜着大约 5°，所以大多数满月时，月球从影子的上方或下方经过，碰不到影子。只有正好对准的那几次，才会发生月食。</p>
+<p>在家用模型试一试：转到背对手电筒时，把球举高一点，头影子就挡不住它了。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">09 · 反馈与下一步</span>
+<h2>错在哪里，就回到哪里</h2>
+<ul>
+<li><strong>把暗的部分说成地球影子</strong>：回看视频“是影子吗”一段，在轨道模拟器里拖到初八，看月球离影子那一侧有多远。</li>
+<li><strong>位置和月相对不上</strong>：在模拟器里从初一一天一天走到十五，边走边说“月球在哪边、看到多少亮”。</li>
+<li><strong>左右分不清</strong>：先找“亮的一边朝着太阳”，再回到<a href="0001-moon-shape-diary.html">第 1 课</a>的“右边亮，越来越圆”。</li>
+</ul>
+<p>四个独立题全对并且能边演示边讲清楚，就可以进入<a href="0003-when-to-find-the-moon.html">第 3 课：今晚去哪找月亮</a>。隔两三天，用<a href="../printable/0002-half-always-lit.html">纸笔版的 C 区新题</a>再检查一次；整个单元的掌握标准见<a href="../reference/moon-phases-quick-reference.html#mastery">速查卡</a>。</p>
+<p>有哪里没看懂，回来告诉教学助手：“我在第 2 课，卡在……”，把你看到的模型样子或画的图描述出来。</p>
+<p class="source-note">推荐观看：国家中小学智慧教育平台<a href="https://basic.smartedu.cn/syncClassroom/classActivity?activityId=3f7b00e2-d73f-cb87-b6a5-4d094a1f2be9">“月有阴晴圆缺”同步课（大象版四年级下册）</a>，微课约 13 分钟，可能需要登录；看完试着用手电筒和球再演示一遍。</p>
+<p class="source-note">陪学者选读：美国海军天文台 <a href="https://aa.usno.navy.mil/faq/moon_phases">USNO “Phases of the Moon”</a>（月球总有一半被太阳照亮，我们看到的是亮的一半中的多少）；<a href="https://openstax.org/books/astronomy-2e/pages/4-5-phases-and-motions-of-the-moon">OpenStax Astronomy 2e §4.5</a>（许多人误以为月相与地球影子有关）；<a href="https://openstax.org/books/astronomy-2e/pages/4-7-eclipses-of-the-sun-and-moon">§4.7</a>（月球轨道倾斜约 5°，所以大多数月份没有食）。核验日期：2026-10-10；动画、情境和题目为原创，英文材料不要求孩子阅读。</p>
+</section>
+</main>
+<footer class="lesson-footer">
+<p>本机只保存活动完成标记；不上传作答。先会解释，再进入下一课。</p><a href="../printable/0002-half-always-lit.html">打开纸笔版</a> · <a href="../reference/moon-phases-quick-reference.html">查看速查卡</a> · <a href="0003-when-to-find-the-moon.html">下一课：今晚去哪找月亮</a>
+</footer>
+<div class="action-row screen-only">
+<button type="button" class="secondary-button" data-reset-progress>清除本课活动进度</button>
+</div>
+</div>
+</body>
+</html>
