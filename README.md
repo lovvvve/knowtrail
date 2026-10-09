@@ -78,6 +78,8 @@
 
 网页互动应服务于学习目标，例如操作、预测、即时反馈、分步提示或可视化。页面需要兼顾儿童使用、键盘操作、移动设备和清晰反馈；纯装饰性动画不算有效互动。
 
+需要视频讲解时，优先用页面内代码绘制的动画（参考 [`cartoon-video.js`](./content/math/multi-digit-multiplication/assets/cartoon-video.js)）：时间线以页面中的文字稿为唯一来源，提供字幕、章节、可拖动进度和暂停预测，离线可用，不嵌入外部视频或联网语音。
+
 ### 可打印版（配套）
 
 打印版应在离线和纸笔环境中独立完成学习闭环。网页中的关键互动需要转换成等价的观察、绘制、排序、填写、实验记录或讨论任务，而不是简单截图网页。
@@ -121,6 +123,8 @@ skills-lock.json           # 第三方 Skills 的来源与内容锁定
 - Claude 从 [`CLAUDE.md`](./CLAUDE.md) 进入，并以 `AGENTS.md` 为唯一规则源。
 
 ## 当前状态
+
+新增数学知识单元 [“多位数乘多位数”](./content/math/multi-digit-multiplication/unit.md)，包含三节短课：[拆开乘，再相加](./content/math/multi-digit-multiplication/lessons/0001-two-digit-no-carry.html)、[进位不慌](./content/math/multi-digit-multiplication/lessons/0002-two-digit-with-carry.html)、[三位数乘两位数](./content/math/multi-digit-multiplication/lessons/0003-three-digit-by-two-digit.html)，以及[速查卡](./content/math/multi-digit-multiplication/reference/multiplication-quick-reference.html)和各课独立打印材料。每课含一段约 2 分钟的卡通动画视频，由页面代码绘制，带字幕、章节、文字稿和中途暂停预测题；课程齐备不表示学习者已经掌握。
 
 新增数学知识单元 [“四则运算：添括号与去括号”](./content/math/arithmetic-parentheses/unit.md)，包含三节短课：[加减法](./content/math/arithmetic-parentheses/lessons/0001-addition-and-subtraction.html)、[乘除法](./content/math/arithmetic-parentheses/lessons/0002-multiplication-and-division.html)、[混合运算的边界](./content/math/arithmetic-parentheses/lessons/0003-mixed-operations.html)，以及[速查卡](./content/math/arithmetic-parentheses/reference/parentheses-quick-reference.html)和各课独立打印材料。默认从第一课诊断开始，乘除与分配律作为拓展；课程齐备不表示学习者已经掌握。
 
