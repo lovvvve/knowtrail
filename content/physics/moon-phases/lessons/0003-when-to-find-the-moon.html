@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第3课 · 今晚去哪找月亮：按农历日期安排观月时间｜知径</title>
+<meta name="description" content="看卡通动画，学会根据农历日期推测月相，判断该在放学后的傍晚、上学前的清晨还是整夜去看月亮，并安全地完成观察记录。提供离线天空时钟与独立打印版。">
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  #m3-stage .label { font-weight: 850; }
+  #m3-stage .big { font-size: 60px; }
+  #m3-stage .mid { font-size: 44px; }
+  #m3-stage .small { font-size: 34px; }
+  #m3-stage .dir { font: 900 58px "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #fffdf6; }
+  #m3-stage .sky-moon .moon-dark { fill: #1d2b4f; opacity: .7; }
+  #m3-stage .sky-moon .moon-rim { stroke: #dfe7f5; stroke-width: 3; opacity: .55; }
+  #m3-stage .sky-moon .moon-lit { filter: drop-shadow(0 0 6px #fff1a8); }
+  #m3-stage .day-moon .moon-dark { fill: #a9d3f2; opacity: 1; }
+  #m3-stage .day-moon .moon-lit { fill: #fdf8e2; filter: none; }
+  #m3-stage .ghost-moon { fill: none; stroke: #fff1a8; stroke-width: 5; stroke-dasharray: 12 10; }
+  #m3-stage .card { fill: #fffaf0; stroke: #17365f; stroke-width: 6; }
+  #m3-stage .card-text { fill: #172033; font-weight: 850; }
+  .exercise select { display: block; max-width: 20rem; margin-top: .35rem; }
+  .when-table td:nth-child(2) .moon-icon { width: 2.6rem; }
+</style>
+<script src="../../../math/powers-and-scientific-notation/assets/lesson.js" defer></script>
+<script src="../assets/moon-model.js" defer></script>
+<script src="../../../math/multi-digit-multiplication/assets/cartoon-video.js" defer></script>
+</head>
+<body data-lesson-id="moon-0003" data-lesson-version="1"><a class="skip-link" href="#lesson-main">跳到课程内容</a>
+<div class="lesson-shell">
+<nav class="course-nav" aria-label="单元课程"><a href="0001-moon-shape-diary.html">01 月亮的形状日记</a><a href="0002-half-always-lit.html">02 一半总是亮的</a><a href="0003-when-to-find-the-moon.html" aria-current="page">03 今晚去哪找月亮</a><a href="../reference/moon-phases-quick-reference.html">速查卡</a>
+</nav>
+<header class="lesson-header">
+<p class="eyebrow">知径 · 月相 · 第 3 / 3 课</p>
+<h1>今晚<br>去哪找月亮</h1>
+<p class="lede">想看月亮，可放学后抬头却找不到？先查一查农历日期，就知道该在傍晚去看，还是明天上学前的清晨去看。</p>
+<div class="lesson-meta"><span class="pill">12–15 分钟</span><span class="pill">核心 · 方位为拓展</span><span class="pill">含 2 分钟动画视频</span>
+</div>
+</header>
+<noscript>
+<p class="callout">互动功能和动画视频需要开启 JavaScript。可以阅读下面的“视频文字稿”，或使用<a href="../printable/0003-when-to-find-the-moon.html">独立打印课程</a>完成同样的学习。</p>
+</noscript>
+<div class="progress-wrap screen-only">
+<div class="progress-label"><span data-progress-label>0/10 项互动任务已完成</span><span>活动进度不等于掌握</span>
+</div><progress data-progress max="100" value="0" aria-label="互动任务进度">0%</progress>
+</div>
+<main id="lesson-main">
+<section class="lesson-section"><span class="section-kicker">今天的目标</span>
+<h2>先查日历，再决定什么时候看</h2>
+<p class="goal-box">你能根据农历日期推测月相，并判断该在放学后的傍晚、上学前的清晨还是整夜去看；知道新月前后看不到，月亮每天大约晚升起 50 分钟。</p>
+<p>这一课要用到前两课的本领：农历日期对应什么月相（第 1 课），月球绕着地球转（第 2 课）。月亮在东边、南边还是西边，是拓展内容，不计入掌握检查。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">01 · 诊断</span>
+<h2>先热热身</h2>
+<p>两道题，检查今天要用到的旧本领。</p>
+<div class="quiz-list">
+<article class="quiz-card" data-quiz data-quiz-id="diag-sunrise" data-checkpoint data-checkpoint-id="diag-sunrise">
+<p class="quiz-prompt">1. 早上，太阳从哪边升起？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="太阳是傍晚从西边落下的。早上它从另一边出来，想一想“东升西落”。">西边</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！太阳东升西落。今天你会发现，月亮也是东升西落。">东边</button>
+<button class="choice" type="button" data-choice data-hint="在上海，太阳中午在南边天空最高，北边一直看不到它。早上它从哪边升起？">北边</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+<article class="quiz-card" data-quiz data-quiz-id="diag-day8" data-checkpoint data-checkpoint-id="diag-day8">
+<p class="quiz-prompt">2. 农历初八前后，月亮是什么样子？</p>
+<div class="choice-grid moons">
+<button class="choice moon-choice" type="button" data-choice data-hint="这是左边一半亮，是下弦月，出现在后半个月。初八还在前半个月，亮面在右边。"><span class="moon-icon" data-moon="270"></span></button>
+<button class="choice moon-choice" type="button" data-choice data-hint="这是右边弯弯的一条，是蛾眉月，比初八早几天。到了初八，右边的亮面已经有一半了。"><span class="moon-icon" data-moon="45"></span></button>
+<button class="choice moon-choice" type="button" data-choice data-correct="true" data-success="对！初八前后是上弦月，右边一半亮。"><span class="moon-icon" data-moon="90"></span></button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+</div>
+<details>
+<summary>最小补救：东西方向或农历日期还不确定</summary>
+<p><strong>方向：</strong>太阳东升西落。早上面朝太阳升起的方向，那就是东边；背对它就是西边。看月亮时我们面朝南方站好：左手边是东，右手边是西。</p>
+<p><strong>农历日期和月相：</strong>回到<a href="0001-moon-shape-diary.html">第 1 课</a>的月相表，或看<a href="../reference/moon-phases-quick-reference.html">速查卡</a>：初一新月，初八前后上弦月，十五、十六前后满月，廿三前后下弦月。</p>
+</details>
+</section>
+
+<section class="lesson-section" id="video"><span class="section-kicker">02 · 动画视频</span>
+<h2>看咕咕做观月计划（约 2 分钟）</h2>
+<p>边看边想：为什么有时傍晚看得到月亮，有时要等到清晨？视频中途会停下来问你一个问题。</p>
+<figure class="cartoon-video" data-cartoon-video aria-labelledby="video-title">
+<figcaption id="video-title" class="sr-only">动画视频：咕咕的观月计划——什么时候能看到月亮</figcaption>
+<div class="video-frame" data-video-frame tabindex="0" role="group" aria-label="动画画面。按空格键播放或暂停，按左右方向键切换上一幕、下一幕。">
+<svg id="m3-stage" class="video-stage vstage" data-video-stage viewBox="0 0 1280 720" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="m3-day" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fa8e0"/><stop offset="1" stop-color="#cfe9fb"/></linearGradient>
+<linearGradient id="m3-dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d3766"/><stop offset=".6" stop-color="#7a6a9a"/><stop offset="1" stop-color="#f0a868"/></linearGradient>
+<marker id="m3-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#fff1a8"/></marker>
+<marker id="m3-arrow-dark" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#17365f"/></marker>
+</defs>
+<rect width="1280" height="720" fill="#0f1a33"/>
+<g>
+<g transform="translate(220 90)"><g class="twinkle" data-prop="star"></g></g>
+<g transform="translate(420 200)"><g class="twinkle" style="animation-delay:-.6s" data-prop="star"></g></g>
+<g transform="translate(860 80)"><g class="twinkle" style="animation-delay:-1.1s" data-prop="star"></g></g>
+<g transform="translate(1040 240)"><g class="twinkle" style="animation-delay:-.3s" data-prop="star"></g></g>
+<g transform="translate(600 300)"><g class="twinkle" style="animation-delay:-1.4s" data-prop="star"></g></g>
+<g transform="translate(140 330)"><g class="twinkle" style="animation-delay:-.9s" data-prop="star"></g></g>
+</g>
+<rect class="vl" data-from="facing" data-until="sun" width="1280" height="720" fill="url(#m3-day)"/>
+<rect class="vl" data-from="later" data-until="morning" width="1280" height="720" fill="url(#m3-dusk)"/>
+<rect class="vl" data-from="daytime" data-until="note" width="1280" height="720" fill="url(#m3-day)"/>
+<path class="vl" data-from="facing" data-until="note" d="M110,560 A530,420 0 0 1 1170,560" fill="none" stroke="#ffffff" stroke-width="4" stroke-dasharray="14 14" opacity=".7"/>
+
+<!-- intro -->
+<g class="vl" data-from="intro" data-until="intro"><g transform="translate(1130 120) scale(.75)"><g data-prop="moon" data-label="60"></g></g></g>
+
+<!-- sun rise / noon / set -->
+<g class="vl" data-from="sun" data-until="sun"><g transform="translate(110 560) scale(.55)"><g data-prop="sun"></g></g></g>
+<g class="vl" data-from="sun" data-until="sun" data-delay="3"><g transform="translate(640 140) scale(.55)"><g data-prop="sun"></g></g></g>
+<g class="vl" data-from="sun" data-until="sun" data-delay="6"><g transform="translate(1170 560) scale(.55)"><g data-prop="sun"></g></g></g>
+
+<!-- moon too -->
+<g class="vl sky-moon" data-from="moon-too" data-until="moon-too"><g transform="translate(330 250) rotate(-20) scale(.7)"><g data-prop="moon" data-label="120"></g></g></g>
+
+<!-- later: same time, three days -->
+<g class="vl" data-from="later" data-until="quarter"><g transform="translate(1170 560) scale(.55)"><g data-prop="sun"></g></g></g>
+<g class="vl sky-moon" data-from="later" data-until="later"><g transform="translate(766 152) rotate(45.3) scale(.55)"><g data-prop="moon" data-label="76"></g></g></g>
+<g class="vl sky-moon" data-from="later" data-until="later" data-delay="3"><g transform="translate(656 140) rotate(39.3) scale(.55)"><g data-prop="moon" data-label="88"></g></g></g>
+<g class="vl sky-moon" data-from="later" data-until="later" data-delay="6"><g transform="translate(543 147) rotate(33.4) scale(.55)"><g data-prop="moon" data-label="101"></g></g></g>
+<text class="vl label light small" data-from="later" data-until="later" x="766" y="232" text-anchor="middle" fill="#172033">初七</text>
+<text class="vl label light small" data-from="later" data-until="later" data-delay="3" x="656" y="232" text-anchor="middle" fill="#172033">初八</text>
+<text class="vl label light small" data-from="later" data-until="later" data-delay="6" x="543" y="232" text-anchor="middle" fill="#172033">初九</text>
+<g class="vl" data-from="later" data-until="later" data-delay="7.5">
+<path d="M800,285 H510" stroke="#fff1a8" stroke-width="7" stroke-linecap="round" marker-end="url(#m3-arrow)"/>
+<text class="label mid" x="655" y="345" text-anchor="middle" fill="#fff1a8">一天比一天靠东</text>
+</g>
+<text class="vl label mid" data-from="later" data-until="later" x="60" y="100" fill="#fff1a8">每天晚升起约 50 分钟</text>
+
+<!-- crescent: 初三 at sunset -->
+<g class="vl sky-moon" data-from="crescent" data-until="crescent"><g transform="translate(1110 366) rotate(72.8) scale(.85)"><g data-prop="moon" data-label="40"></g></g></g>
+<text class="vl label mid" data-from="crescent" data-until="crescent" data-delay="2" x="1080" y="290" text-anchor="middle" fill="#fff1a8">蛾眉月</text>
+
+<!-- quarter: 初八 at sunset -->
+<g class="vl sky-moon" data-from="quarter" data-until="quarter"><g transform="translate(656 140) rotate(39.3) scale(.7)"><g data-prop="moon" data-label="88"></g></g></g>
+<text class="vl label mid" data-from="quarter" data-until="quarter" data-delay="2" x="656" y="250" text-anchor="middle" fill="#fff1a8">上弦月</text>
+
+<!-- full: 十五 -->
+<g class="vl" data-from="full" data-until="ask"><g transform="translate(1170 560) scale(.55)"><g data-prop="sun"></g></g></g>
+<g class="vl sky-moon" data-from="full" data-until="full"><g transform="translate(113 514) scale(.7)"><g data-prop="moon" data-label="176"></g></g></g>
+<text class="vl label mid" data-from="full" data-until="full" data-delay="1.5" x="80" y="440" fill="#fff1a8">满月升起</text>
+<g class="vl" data-from="full" data-until="full" data-delay="4"><circle class="ghost-moon" cx="265" cy="263" r="42"/><text class="label small" x="265" y="345" text-anchor="middle" fill="#fff1a8">晚上 9 点</text></g>
+<g class="vl" data-from="full" data-until="full" data-delay="5.5"><circle class="ghost-moon" cx="640" cy="140" r="42"/><text class="label small" x="640" y="222" text-anchor="middle" fill="#fff1a8">半夜 12 点</text></g>
+<g class="vl" data-from="full" data-until="full" data-delay="7"><circle class="ghost-moon" cx="1015" cy="263" r="42"/><text class="label small" x="1015" y="345" text-anchor="middle" fill="#fff1a8">凌晨 3 点</text></g>
+
+<!-- ask: 廿三 at sunset -->
+<text class="vl label" data-from="ask" data-until="ask" x="640" y="370" text-anchor="middle" font-size="220" fill="#fff1a8">?</text>
+
+<!-- morning: 廿三 at sunrise -->
+<g class="vl" data-from="morning" data-until="morning"><g transform="translate(110 560) scale(.55)"><g data-prop="sun"></g></g></g>
+<g class="vl sky-moon" data-from="morning" data-until="morning" data-delay="1"><g transform="translate(686 142) rotate(-36) scale(.7)"><g data-prop="moon" data-label="265"></g></g></g>
+<text class="vl label mid" data-from="morning" data-until="morning" data-delay="2.5" x="686" y="250" text-anchor="middle" fill="#fff1a8">下弦月</text>
+
+<!-- daytime: 廿三 at 9 a.m. -->
+<g class="vl" data-from="daytime" data-until="daytime"><g transform="translate(265 263) scale(.55)"><g data-prop="sun"></g></g></g>
+<g class="vl sky-moon day-moon" data-from="daytime" data-until="daytime" data-delay="1"><g transform="translate(1036 281) rotate(1.3) scale(.7)"><g data-prop="moon" data-label="267"></g></g></g>
+<text class="vl label light mid" data-from="daytime" data-until="daytime" data-delay="2.5" x="1036" y="372" text-anchor="middle" fill="#17365f">白天的月亮</text>
+
+<!-- safety -->
+<g class="vl pop" data-from="safety" data-until="safety">
+<rect x="430" y="110" width="800" height="370" rx="30" fill="#fffaf0" stroke="#b3261e" stroke-width="8"/>
+<g transform="translate(530 225) scale(.4)"><g data-prop="sun"></g></g>
+<circle cx="530" cy="225" r="62" fill="none" stroke="#b3261e" stroke-width="10"/>
+<path d="M486,181 L574,269" stroke="#b3261e" stroke-width="10" stroke-linecap="round"/>
+<text x="620" y="215" font-size="54" font-weight="900" fill="#8c1d18">千万别直视太阳</text>
+<text x="620" y="275" font-size="40" font-weight="800" fill="#172033">戴墨镜也不行</text>
+<path d="M470,330 H1190" stroke="#e3c9c5" stroke-width="4"/>
+<g transform="translate(530 405) scale(.4)"><g data-prop="moon" data-label="180"></g></g>
+<text x="620" y="420" font-size="44" font-weight="850" fill="#172033">夜里看月亮，请大人陪着</text>
+</g>
+
+<!-- new moon at noon -->
+<g class="vl" data-from="new" data-until="new"><g transform="translate(640 140) scale(.55)"><g data-prop="sun"></g></g></g>
+<g class="vl sky-moon day-moon" data-from="new" data-until="new" data-delay="1.5" opacity=".75"><g transform="translate(770 180) scale(.7)"><g data-prop="moon" data-label="4"></g></g></g>
+<text class="vl label light mid" data-from="new" data-until="new" data-delay="3" x="760" y="300" text-anchor="middle" fill="#17365f">新月：被阳光淹没</text>
+
+<!-- model note -->
+<g class="vl pop" data-from="note" data-until="note">
+<rect class="card" x="470" y="160" width="330" height="200" rx="26"/>
+<text class="card-text" x="635" y="235" text-anchor="middle" font-size="44">日出</text>
+<text class="card-text" x="635" y="315" text-anchor="middle" font-size="64">6:00</text>
+<rect class="card" x="880" y="160" width="330" height="200" rx="26"/>
+<text class="card-text" x="1045" y="235" text-anchor="middle" font-size="44">日落</text>
+<text class="card-text" x="1045" y="315" text-anchor="middle" font-size="64">18:00</text>
+<text class="label light mid" x="840" y="440" text-anchor="middle" fill="#17365f">动画里这样画；真实时间随季节变</text>
+</g>
+
+<!-- ground, directions -->
+<path d="M0,560 H1280 V720 H0 Z" fill="#2f5a3a"/>
+<path d="M0,600 C300,585 600,610 900,592 C1060,584 1180,596 1280,590 V720 H0 Z" fill="#284e32"/>
+<g class="vl" data-from="facing" data-until="note" data-focus="facing">
+<text class="dir" x="110" y="652" text-anchor="middle">东</text>
+<text class="dir" x="640" y="652" text-anchor="middle">南</text>
+<text class="dir" x="1170" y="652" text-anchor="middle">西</text>
+</g>
+<g transform="translate(330 712) scale(.62)"><g data-character="owl"></g></g>
+
+<!-- overlays -->
+<g class="vl pop" data-from="intro" data-until="intro">
+<rect x="440" y="180" width="790" height="260" rx="36" fill="#fffaf0" stroke="#17365f" stroke-width="6"/>
+<text x="835" y="300" text-anchor="middle" font-size="96" font-weight="900" fill="#17365f">咕咕的观月计划</text>
+<text x="835" y="390" text-anchor="middle" font-size="48" font-weight="800" fill="#8a5300">月相 · 第 3 课</text>
+</g>
+<g class="vl" data-from="facing" data-until="facing">
+<text class="label light big" x="640" y="110" text-anchor="middle" fill="#17365f">面朝南方站好</text>
+<text class="label light mid" x="70" y="250" fill="#17365f">← 左手边是东</text>
+<text class="label light mid" x="1210" y="250" text-anchor="end" fill="#17365f">右手边是西 →</text>
+</g>
+<g class="vl" data-from="sun" data-until="sun">
+<text class="label light small" x="190" y="500" fill="#17365f">清晨 6:00</text>
+</g>
+<text class="vl label light small" data-from="sun" data-until="sun" data-delay="3" x="640" y="250" text-anchor="middle" fill="#17365f">中午 12:00</text>
+<text class="vl label light small" data-from="sun" data-until="sun" data-delay="6" x="1090" y="500" text-anchor="end" fill="#17365f">傍晚 6:00</text>
+<text class="vl label big" data-from="moon-too" data-until="moon-too" x="760" y="110" text-anchor="middle" fill="#fff1a8">月亮也东升西落</text>
+<text class="vl label" data-from="moon-too" data-until="moon-too" data-delay="3" x="760" y="330" text-anchor="middle" font-size="150" fill="#fff1a8">?</text>
+<text class="vl label mid" data-from="later" data-until="ask" x="1230" y="95" text-anchor="end" fill="#fff1a8">傍晚 6:00</text>
+<text class="vl label mid" data-from="morning" data-until="morning" x="1230" y="95" text-anchor="end" fill="#fff1a8">清晨 6:00</text>
+<text class="vl label light mid" data-from="daytime" data-until="daytime" x="1230" y="95" text-anchor="end" fill="#17365f">上午 9:00</text>
+<g class="vl" data-from="crescent" data-until="crescent"><g transform="translate(150 150) scale(.8)"><g data-prop="calendar" data-label="初三"></g></g></g>
+<g class="vl" data-from="quarter" data-until="quarter"><g transform="translate(150 150) scale(.8)"><g data-prop="calendar" data-label="初八"></g></g></g>
+<g class="vl" data-from="full" data-until="full"><g transform="translate(150 150) scale(.8)"><g data-prop="calendar" data-label="十五"></g></g></g>
+<g class="vl" data-from="ask" data-until="morning"><g transform="translate(150 150) scale(.8)"><g data-prop="calendar" data-label="廿三"></g></g></g>
+<g class="vl" data-from="new" data-until="new"><g transform="translate(150 150) scale(.8)"><g data-prop="calendar" data-label="初一"></g></g></g>
+
+<!-- recap -->
+<g class="vl rise" data-from="recap" data-until="recap" data-delay=".3">
+<rect class="card" x="450" y="40" width="790" height="110" rx="22"/>
+<g transform="translate(515 95) scale(.45)"><g data-prop="moon" data-label="60"></g></g>
+<text class="card-text" x="580" y="112" font-size="44">前半个月：放学后的傍晚看</text>
+</g>
+<g class="vl rise" data-from="recap" data-until="recap" data-delay="2.6">
+<rect class="card" x="450" y="170" width="790" height="110" rx="22"/>
+<g transform="translate(515 225) scale(.45)"><g data-prop="moon" data-label="180"></g></g>
+<text class="card-text" x="580" y="242" font-size="44">十五前后：天黑后整夜都在</text>
+</g>
+<g class="vl rise" data-from="recap" data-until="recap" data-delay="5">
+<rect class="card" x="450" y="300" width="790" height="110" rx="22"/>
+<g transform="translate(515 355) scale(.45)"><g data-prop="moon" data-label="270"></g></g>
+<text class="card-text" x="580" y="372" font-size="44">后半个月：上学前的清晨看</text>
+</g>
+<g class="vl rise" data-from="recap" data-until="recap" data-delay="7.4">
+<rect class="card" x="450" y="430" width="790" height="110" rx="22"/>
+<g transform="translate(515 485) scale(.45)"><g data-prop="moon" data-label="0"></g></g>
+<text class="card-text" x="580" y="502" font-size="44">初一前后：几乎看不到</text>
+</g>
+</svg>
+<button class="video-start" type="button" data-video-start aria-label="播放动画视频"><span>▶ 播放动画视频</span></button>
+</div>
+<p class="video-caption" data-video-caption aria-live="polite"></p>
+<div class="video-prompt" data-video-prompt="evening-23" hidden>
+<article class="quiz-card" data-quiz data-quiz-id="video-evening-23" data-checkpoint data-checkpoint-id="video-evening-23">
+<p class="quiz-prompt">视频暂停了：农历廿三，放学后的傍晚能看到月亮吗？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！廿三前后是下弦月，它半夜才从东边升起，傍晚还在地平线下面，要等到清晨去看。">不能，要等到清晨看</button>
+<button class="choice" type="button" data-choice data-hint="傍晚高挂在南边的是初八前后的上弦月。廿三已经是后半个月，月亮每天都晚升起一些，傍晚它升起来了吗？">能，在南边高高挂着</button>
+<button class="choice" type="button" data-choice data-hint="傍晚西边低处的是初三前后的蛾眉月。廿三是后半个月，月亮要很晚才升起。">能，在西边天空低处</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+<button class="primary-button spaced-top" type="button" data-video-continue hidden>继续播放 ▶</button>
+</article>
+</div>
+<div class="video-controls">
+<button class="primary-button" type="button" data-video-play>▶ 播放</button>
+<button class="secondary-button" type="button" data-video-prev>◀ 上一幕</button>
+<button class="secondary-button" type="button" data-video-next>下一幕 ▶</button>
+<input type="range" min="0" max="135" step="0.1" value="0" data-video-seek aria-label="视频进度">
+<span class="video-time" data-video-time>0:00 / 2:15</span>
+<label>速度 <select data-video-speed><option value="0.75">慢一点</option><option value="1" selected>正常</option><option value="1.25">快一点</option></select></label>
+<button class="secondary-button" type="button" data-video-voice aria-pressed="false">🔈 朗读：关</button>
+</div>
+<p class="video-voice-note" data-video-voice-note></p>
+<ol class="video-chapters" data-video-chapters aria-label="视频章节"></ol>
+<details class="video-transcript">
+<summary>视频文字稿（不看动画也能读）</summary>
+<ol data-video-shots>
+<li data-shot="intro" data-duration="7" data-chapter="开场" data-pose="wave">我是猫头鹰咕咕，夜里最爱看月亮。今天我们一起做一份观月计划！</li>
+<li data-shot="facing" data-duration="8" data-pose="point">先面朝南方站好：左手边是东，右手边是西，前面是南边的天空。</li>
+<li data-shot="sun" data-duration="9" data-chapter="东升西落" data-pose="point">太阳从东边升起，中午在南边最高，傍晚从西边落下。</li>
+<li data-shot="moon-too" data-duration="7" data-pose="think">月亮也是东升西落。可它升起的时间每天都在变，这是怎么回事？</li>
+<li data-shot="later" data-duration="12" data-chapter="每天晚 50 分钟" data-pose="point">月亮每天大约晚升起 50 分钟。同样是傍晚 6 点，初七、初八、初九的月亮一天比一天靠东。</li>
+<li data-shot="crescent" data-duration="10" data-chapter="前半个月看傍晚" data-pose="point">农历初三前后，太阳刚落山，西边低处挂着一弯蛾眉月，亮的一边朝着太阳。</li>
+<li data-shot="quarter" data-duration="8" data-pose="point">农历初八前后，放学后的傍晚，上弦月高高挂在南边天空，半夜才落下。</li>
+<li data-shot="full" data-duration="11" data-chapter="满月整夜" data-pose="cheer">农历十五前后，太阳从西边落下，满月从东边升起，整夜都在天上。</li>
+<li data-shot="ask" data-duration="6" data-pose="think" data-prompt="evening-23">那农历廿三呢？放学后的傍晚，你能看到月亮吗？</li>
+<li data-shot="morning" data-duration="11" data-chapter="后半个月看清晨" data-pose="point">傍晚找不到！廿三前后的下弦月半夜才升起，上学前的清晨高挂在南边。</li>
+<li data-shot="daytime" data-duration="9" data-pose="surprised">太阳升起以后，它还淡淡地挂在西边天空。原来白天也能看到月亮！</li>
+<li data-shot="safety" data-duration="10" data-chapter="安全" data-pose="point">白天找月亮，千万别直视太阳，戴墨镜也不行。夜里看月亮，请大人陪着。</li>
+<li data-shot="new" data-duration="10" data-pose="think">初一前后是新月：它跟太阳同升同落，亮面背着我们，几乎看不到。</li>
+<li data-shot="note" data-duration="6" data-pose="point">动画把日出、日落都画在 6 点。真实的时间会随季节早一点或晚一点。</li>
+<li data-shot="recap" data-duration="11" data-chapter="小结" data-pose="wave">观月计划：前半个月傍晚看，满月整夜都在，后半个月清晨看，新月前后看不到。</li>
+</ol>
+</details>
+</figure>
+<p class="source-note">动画由本页代码实时绘制，不联网、不上传。可以拖动进度条、点章节重看某一段；选“慢一点”或“朗读”（设备有离线中文语音时可用）。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">03 · 讲解</span>
+<h2>月亮每天晚一点，于是换了时间出场</h2>
+<p>月球每天绕地球往东走一小段，所以它每天都比前一天<strong>晚升起大约 50 分钟</strong>。它和太阳“拉开”的距离越来越大，出场的时间就从白天慢慢挪到了夜里：</p>
+<ul>
+<li><strong>前半个月</strong>：月亮跟在太阳后面不远。太阳落山时它还在天上，<strong>放学后的傍晚</strong>去看。</li>
+<li><strong>十五前后</strong>：月亮转到地球的另一边，和太阳正好相对。太阳落下，它就升起，<strong>天黑后整夜都在</strong>。</li>
+<li><strong>后半个月</strong>：月亮要到深夜甚至半夜才升起，<strong>上学前的清晨</strong>去看。太阳升起后，它常常还淡淡地挂在西边天空。</li>
+<li><strong>初一前后</strong>：月亮和太阳同升同落，被阳光淹没，亮面又背着我们，<strong>几乎看不到</strong>。为什么亮面背着我们，见<a href="0002-half-always-lit.html">第 2 课</a>。</li>
+</ul>
+<p>下表写的是“前后”，因为每个月都差一点：比如 2026 年 10 月 10 日是农历九月初一；这个月的上弦月在初十凌晨，最圆的满月在十七中午。所以“初八”“十五”只是大约。</p>
+<div class="table-wrap">
+<table class="number-table when-table">
+<caption class="sr-only">农历日期、月相和什么时候好找</caption>
+<thead><tr><th scope="col">农历日期（前后）</th><th scope="col">月相</th><th scope="col">什么时候好找</th><th scope="col">在哪边（拓展）</th></tr></thead>
+<tbody>
+<tr><td>初一</td><td><span class="moon-icon" data-moon="0"></span><br>新月</td><td>几乎看不到</td><td>和太阳在一起</td></tr>
+<tr><td>初二–初六</td><td><span class="moon-icon" data-moon="45"></span><br>蛾眉月</td><td>放学后的傍晚，不久就落下</td><td>西边低处</td></tr>
+<tr><td>初八前后</td><td><span class="moon-icon" data-moon="90"></span><br>上弦月</td><td>下午到上半夜，傍晚最好找</td><td>傍晚在南边高处</td></tr>
+<tr><td>初十–十四</td><td><span class="moon-icon" data-moon="135"></span><br>凸月（越来越圆）</td><td>傍晚到后半夜</td><td>傍晚在东边</td></tr>
+<tr><td>十五、十六前后</td><td><span class="moon-icon" data-moon="180"></span><br>满月</td><td>天黑后整夜都在</td><td>傍晚从东边升起</td></tr>
+<tr><td>十八–廿一</td><td><span class="moon-icon" data-moon="225"></span><br>凸月（越来越缺）</td><td>晚上较晚升起，到清晨</td><td>清晨在西边</td></tr>
+<tr><td>廿三前后</td><td><span class="moon-icon" data-moon="270"></span><br>下弦月</td><td>半夜升起，上学前的清晨好找</td><td>清晨在南边高处</td></tr>
+<tr><td>廿五–廿九</td><td><span class="moon-icon" data-moon="315"></span><br>残月</td><td>上学前的清晨，太阳出来前</td><td>东边低处</td></tr>
+</tbody>
+</table>
+</div>
+<p class="callout"><strong>白天也能看到月亮：</strong>只要它不是新月或满月，又刚好在天上，白天就可能看到淡淡的月牙、半月或凸月。比如下弦月前后，上午常挂在西边天空。白天找月亮时，<strong>千万别直视太阳</strong>。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">04 · 天空时钟</span>
+<h2>选日期、拨时间，看月亮在不在天上</h2>
+<p>面朝南方：左边是东，右边是西。先选农历日期，再按“傍晚”“清晨”看一看。<strong>任务：</strong>至少查 4 次，傍晚和清晨都要查，比如初四、初八、十五、廿三。</p>
+<div class="sky-lab" data-sky-lab data-checkpoint data-checkpoint-id="sky-lab">
+<svg data-sky-svg role="img" aria-label="天空时钟：面朝南方看天空"></svg>
+<div class="lab-row"><label for="sky-day">农历日期：<output data-sky-day-label for="sky-day"></output></label>
+<input id="sky-day" type="range" min="1" max="30" step="1" value="4" data-sky-day>
+</div>
+<div class="lab-row"><label for="sky-time">时间：<output data-sky-time-label for="sky-time"></output></label>
+<input id="sky-time" type="range" min="0" max="23.5" step="0.5" value="18" data-sky-time>
+</div>
+<div class="sky-quick">
+<button class="secondary-button" type="button" data-sky-at="18">傍晚 6 点（放学后）</button>
+<button class="secondary-button" type="button" data-sky-at="6">清晨 6 点（上学前）</button>
+<button class="secondary-button" type="button" data-sky-at="21">晚上 9 点</button>
+<button class="secondary-button" type="button" data-sky-at="0">半夜 12 点</button>
+<button class="secondary-button" type="button" data-sky-today>用今天的日期</button>
+</div>
+<p class="lab-readout" data-sky-readout aria-live="polite"></p>
+<p class="feedback" data-lab-feedback aria-live="polite"></p>
+<button class="primary-button" type="button" data-complete-checkpoint disabled aria-disabled="true" data-completed-label="天空时钟已完成 ✓">完成天空时钟</button>
+</div>
+<p class="source-note">模型把日出、日落都定在 6 点，真实时间随季节变化；“用今天的日期”按这台设备的日期估算农历，不联网。轨道和天空都不按比例画。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">05 · 今晚的月亮与观察计划</span>
+<h2>把今天学的用到真实的天空</h2>
+<div class="tonight" data-tonight hidden><span data-tonight-moon></span><p data-tonight-text></p></div>
+<div class="safety spaced-top" role="note">
+<p><strong>安全第一：</strong></p>
+<ul>
+<li>夜里看月亮，一定请大人陪着，不独自外出。</li>
+<li>白天找月亮，<strong>绝不直视太阳</strong>，戴墨镜也不行。</li>
+<li>走路时看脚下和车辆，停下来再抬头；在阳台或窗边看，不探身、不攀爬。</li>
+</ul>
+</div>
+<h3 class="spaced-top">一周观月计划（四步）</h3>
+<ol class="step-list">
+<li><strong>查日历</strong>：找到今天的农历日期。</li>
+<li><strong>先预测</strong>：今天是什么月相？该在放学后的傍晚，还是明天上学前的清晨看？</li>
+<li><strong>去看看</strong>：到了时间，和大人一起找月亮。</li>
+<li><strong>画下来</strong>：把看到的形状画进记录表，再和预测比一比。</li>
+</ol>
+<p>阴天、下雨看不到月亮，记一个“阴天”就好，不算失败。观察记录表在<a href="../printable/0003-when-to-find-the-moon.html">纸笔版第 2 页</a>，可以打印出来贴在书桌旁。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">06 · 找一找</span>
+<h2>什么时候去看？</h2>
+<div class="quiz-list">
+<article class="quiz-card" data-quiz data-quiz-id="when-full" data-checkpoint data-checkpoint-id="quiz-when-full">
+<p class="quiz-prompt">1. 满月什么时候能看到？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="清晨满月正要从西边落下，可它前一晚整夜都在天上。只在清晨，太少了。">只在上学前清晨</button>
+<button class="choice" type="button" data-choice data-hint="中午太阳在南边最高，满月却和太阳正好相对，这时它在地平线下面。">只在中午最亮时</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！满月和太阳正好相对：太阳落山前后它从东边升起，天黑后整夜都在天上。">太阳落山后整夜</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+<article class="quiz-card" data-quiz data-quiz-id="when-25" data-checkpoint data-checkpoint-id="quiz-when-25">
+<p class="quiz-prompt">2. 农历廿五想看月亮，最好什么时候去看？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="廿五是后半个月，月亮要到后半夜才升起，晚上九点它还在地平线下面。">晚饭后九点钟</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！廿五前后是残月，天快亮时它在东边天空，上学前的清晨去看。">上学前的清晨</button>
+<button class="choice" type="button" data-choice data-hint="放学后的傍晚是前半个月看月亮的时间。廿五已经是后半个月了。">放学后的傍晚</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+<article class="quiz-card" data-quiz data-quiz-id="why-new" data-checkpoint data-checkpoint-id="quiz-why-new">
+<p class="quiz-prompt">3. 为什么农历初一前后几乎看不到月亮？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！新月和太阳一起升起、一起落下，白天被阳光淹没，亮的一面又背着我们，所以几乎看不到。">跟太阳同升同落</button>
+<button class="choice" type="button" data-choice data-hint="月球钻进地球的影子是月食，只在满月前后偶尔发生。初一前后，月亮和太阳在同一边。">被地球影子挡住</button>
+<button class="choice" type="button" data-choice data-hint="月球一直在绕地球转，从不休息。想一想：初一时它在天上离太阳有多近？">月亮那几天休息</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+</div>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">07 · 练习</span>
+<h2>查日期，定时间</h2>
+<p>每题选一个最合适的时间。可以先想月相，再想它什么时候在天上；也可以用上面的天空时钟核对。</p>
+<form data-mastery-stage data-milestone-id="practice" data-checkpoint data-checkpoint-id="practice" data-hint="先判断是前半个月、十五前后、后半个月，还是初一前后，再对应时间：前半个月傍晚，十五前后整夜，后半个月清晨，初一前后几乎看不到。" data-success="这组都对了！接下来合上提示，用新题独立检查。">
+<div class="exercise"><label for="practice-1">1. 农历初四，想看月亮：
+<select id="practice-1" name="practice-1" required data-correct="放学后的傍晚"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
+<div class="exercise"><label for="practice-2">2. 农历廿六，想看月亮：
+<select id="practice-2" name="practice-2" required data-correct="上学前的清晨"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
+<div class="exercise"><label for="practice-3">3. 农历十五，想看月亮：
+<select id="practice-3" name="practice-3" required data-correct="天黑后整夜都在"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
+<div class="exercise"><label for="practice-4">4. 农历初一，想看月亮：
+<select id="practice-4" name="practice-4" required data-correct="几乎看不到"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
+<button class="primary-button" type="submit">检查练习</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<details>
+<summary>再给一个线索</summary>
+<p>月亮每天晚升起约 50 分钟。月初它跟在太阳后面不远，傍晚还在天上；到了月底，它半夜以后才升起，只能清晨看。</p>
+</details>
+<details>
+<summary>做完后核对思路</summary>
+<p>四题依次为：放学后的傍晚（初四是蛾眉月）、上学前的清晨（廿六是残月）、天黑后整夜都在（十五前后是满月）、几乎看不到（初一是新月）。</p>
+</details>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">08 · 独立检查</span>
+<h2>合上提示，再试新题</h2>
+<p>不看上面的讲解和天空时钟，自己判断。</p>
+<form data-mastery-stage data-milestone-id="independent" data-checkpoint data-checkpoint-id="independent" data-hint="有错的题已经标出。先说出这一天大约是什么月相，再想它是前半个月、十五前后、后半个月，还是初一前后。" data-success="四题都对！最后，把理由讲给陪学者听。">
+<div class="exercise"><label for="independent-1">1. 农历初六，想看月亮：
+<select id="independent-1" name="independent-1" required data-correct="放学后的傍晚"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
+<div class="exercise"><label for="independent-2">2. 新月那一天，想看月亮：
+<select id="independent-2" name="independent-2" required data-correct="几乎看不到"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
+<div class="exercise"><label for="independent-3">3. 农历廿三，想看月亮：
+<select id="independent-3" name="independent-3" required data-correct="上学前的清晨"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
+<div class="exercise"><label for="independent-4">4. 农历十六，想看月亮：
+<select id="independent-4" name="independent-4" required data-correct="天黑后整夜都在"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
+<button class="primary-button" type="submit">检查独立题</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<form class="retrieval-form spaced-top" data-teachback-form data-milestone-id="explanation" data-checkpoint data-checkpoint-id="explanation" data-hint="请先让孩子不看提示讲一遍，再由陪学者按下面两点核对后勾选。" data-success="讲清楚了！三课都完成了。隔两三天，用三份纸笔版的 C 区再检查一次。">
+<div class="callout"><strong>讲给陪学者听：</strong>农历廿三想看月亮，应该什么时候去？为什么放学后的傍晚看不到？</div>
+<label class="check-row"><input type="checkbox" name="explained">孩子独立讲到两点：① 廿三前后是下弦月，要在上学前的清晨看（太阳升起后它还可能挂在西边天空）；② 月亮每天晚升起约 50 分钟，到了后半个月，它半夜才升起，傍晚还在地平线下面。</label>
+<button class="primary-button" type="submit">陪学者确认</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<details>
+<summary>做完后核对思路</summary>
+<p>四题依次为：放学后的傍晚（初六是蛾眉月）、几乎看不到（新月和太阳同升同落）、上学前的清晨（廿三是下弦月）、天黑后整夜都在（十六是满月前后）。</p>
+</details>
+<div class="callout spaced-top"><strong>拓展（不计入掌握检查）：月亮在哪边？</strong>面朝南方，傍晚的蛾眉月在西边低处，上弦月在南边高处，满月刚从东边升起；清晨的下弦月在南边高处，残月在东边低处。去观察时可以把方向也记下来。</div>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">09 · 反馈与下一步</span>
+<h2>错在哪里，就回到哪里</h2>
+<ul>
+<li><strong>傍晚和清晨弄反了</strong>：回看视频“前半个月看傍晚”“后半个月看清晨”两段，记住“月初傍晚，月底清晨”。</li>
+<li><strong>忘了满月整夜都在</strong>：回看视频“满月整夜”一段，或在天空时钟里选十五，拨到晚上 9 点和半夜 12 点。</li>
+<li><strong>以为新月也能看到</strong>：回看视频“安全”之后的一段；为什么亮面背着我们，见<a href="0002-half-always-lit.html">第 2 课</a>。</li>
+<li><strong>农历日期对应的月相记不清</strong>：先回<a href="0001-moon-shape-diary.html">第 1 课</a>的月相表，再回来判断时间。</li>
+</ul>
+<p>四个独立题全对并且讲清理由，三课就都学完了。隔两三天，不看提示完成三份纸笔版的 C 区：<a href="../printable/0001-moon-shape-diary.html">第 1 课</a>、<a href="../printable/0002-half-always-lit.html">第 2 课</a>、<a href="../printable/0003-when-to-find-the-moon.html">第 3 课</a>；整个单元的掌握标准见<a href="../reference/moon-phases-quick-reference.html#mastery">速查卡</a>。真实观察看天气，作为推荐练习，不作为掌握门槛。</p>
+<p>有哪里没看懂，回来告诉教学助手：“我在第 3 课，卡在……”，也可以把你的观察记录拍下来一起讨论。</p>
+<p class="source-note">推荐观看：国家中小学智慧教育平台<a href="https://basic.smartedu.cn/syncClassroom/classActivity?activityId=8bb5d63d-269b-436f-89bd-5e0b346246f4">“月相变化的规律”同步课（教科版三年级下册，旧版）</a>，微课约 14 分钟，可能需要登录；看完和陪学者定一个本周的观月计划。</p>
+<p class="source-note">陪学者选读：紫金山天文台<a href="http://www.pmo.cas.cn/xwdt2019/kpdt2019/202203/t20220317_6399980.html">《历书科普问题解答》</a>（初一是朔所在的日子，望多在十六、有时十七；上弦日太阳落山后半个月亮高挂天空，望日太阳西落时满月从东方升起，下弦日约午夜从东方升起）；中国数字科技馆<a href="https://www.cdstm.cn/museum/zphc/kxly/201903/t20190327_911543.html">月相科普</a>（满月整夜可见，下弦月只在下半夜出现，残月日出前不久从东方升起）；<a href="https://svs.gsfc.nasa.gov/5587/">NASA SVS 5587</a>（各月相在哪边可见，本课方位拓展的依据）；<a href="https://openstax.org/books/astronomy-2e/pages/4-5-phases-and-motions-of-the-moon">OpenStax Astronomy 2e §4.5</a>（月出每天平均推迟约 50 分钟、各月相出没时间）；<a href="https://www.rmg.co.uk/sites/default/files/import/media/pdf/KS2_Daytime_Moon_Viewing.pdf">Royal Museums Greenwich · 白天观察月亮</a>（观察前先提醒不直视太阳）；<a href="https://science.nasa.gov/eclipses/safety/">NASA · 观看太阳的安全</a>（普通墨镜再暗也不能用来看太阳）。核验日期：2026-10-10；动画、情境和题目为原创，英文材料不要求孩子阅读。</p>
+</section>
+</main>
+<footer class="lesson-footer">
+<p>本机只保存活动完成标记；不上传作答。先会解释，再算学完。</p><a href="../printable/0003-when-to-find-the-moon.html">打开纸笔版</a> · <a href="../reference/moon-phases-quick-reference.html">查看速查卡</a> · <a href="0001-moon-shape-diary.html">回到第 1 课</a>
+</footer>
+<div class="action-row screen-only">
+<button type="button" class="secondary-button" data-reset-progress>清除本课活动进度</button>
+</div>
+</div>
+</body>
+</html>
