@@ -56,7 +56,7 @@
 | 语文 | 阅读、表达、词句理解、写作与文化积累 |
 | 数学 | 数感、运算、空间、逻辑、问题解决与数学表达 |
 | 英语 | 听说读写、自然语境、词汇语法与实际沟通 |
-| 物理 | 从运动、力、声、光、热、电等生活现象建立初步模型 |
+| 物理 | 从运动、力、声、光、热、电及日月观察等生活现象建立初步模型 |
 | 化学 | 从材料、变化、混合与微观想象建立初步概念 |
 | 生物 | 从生命现象、人体、动植物、生态与观察实践建立理解 |
 
@@ -123,6 +123,8 @@ skills-lock.json           # 第三方 Skills 的来源与内容锁定
 - Claude 从 [`CLAUDE.md`](./CLAUDE.md) 进入，并以 `AGENTS.md` 为唯一规则源。
 
 ## 当前状态
+
+新增首个物理知识单元 [“月相：月亮为什么会变样”](./content/physics/moon-phases/unit.md)，包含三节短课：[月亮的形状日记](./content/physics/moon-phases/lessons/0001-moon-shape-diary.html)、[一半总是亮的](./content/physics/moon-phases/lessons/0002-half-always-lit.html)、[今晚去哪找月亮](./content/physics/moon-phases/lessons/0003-when-to-find-the-moon.html)，以及[速查卡](./content/physics/moon-phases/reference/moon-phases-quick-reference.html)和各课独立打印材料。每课含一段约 2 分钟的卡通动画视频（猫头鹰咕咕），复用多位数乘法单元的动画组件；另有俯视轨道模拟器、天空时钟和按设备日期离线估算的“今晚的月亮”。课程齐备不表示学习者已经掌握。
 
 新增数学知识单元 [“多位数乘多位数”](./content/math/multi-digit-multiplication/unit.md)，包含三节短课：[拆开乘，再相加](./content/math/multi-digit-multiplication/lessons/0001-two-digit-no-carry.html)、[进位不慌](./content/math/multi-digit-multiplication/lessons/0002-two-digit-with-carry.html)、[三位数乘两位数](./content/math/multi-digit-multiplication/lessons/0003-three-digit-by-two-digit.html)，以及[速查卡](./content/math/multi-digit-multiplication/reference/multiplication-quick-reference.html)和各课独立打印材料。每课含一段约 2 分钟的卡通动画视频，由页面代码绘制，带字幕、章节、文字稿和中途暂停预测题；课程齐备不表示学习者已经掌握。
 
