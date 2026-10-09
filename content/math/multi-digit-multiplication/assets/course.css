@@ -1,0 +1,75 @@
+@import url("../../arithmetic-parentheses/assets/course.css");
+@import url("cartoon-video.css");
+
+:root { --primary: #2f6b3f; --primary-dark: #22502f; --accent: #a14d12; --focus: #22502f; --surface-soft: #eef6ea; }
+body { background: #f6f3e8; }
+.lesson-header { background: linear-gradient(140deg, #1f4a2c, #2f6b3f 62%, #6f8f3a); }
+
+/* Vertical multiplication (竖式). Each .vrow repeats the same fixed columns:
+   sign, --digits digit cells, then an optional note. */
+.vcalc {
+  --digits: 3;
+  display: inline-block;
+  margin: .5rem 0;
+  padding: .45rem .9rem;
+  font: 750 clamp(1.45rem, 5vw, 2rem)/1.3 ui-monospace, "SFMono-Regular", Consolas, "Courier New", monospace;
+  color: var(--ink);
+  background: #fbfaf3;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.vrow { display: grid; grid-template-columns: 1.1em repeat(var(--digits), 1em) auto; column-gap: .12em; align-items: center; }
+.vrow > span { text-align: center; }
+.vline { display: block; width: calc(1.1em + var(--digits) * 1.12em); margin: .12em 0; border-top: 3px solid currentColor; }
+.vcalc .note {
+  padding-left: .5em;
+  color: var(--muted);
+  font: 700 clamp(.85rem, 2.6vw, 1rem)/1.3 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  text-align: left;
+  white-space: nowrap;
+}
+.vcalc .ghost { color: #8a93a6; outline: 2px dashed #8a93a6; outline-offset: -2px; border-radius: 6px; }
+.vcalc .carry { display: inline-block; font-size: .5em; color: var(--accent); vertical-align: top; }
+.vcalc .struck { text-decoration: line-through 2px; }
+.vrow.ones > span:not(.note) { color: #a35400; }
+.vrow.tens > span:not(.note) { color: #1f5fa8; }
+.vrow.hundreds > span:not(.note) { color: #6b3fa0; }
+.vrow.wrong > span:not(.note) { color: var(--error); }
+.vcalc-row { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; align-items: flex-start; }
+.choice .vcalc { margin: 0; font-size: clamp(1.15rem, 4vw, 1.45rem); background: transparent; border: 0; }
+.choice.is-correct .vcalc, .choice.is-wrong .vcalc { color: inherit; }
+.choice.is-correct .vcalc .vrow > span, .choice.is-wrong .vcalc .vrow > span { color: inherit; }
+.choice-grid.three { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); }
+.step-list li + li { margin-top: .4rem; }
+.mini-label { display: block; color: var(--muted); font-size: .85rem; font-weight: 700; }
+
+/* Paper: square grid for writing 竖式 by hand. */
+.square-grid {
+  --cols: 6;
+  --rows: 7;
+  width: calc(var(--cols) * 9mm + 1px);
+  height: calc(var(--rows) * 9mm + 1px);
+  margin: .4rem 0 .8rem;
+  background-image: linear-gradient(#9aa0aa 1px, transparent 1px), linear-gradient(90deg, #9aa0aa 1px, transparent 1px);
+  background-size: 9mm 9mm;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.paper-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: .4rem 1.2rem; }
+.paper-grid.three { grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); }
+.storyboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: .6rem; padding: 0; list-style: none; counter-reset: frame; }
+.storyboard li { position: relative; padding: .7rem .8rem .7rem 2.6rem; border: 1px solid var(--line); border-radius: 10px; background: #fff; counter-increment: frame; }
+.storyboard li::before { content: counter(frame); position: absolute; left: .7rem; top: .65rem; display: grid; place-items: center; width: 1.4rem; height: 1.4rem; border: 2px solid currentColor; border-radius: 50%; font-weight: 800; font-size: .85rem; }
+
+@media print {
+  body { background: #fff; }
+  .paper-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .vcalc { font-size: 15pt; padding: .15rem .6rem; margin: .25rem 0; background: #fff; border-color: #555; }
+  .vcalc-row { flex-wrap: nowrap; }
+  .number-table th, .number-table td { padding: .2rem .45rem; }
+  .vcalc-row > :not(.vcalc) { flex: 1; }
+  .vrow > span:not(.note), .vcalc .note, .vcalc .carry { color: #000 !important; }
+  .vcalc .ghost { color: #555; outline-color: #555; }
+  .storyboard li { border-color: #555; break-inside: avoid; }
+  .paper-grid > * { break-inside: avoid; }
+}
