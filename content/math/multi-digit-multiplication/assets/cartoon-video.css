@@ -1,0 +1,125 @@
+/* Cartoon video player (pairs with cartoon-video.js). */
+.cartoon-video { margin: 1rem 0 0; }
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #dff3ff;
+  border: 3px solid #23402f;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.video-frame:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.video-stage { display: block; width: 100%; height: 100%; font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif; }
+.video-start {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 0;
+  color: #fff;
+  background: rgb(23 32 51 / 30%);
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+.video-start span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: .6em 1.3em;
+  font-size: clamp(1rem, 3.6vw, 1.45rem);
+  font-weight: 850;
+  background: var(--primary);
+  border: 3px solid #fff;
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgb(0 0 0 / 25%);
+}
+.video-start:hover span { background: var(--primary-dark); }
+.video-caption {
+  min-height: 3.4em;
+  margin: .6rem 0 0;
+  padding: .7rem 1rem;
+  color: #fff;
+  background: #172033;
+  border-radius: 12px;
+  font-size: clamp(1.02rem, 2.8vw, 1.22rem);
+  font-weight: 650;
+  line-height: 1.6;
+}
+.video-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .6rem; }
+.video-controls .secondary-button, .video-controls .primary-button { min-height: 44px; padding: .45rem .85rem; }
+.video-controls input[type="range"] { flex: 1 1 11rem; min-width: 0; min-height: 44px; accent-color: var(--primary); }
+.video-controls select { min-height: 44px; padding: .3rem .5rem; border: 2px solid var(--line); border-radius: .6rem; background: #fff; }
+.video-controls label { display: inline-flex; align-items: center; gap: .4rem; font-weight: 700; }
+.video-controls button:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+.video-time { min-width: 6.6em; font-variant-numeric: tabular-nums; font-weight: 700; }
+.video-voice-note { margin: .35rem 0 0; color: var(--muted); font-size: .9rem; }
+.video-chapters { display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; margin: .6rem 0 0; list-style: none; }
+.video-chapters button {
+  min-height: 44px;
+  padding: .35rem .85rem;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.video-chapters button[aria-current="true"] { border-color: var(--primary); background: var(--surface-soft); }
+.video-prompt { margin-top: .6rem; }
+.video-prompt .choice-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); }
+.video-transcript ol { padding-left: 1.4rem; }
+.video-transcript li + li { margin-top: .35rem; }
+.cartoon-video:not(.is-ready) :is(.video-frame, .video-controls, .video-chapters, .video-caption, .video-voice-note) { display: none; }
+
+/* Stage layers: hidden until the timeline turns them on. */
+.vstage .vl { opacity: 0; transition: opacity .45s ease, transform .6s cubic-bezier(.3, 1.35, .5, 1); }
+.vstage .vl.is-on { opacity: 1; }
+.vstage .vl.pop { transform: scale(.35); transform-box: fill-box; transform-origin: center; }
+.vstage .vl.rise { transform: translateY(40px); }
+.vstage .vl.pop.is-on, .vstage .vl.rise.is-on { transform: none; }
+.vstage .is-focus { animation: v-glow .8s ease-in-out infinite alternate; }
+.vstage .fall { animation: v-fall 2.8s linear infinite; }
+.vstage .hop { animation: v-hop .9s ease-in-out infinite alternate; }
+@keyframes v-glow { from { filter: drop-shadow(0 0 0 #ffcf4a); } to { filter: drop-shadow(0 0 14px #ffcf4a); } }
+@keyframes v-fall { from { transform: translateY(-120px) rotate(0); } to { transform: translateY(820px) rotate(320deg); } }
+@keyframes v-hop { to { transform: translateY(-14px); } }
+
+/* Squirrel: animated parts pivot on their local origin. */
+.vstage .sq { animation: sq-bob 1.8s ease-in-out infinite alternate; }
+.vstage .sq-eye { animation: sq-blink 4.2s infinite; }
+.vstage .sq-tail { animation: sq-tail 2.4s ease-in-out infinite alternate; }
+.vstage .sq-head, .vstage .sq-arm-front, .vstage .sq-arm-back { transition: transform .45s ease; }
+.vstage .sq-mouth-open { transform: scaleY(0); }
+.vstage .sq-exclaim, .vstage .sq-question { opacity: 0; transition: opacity .3s; }
+.is-playing .vstage .sq-mouth-open { animation: sq-talk .3s ease-in-out infinite alternate; }
+.vstage[data-pose="wave"] .sq-arm-front { animation: sq-wave .55s ease-in-out infinite alternate; }
+.vstage[data-pose="point"] .sq-arm-front { transform: rotate(-78deg); }
+.vstage[data-pose="think"] .sq-head { transform: rotate(-7deg); }
+.vstage[data-pose="think"] .sq-question,
+.vstage[data-pose="surprised"] .sq-exclaim { opacity: 1; }
+.vstage[data-pose="surprised"] .sq-eye { animation: none; transform: scale(1.35); }
+.vstage[data-pose="surprised"] .sq-tail { animation: sq-puff .25s ease-in-out infinite alternate; }
+.vstage[data-pose="cheer"] .sq { animation: sq-jump .45s ease-in-out infinite alternate; }
+.vstage[data-pose="cheer"] .sq-arm-front { transform: rotate(-165deg); }
+.vstage[data-pose="cheer"] .sq-arm-back { transform: rotate(150deg); }
+@keyframes sq-bob { to { transform: translateY(-8px); } }
+@keyframes sq-blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
+@keyframes sq-tail { from { transform: rotate(-4deg); } to { transform: rotate(7deg); } }
+@keyframes sq-talk { from { transform: scaleY(.15); } to { transform: scaleY(1); } }
+@keyframes sq-wave { from { transform: rotate(-155deg); } to { transform: rotate(-110deg); } }
+@keyframes sq-puff { from { transform: scale(1.1) rotate(6deg); } to { transform: scale(1.2) rotate(10deg); } }
+@keyframes sq-jump { to { transform: translateY(-28px); } }
+
+.cartoon-video:not(.is-playing) .vstage * { animation-play-state: paused !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .vstage, .vstage * { animation: none !important; transition: none !important; }
+}
+
+@media print {
+  .cartoon-video :is(.video-frame, .video-controls, .video-chapters, .video-caption, .video-voice-note) { display: none !important; }
+}

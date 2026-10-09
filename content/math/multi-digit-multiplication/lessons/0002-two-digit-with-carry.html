@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第2课 · 进位不慌：两位数乘两位数｜知径</title>
+<meta name="description" content="看卡通动画，学会两位数乘两位数中的进位：进位写小、乘完马上加、用过就划掉，并能找出用错进位的地方。提供离线练习与独立打印版。">
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  #m2-stage .chalk { font: 800 88px ui-monospace, Consolas, "Courier New", monospace; fill: #fdfbf3; }
+  #m2-stage .chalk.ones { fill: #ffd36b; }
+  #m2-stage .chalk.tens { fill: #9fd8ff; }
+  #m2-stage .chalk.wrong { fill: #ff8a80; }
+  #m2-stage .chalk.ghost { fill: #b8c2bd; }
+  #m2-stage .carry { font: 800 42px ui-monospace, Consolas, "Courier New", monospace; }
+  #m2-stage .carry.ones { fill: #ffd36b; }
+  #m2-stage .carry.tens { fill: #9fd8ff; }
+  #m2-stage .carry.wrong { fill: #ffb4a8; }
+  #m2-stage .helper { font: 800 38px ui-monospace, Consolas, "Courier New", monospace; }
+  #m2-stage .label { font-weight: 850; paint-order: stroke; stroke: #fffdf6; stroke-width: 10px; stroke-linejoin: round; }
+  #m2-stage .right-sacks { transition: transform .8s cubic-bezier(.3, 1.3, .5, 1); }
+  #m2-stage.past-split .right-sacks { transform: translateX(110px); }
+  #m2-stage[data-shot="row1-a"] .carry-a,
+  #m2-stage[data-shot="row1-b"] .carry-a,
+  #m2-stage[data-shot="row2"] .carry-b { animation: v-hop .45s ease-in-out infinite alternate; }
+</style>
+<script src="../../powers-and-scientific-notation/assets/lesson.js" defer></script>
+<script src="../assets/cartoon-video.js" defer></script>
+</head>
+<body data-lesson-id="multiply-0002" data-lesson-version="1"><a class="skip-link" href="#lesson-main">跳到课程内容</a>
+<div class="lesson-shell">
+<nav class="course-nav" aria-label="单元课程"><a href="0001-two-digit-no-carry.html">01 拆开乘，再相加</a><a href="0002-two-digit-with-carry.html" aria-current="page">02 进位不慌</a><a href="0003-three-digit-by-two-digit.html">03 三位数乘两位数</a><a href="../reference/multiplication-quick-reference.html">速查卡</a>
+</nav>
+<header class="lesson-header">
+<p class="eyebrow">知径 · 多位数乘多位数 · 第 2 / 3 课</p>
+<h1>进位不慌<br>两位数乘两位数</h1>
+<p class="lede">乘出来满十了怎么办？把进位写小、乘完马上加、用过就划掉。今天还要学会发现“用错进位”的地方。</p>
+<div class="lesson-meta"><span class="pill">12–15 分钟</span><span class="pill">核心</span><span class="pill">含 2 分钟动画视频</span>
+</div>
+</header>
+<noscript>
+<p class="callout">互动功能和动画视频需要开启 JavaScript。可以阅读下面的“视频文字稿”，或使用<a href="../printable/0002-two-digit-with-carry.html">独立打印课程</a>完成同样的学习。</p>
+</noscript>
+<div class="progress-wrap screen-only">
+<div class="progress-label"><span data-progress-label>0/7 项互动任务已完成</span><span>活动进度不等于掌握</span>
+</div><progress data-progress max="100" value="0" aria-label="互动任务进度">0%</progress>
+</div>
+<main id="lesson-main">
+<section class="lesson-section"><span class="section-kicker">今天的目标</span>
+<h2>进位写小，马上加，用完划掉</h2>
+<p class="goal-box">你能用竖式算出 47 × 23 这样要进位的两位数乘两位数，并能指出：第二行只加这一行自己的进位，不加第一行留下的进位。</p>
+<p>竖式的三步和第 1 课一样：个位去乘，十位去乘并从十位写起，两行相加。今天多了一件事——管好进位。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">01 · 诊断</span>
+<h2>先热热身</h2>
+<p>前两题是两位数乘一位数的进位，第 3 题来自第 1 课。</p>
+<form data-mastery-stage data-milestone-id="diagnostic" data-checkpoint data-checkpoint-id="diagnostic" data-hint="前两题可以拆开乘：27 × 4 = 20 × 4 + 7 × 4；第 3 题想想第二行是用十位上的 1 去乘，乘出来的是几个十。" data-success="三题都对！一位数乘法的进位你会，第 1 课的“从十位写起”也记得，今天把它们放进同一个竖式里。">
+<div class="exercise"><label for="diagnostic-1">1. 27 × 4 = <input class="blank" id="diagnostic-1" name="diagnostic-1" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="热身题第1空" data-correct="108"></label>
+</div>
+<div class="exercise"><label for="diagnostic-2">2. 19 × 5 = <input class="blank" id="diagnostic-2" name="diagnostic-2" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="热身题第2空" data-correct="95"></label>
+</div>
+<div class="exercise"><label for="diagnostic-3">3. 21 × 13 的竖式里，第二行写的 21 表示 <input class="blank" id="diagnostic-3" name="diagnostic-3" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="热身题第3空" data-correct="210"></label>
+</div>
+<button class="primary-button" type="submit">检查热身题</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<details>
+<summary>最小补救：一位数乘法的进位</summary>
+<p>27 × 4：先算 7 × 4 = 28，写 8，2 个十进上去；再算 2 × 4 = 8，加上进位 2 得 10，写 10。结果 108。用拆开乘核对：20 × 4 + 7 × 4 = 80 + 28 = 108。</p>
+<p>第 3 题不会：十位上的 1 表示 1 个十，第二行算的是 21 × 10 = 210。先回<a href="0001-two-digit-no-carry.html#video">第 1 课的视频</a>看“别错位”一段。</p>
+</details>
+</section>
+
+<section class="lesson-section" id="video"><span class="section-kicker">02 · 动画视频</span>
+<h2>看果果数麻袋（约 2 分钟）</h2>
+<p>边看边想：进位的小数字写在哪里？什么时候加上？用过以后怎么办？视频中途会停下来问你一个问题。</p>
+<figure class="cartoon-video" data-cartoon-video aria-labelledby="video-title">
+<figcaption id="video-title" class="sr-only">动画视频：进位不慌——两位数乘两位数</figcaption>
+<div class="video-frame" data-video-frame tabindex="0" role="group" aria-label="动画画面。按空格键播放或暂停，按左右方向键切换上一幕、下一幕。">
+<svg id="m2-stage" class="video-stage vstage" data-video-stage viewBox="0 0 1280 720" aria-hidden="true" focusable="false">
+<defs>
+<linearGradient id="m2-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe6ff"/><stop offset="1" stop-color="#f1faff"/></linearGradient>
+<marker id="m2-arrow-y" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#ffd36b"/></marker>
+<marker id="m2-arrow-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#9fd8ff"/></marker>
+</defs>
+<rect width="1280" height="720" fill="url(#m2-sky)"/>
+<circle cx="1190" cy="80" r="48" fill="#ffd66b"/>
+<path d="M0,560 C200,500 380,540 640,520 C900,500 1080,540 1280,510 L1280,720 L0,720 Z" fill="#a9d98b"/>
+<path d="M0,640 C260,610 520,650 800,625 C1000,608 1150,630 1280,615 L1280,720 L0,720 Z" fill="#86c06a"/>
+<rect x="18" y="150" width="86" height="570" rx="12" fill="#8a5a33"/>
+<ellipse cx="61" cy="330" rx="24" ry="32" fill="#4a2c17"/>
+<circle cx="40" cy="120" r="100" fill="#4f9a4a"/>
+<circle cx="130" cy="70" r="70" fill="#5fae55"/>
+<g transform="translate(205 690)"><g data-character="squirrel"></g></g>
+
+<g class="vl pop" data-from="intro" data-until="intro">
+<rect x="440" y="160" width="790" height="280" rx="36" fill="#fffaf0" stroke="#7d4a1c" stroke-width="6"/>
+<text x="835" y="285" text-anchor="middle" font-size="104" font-weight="900" fill="#7d3c12">进位不慌</text>
+<text x="835" y="385" text-anchor="middle" font-size="52" font-weight="800" fill="#2f6b3f">两位数乘两位数 · 第 2 课</text>
+</g>
+
+<g class="vl" data-from="ask" data-until="split">
+<g class="left-sacks">
+<g transform="translate(490 290) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(585 290) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(680 290) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(775 290) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(870 290) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(490 370) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(585 370) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(680 370) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(775 370) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(870 370) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(490 450) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(585 450) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(680 450) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(775 450) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(870 450) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(490 530) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(585 530) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(680 530) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(775 530) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(870 530) scale(.7)" data-prop="sack" data-label="36"></g>
+</g>
+<g class="right-sacks">
+<g transform="translate(965 290) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(965 370) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(965 450) scale(.7)" data-prop="sack" data-label="36"></g>
+<g transform="translate(965 530) scale(.7)" data-prop="sack" data-label="36"></g>
+<g class="vl" data-from="split" data-until="split">
+<path d="M920,552 Q920,570 938,570 H992 Q1010,570 1010,552" fill="none" stroke="#7d3c12" stroke-width="6" stroke-linecap="round"/>
+<text class="label" x="965" y="625" text-anchor="middle" font-size="50" fill="#a35400">4 袋</text>
+</g>
+</g>
+<g class="vl" data-from="split" data-until="split">
+<path d="M445,552 Q445,570 465,570 H895 Q915,570 915,552" fill="none" stroke="#7d3c12" stroke-width="6" stroke-linecap="round"/>
+<text class="label" x="680" y="625" text-anchor="middle" font-size="50" fill="#1f5fa8">20 袋</text>
+</g>
+</g>
+
+<text class="vl label" data-from="ask" data-until="ask" x="830" y="175" text-anchor="middle" font-size="80" fill="#172033">36 × 24 = ?</text>
+<g class="vl" data-from="estimate" data-until="estimate">
+<text class="label" x="830" y="92" text-anchor="middle" font-size="40" fill="#536078">30 × 20 = 600，40 × 30 = 1200</text>
+<text class="label" x="830" y="180" text-anchor="middle" font-size="72" fill="#172033">在 600 和 1200 之间</text>
+</g>
+<text class="vl label" data-from="split" data-until="split" x="830" y="175" text-anchor="middle" font-size="80" fill="#172033">24 = 20 + 4</text>
+
+<g class="vl" data-from="board" data-until="check">
+<rect x="430" y="50" width="820" height="620" rx="28" fill="#23493a" stroke="#7d4a1c" stroke-width="14"/>
+<text class="chalk" x="860" y="170" text-anchor="middle">3</text>
+<text class="chalk" x="960" y="170" text-anchor="middle">6</text>
+<text class="chalk" x="650" y="270" text-anchor="middle">×</text>
+<text class="chalk" x="860" y="270" text-anchor="middle">2</text>
+<text class="chalk" x="960" y="270" text-anchor="middle">4</text>
+<path d="M600,302 H1010" stroke="#fdfbf3" stroke-width="7" stroke-linecap="round"/>
+</g>
+
+<circle class="vl" data-from="row1-a" data-until="row1-b" cx="960" cy="242" r="48" fill="none" stroke="#ffd36b" stroke-width="6"/>
+<path class="vl" data-from="row1-a" data-until="row1-a" data-delay="1.5" d="M998,222 C1035,200 1035,160 1000,140" fill="none" stroke="#ffd36b" stroke-width="6" marker-end="url(#m2-arrow-y)"/>
+<text class="vl helper" data-from="row1-a" data-until="row1-a" data-delay="3" x="1140" y="132" text-anchor="middle" fill="#ffd36b">4×6=24</text>
+<text class="vl pop chalk ones" data-from="row1-a" data-until="check" data-delay="5" x="960" y="395" text-anchor="middle">4</text>
+<g class="vl pop" data-from="row1-a" data-until="check" data-delay="7"><text class="carry ones carry-a" x="840" y="100" text-anchor="middle">2</text></g>
+<path class="vl" data-from="row1-b" data-until="row1-b" data-delay="1" d="M935,208 C915,190 898,182 884,176" fill="none" stroke="#ffd36b" stroke-width="6" marker-end="url(#m2-arrow-y)"/>
+<text class="vl helper" data-from="row1-b" data-until="row1-b" data-delay="2.5" x="1140" y="132" text-anchor="middle" fill="#ffd36b">4×3+2=14</text>
+<text class="vl pop chalk ones" data-from="row1-b" data-until="check" data-delay="5" x="860" y="395" text-anchor="middle">4</text>
+<text class="vl pop chalk ones" data-from="row1-b" data-until="check" data-delay="6.5" x="760" y="395" text-anchor="middle">1</text>
+<text class="vl" data-from="row1-b" data-until="check" data-delay="8" x="1030" y="385" font-size="40" font-weight="800" fill="#ffd36b">← 36 × 4</text>
+<path class="vl" data-from="cross1" data-until="check" data-delay=".8" d="M822,102 L858,62" stroke="#ff8a80" stroke-width="7" stroke-linecap="round"/>
+
+<circle class="vl" data-from="ask-carry" data-until="row2" cx="860" cy="242" r="48" fill="none" stroke="#9fd8ff" stroke-width="6"/>
+<path class="vl" data-from="ask-carry" data-until="row2" data-delay="1" d="M885,208 C905,190 925,182 938,176" fill="none" stroke="#9fd8ff" stroke-width="6" marker-end="url(#m2-arrow-b)"/>
+<text class="vl helper" data-from="ask-carry" data-until="ask-carry" data-delay="2" x="1140" y="132" text-anchor="middle" fill="#9fd8ff">2×6=12</text>
+<text class="vl pop chalk tens" data-from="row2" data-until="check" data-delay="1" x="860" y="495" text-anchor="middle">2</text>
+<g class="vl pop" data-from="row2" data-until="check" data-delay="2.5"><text class="carry tens carry-b" x="885" y="100" text-anchor="middle">1</text></g>
+<path class="vl" data-from="row2" data-until="row2" data-delay="4.5" d="M822,222 C785,200 785,160 820,140" fill="none" stroke="#9fd8ff" stroke-width="6" marker-end="url(#m2-arrow-b)"/>
+<text class="vl helper" data-from="row2" data-until="row2" data-delay="5" x="1140" y="132" text-anchor="middle" fill="#9fd8ff">2×3+1=7</text>
+<text class="vl pop chalk tens" data-from="row2" data-until="check" data-delay="7.5" x="760" y="495" text-anchor="middle">7</text>
+<g class="vl" data-from="row2" data-until="row2" data-delay="9.5">
+<rect x="926" y="425" width="68" height="84" rx="10" fill="none" stroke="#b8c2bd" stroke-width="4" stroke-dasharray="10 8"/>
+<text class="chalk ghost" x="960" y="495" text-anchor="middle">0</text>
+</g>
+<text class="vl" data-from="row2" data-until="check" data-delay="10" x="1030" y="485" font-size="40" font-weight="800" fill="#9fd8ff">← 36 × 20</text>
+<path class="vl" data-from="cross2" data-until="check" data-delay=".8" d="M867,102 L903,62" stroke="#ff8a80" stroke-width="7" stroke-linecap="round"/>
+
+<g class="vl" data-from="mistake" data-until="mistake">
+<rect x="430" y="50" width="820" height="620" rx="28" fill="#3b2b2b" stroke="#7d4a1c" stroke-width="14"/>
+<text x="470" y="110" font-size="40" font-weight="800" fill="#ffb4a8">如果这样写……</text>
+<text class="carry wrong" x="840" y="122" text-anchor="middle">2</text>
+<text class="carry wrong" x="885" y="122" text-anchor="middle">1</text>
+<text class="chalk" x="860" y="195" text-anchor="middle">3</text>
+<text class="chalk" x="960" y="195" text-anchor="middle">6</text>
+<text class="chalk" x="650" y="290" text-anchor="middle">×</text>
+<text class="chalk" x="860" y="290" text-anchor="middle">2</text>
+<text class="chalk" x="960" y="290" text-anchor="middle">4</text>
+<path d="M600,320 H1010" stroke="#fdfbf3" stroke-width="7" stroke-linecap="round"/>
+<text class="chalk ones" x="760" y="410" text-anchor="middle">1</text>
+<text class="chalk ones" x="860" y="410" text-anchor="middle">4</text>
+<text class="chalk ones" x="960" y="410" text-anchor="middle">4</text>
+<text class="chalk wrong" x="760" y="505" text-anchor="middle">9</text>
+<text class="chalk tens" x="860" y="505" text-anchor="middle">2</text>
+<path d="M600,535 H1010" stroke="#fdfbf3" stroke-width="7" stroke-linecap="round"/>
+<text class="chalk wrong" x="660" y="630" text-anchor="middle">1</text>
+<text class="chalk wrong" x="760" y="630" text-anchor="middle">0</text>
+<text class="chalk wrong" x="860" y="630" text-anchor="middle">6</text>
+<text class="chalk wrong" x="960" y="630" text-anchor="middle">4</text>
+<g class="vl pop" data-from="mistake" data-until="mistake" data-delay="3">
+<circle cx="760" cy="476" r="48" fill="none" stroke="#ff5252" stroke-width="7"/>
+<text x="1135" y="420" text-anchor="middle" font-size="40" font-weight="850" fill="#ffb4a8">多加了</text>
+<text x="1135" y="472" text-anchor="middle" font-size="40" font-weight="850" fill="#ffb4a8">进位 2！</text>
+</g>
+</g>
+
+<g class="vl" data-from="mistake-why" data-until="mistake-why">
+<rect x="430" y="50" width="820" height="620" rx="28" fill="#fffaf0" stroke="#7d4a1c" stroke-width="14"/>
+<text x="840" y="140" text-anchor="middle" font-size="52" font-weight="900" fill="#172033">估一估能发现吗？</text>
+<path d="M500,380 H1180" stroke="#536078" stroke-width="6" stroke-linecap="round"/>
+<path d="M500,358 V402 M1180,358 V402" stroke="#536078" stroke-width="6" stroke-linecap="round"/>
+<text x="500" y="452" text-anchor="middle" font-size="40" font-weight="800" fill="#536078">600</text>
+<text x="1180" y="452" text-anchor="middle" font-size="40" font-weight="800" fill="#536078">1200</text>
+<g class="vl pop" data-from="mistake-why" data-until="mistake-why" data-delay="1">
+<circle cx="799" cy="380" r="17" fill="#2f6b3f"/>
+<text x="799" y="330" text-anchor="middle" font-size="40" font-weight="850" fill="#2f6b3f">864 对</text>
+</g>
+<g class="vl pop" data-from="mistake-why" data-until="mistake-why" data-delay="2.5">
+<circle cx="1026" cy="380" r="17" fill="#c62828"/>
+<text x="1026" y="330" text-anchor="middle" font-size="40" font-weight="850" fill="#c62828">1064 错</text>
+</g>
+<text class="vl" data-from="mistake-why" data-until="mistake-why" data-delay="4" x="840" y="545" text-anchor="middle" font-size="44" font-weight="800" fill="#172033">两个都在 600 和 1200 之间</text>
+<text class="vl" data-from="mistake-why" data-until="mistake-why" data-delay="6" x="840" y="612" text-anchor="middle" font-size="44" font-weight="850" fill="#c62828">估算分不出来，要靠划掉进位！</text>
+</g>
+
+<path class="vl" data-from="sum" data-until="check" d="M600,527 H1010" stroke="#fdfbf3" stroke-width="7" stroke-linecap="round"/>
+<text class="vl pop chalk" data-from="sum" data-until="check" data-delay="1.5" x="960" y="620" text-anchor="middle">4</text>
+<text class="vl pop chalk" data-from="sum" data-until="check" data-delay="3" x="860" y="620" text-anchor="middle">6</text>
+<text class="vl pop chalk" data-from="sum" data-until="check" data-delay="4.5" x="760" y="620" text-anchor="middle">8</text>
+<g class="vl pop" data-from="check" data-until="check">
+<rect x="1030" y="560" width="200" height="84" rx="20" fill="#fffaf0" stroke="#2f6b3f" stroke-width="5"/>
+<path d="M1048,602 L1064,620 L1092,584" fill="none" stroke="#2f6b3f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1168" y="615" text-anchor="middle" font-size="34" font-weight="850" fill="#2f6b3f">在范围内</text>
+</g>
+<g class="vl" data-from="check" data-until="check">
+<g transform="translate(500 -90)"><g class="fall" data-prop="cone"></g></g>
+<g transform="translate(640 -90)"><g class="fall" style="animation-delay:-1.1s" data-prop="cone"></g></g>
+<g transform="translate(780 -90)"><g class="fall" style="animation-delay:-2s" data-prop="cone"></g></g>
+<g transform="translate(1080 -90)"><g class="fall" style="animation-delay:-.6s" data-prop="cone"></g></g>
+<g transform="translate(1200 -90)"><g class="fall" style="animation-delay:-1.7s" data-prop="cone"></g></g>
+</g>
+
+<g class="vl rise" data-from="recap" data-until="recap" data-delay=".3">
+<rect x="440" y="70" width="800" height="170" rx="24" fill="#fffaf0" stroke="#a35400" stroke-width="5"/>
+<text x="480" y="140" font-size="50" font-weight="900" fill="#a35400">① 进位写小，记在旁边</text>
+<text x="480" y="208" font-size="44" font-weight="800" fill="#172033">4 × 6 = 24：写 4，进 2</text>
+</g>
+<g class="vl rise" data-from="recap" data-until="recap" data-delay="3">
+<rect x="440" y="270" width="800" height="170" rx="24" fill="#fffaf0" stroke="#1f5fa8" stroke-width="5"/>
+<text x="480" y="340" font-size="50" font-weight="900" fill="#1f5fa8">② 乘完马上加上进位</text>
+<text x="480" y="408" font-size="44" font-weight="800" fill="#172033">4 × 3 = 12，12 + 2 = 14</text>
+</g>
+<g class="vl rise" data-from="recap" data-until="recap" data-delay="5.5">
+<rect x="440" y="470" width="800" height="170" rx="24" fill="#fffaf0" stroke="#2f6b3f" stroke-width="5"/>
+<text x="480" y="540" font-size="50" font-weight="900" fill="#2f6b3f">③ 这一行用完就划掉</text>
+<text x="480" y="608" font-size="44" font-weight="800" fill="#172033">第二行只加自己的进位 1</text>
+</g>
+</svg>
+<button class="video-start" type="button" data-video-start aria-label="播放动画视频"><span>▶ 播放动画视频</span></button>
+</div>
+<p class="video-caption" data-video-caption aria-live="polite"></p>
+<div class="video-prompt" data-video-prompt="carry-write" hidden>
+<article class="quiz-card" data-quiz data-quiz-id="video-carry-write" data-checkpoint data-checkpoint-id="video-carry-write">
+<p class="quiz-prompt">视频暂停了：用十位上的 2 去乘 6，2 × 6 = 12。这一步该怎么写？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="12 里的 1 是 1 个十，要进上去；写下来的是 12 个位上的那个数。">写 1，进 2</button>
+<button class="choice" type="button" data-choice data-hint="上一行的进位 2 已经用过、划掉了，这一步不能再加。只看 2 × 6 = 12 本身。">写 4，进 1</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！写下 12 个位上的 2（它在十位上，表示 2 个十），把 1 进上去，等 2 × 3 算完马上加。">写 2，进 1</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+<button class="primary-button spaced-top" type="button" data-video-continue hidden>继续播放 ▶</button>
+</article>
+</div>
+<div class="video-controls">
+<button class="primary-button" type="button" data-video-play>▶ 播放</button>
+<button class="secondary-button" type="button" data-video-prev>◀ 上一幕</button>
+<button class="secondary-button" type="button" data-video-next>下一幕 ▶</button>
+<input type="range" min="0" max="137" step="0.1" value="0" data-video-seek aria-label="视频进度">
+<span class="video-time" data-video-time>0:00 / 2:17</span>
+<label>速度 <select data-video-speed><option value="0.75">慢一点</option><option value="1" selected>正常</option><option value="1.25">快一点</option></select></label>
+<button class="secondary-button" type="button" data-video-voice aria-pressed="false">🔈 朗读：关</button>
+</div>
+<p class="video-voice-note" data-video-voice-note></p>
+<ol class="video-chapters" data-video-chapters aria-label="视频章节"></ol>
+<details class="video-transcript">
+<summary>视频文字稿（不看动画也能读）</summary>
+<ol data-video-shots>
+<li data-shot="intro" data-duration="9" data-chapter="开场" data-pose="wave">嗨，我是果果！今天的松果更多了，乘的时候还会遇到“满十”要进位。</li>
+<li data-shot="ask" data-duration="7" data-pose="point">仓库里有 24 袋松果，每袋 36 颗。一共有多少颗？</li>
+<li data-shot="estimate" data-duration="10" data-chapter="估一估" data-pose="think">先估一估：30 × 20 = 600，40 × 30 = 1200。答案应该在 600 和 1200 之间。</li>
+<li data-shot="split" data-duration="8" data-chapter="拆开乘" data-pose="point">像上次一样，把 24 拆成 20 + 4：先算 4 袋，再算 20 袋。</li>
+<li data-shot="board" data-duration="7" data-chapter="写竖式" data-pose="point">写成竖式，个位对齐。这次乘出来会满十，要进位。</li>
+<li data-shot="row1-a" data-duration="10" data-pose="point">先用个位的 4 去乘 6：4 × 6 = 24。个位写 4，2 进到十位，写小一点记住。</li>
+<li data-shot="row1-b" data-duration="10" data-pose="point">再算 4 × 3 = 12，马上加上进位 2，得 14。第一行是 144。</li>
+<li data-shot="cross1" data-duration="6" data-pose="point">这个进位 2 已经用过了，划掉它！</li>
+<li data-shot="ask-carry" data-duration="8" data-pose="think" data-prompt="carry-write">第二步用十位的 2 去乘。2 × 6 = 12，暂停想一想：这一步怎么写？</li>
+<li data-shot="row2" data-duration="12" data-pose="point">写 2，进 1。再算 2 × 3 = 6，加上进位 1 得 7。第二行写 72，末位对齐十位，表示 720。</li>
+<li data-shot="cross2" data-duration="7" data-pose="point">第二行的进位 1 也用完了，划掉。每一行只加自己的进位。</li>
+<li data-shot="mistake" data-duration="9" data-chapter="别带错" data-pose="surprised">要是第二行把上一行的进位 2 也加上，就会写成 92，结果变成 1064。</li>
+<li data-shot="mistake-why" data-duration="11" data-pose="think">1064 也在 600 和 1200 之间，估一估发现不了！所以进位用过就划掉，每一步都要看清。</li>
+<li data-shot="sum" data-duration="7" data-pose="point">回到正确的竖式：144 + 720 = 864。</li>
+<li data-shot="check" data-duration="7" data-pose="cheer">864 在 600 和 1200 之间。24 袋一共 864 颗松果！</li>
+<li data-shot="recap" data-duration="9" data-chapter="小结" data-pose="wave">进位三件事：写小一点，乘完马上加，用过就划掉。下次见！</li>
+</ol>
+</details>
+</figure>
+<p class="source-note">动画由本页代码实时绘制，不联网、不上传。可以拖动进度条、点章节重看某一段；选“慢一点”或“朗读”（设备有离线中文语音时可用）。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">03 · 讲解</span>
+<h2>进位从哪里来，到哪里去</h2>
+<p>这是视频里的完整竖式。36 上方的两个小数字就是进位：小 2 属于第一行，小 1 属于第二行，用完都划掉了。</p>
+<div class="vcalc" style="--digits:3" role="img" aria-label="竖式：36 乘 24。36 的十位上方记着两个小进位 2 和 1，都已划掉。第一行 144，是 36 乘 4；第二行写 72，末位对齐十位，表示 720，是 36 乘 20；两行相加得 864。">
+<div class="vrow"><span></span><span></span><span><i class="carry struck">2</i><i class="carry struck">1</i></span><span></span></div>
+<div class="vrow"><span></span><span></span><span>3</span><span>6</span></div>
+<div class="vrow"><span>×</span><span></span><span>2</span><span>4</span></div>
+<div class="vline"></div>
+<div class="vrow ones"><span></span><span>1</span><span>4</span><span>4</span><span class="note">← 36 × 4</span></div>
+<div class="vrow tens"><span></span><span>7</span><span>2</span><span class="ghost">0</span><span class="note">← 36 × 20，0 可不写</span></div>
+<div class="vline"></div>
+<div class="vrow"><span></span><span>8</span><span>6</span><span>4</span></div>
+</div>
+<ol class="step-list">
+<li><strong>个位去乘</strong>：4 × 6 = 24，写 4，进 2（写小一点）；4 × 3 = 12，马上加进位 2 得 14，写 14。第一行是 144。这一行用完，划掉小 2。</li>
+<li><strong>十位去乘</strong>：2 × 6 = 12，写 2（在十位上），进 1；2 × 3 = 6，加进位 1 得 7。第二行写 72，末位对齐十位，表示 720。划掉小 1。</li>
+<li><strong>两行相加</strong>：144 + 720 = 864，在估算的 600 和 1200 之间。</li>
+</ol>
+<p class="callout">进位的小数字写在哪里，各班习惯可能不同：写在上方或横线旁边都可以。关键是三件事：<strong>写小、乘完马上加、用完就划掉</strong>。估算能发现“写错位”这种差很多的错误，但多数进位错误只差一点点，估算查不出来，要一步一步核对。</p>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">04 · 找一找</span>
+<h2>进位用对了吗？</h2>
+<div class="quiz-list">
+<article class="quiz-card" data-quiz data-quiz-id="carry-vcalc" data-checkpoint data-checkpoint-id="quiz-carry-vcalc">
+<p class="quiz-prompt">算 28 × 13，哪一个竖式是对的？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-correct="true" aria-label="甲：第一行 84，第二行 28，结果 364" data-success="对！3 × 8 = 24 写 4 进 2，3 × 2 = 6 加 2 得 8，第一行 84；第二行 28 × 10 没有进位，写 28 从十位起。84 + 280 = 364。">
+<span class="vcalc" style="--digits:3" aria-hidden="true">
+<span class="vrow"><span></span><span></span><span>2</span><span>8</span></span>
+<span class="vrow"><span>×</span><span></span><span>1</span><span>3</span></span>
+<span class="vline"></span>
+<span class="vrow"><span></span><span></span><span>8</span><span>4</span></span>
+<span class="vrow"><span></span><span>2</span><span>8</span><span></span></span>
+<span class="vline"></span>
+<span class="vrow"><span></span><span>3</span><span>6</span><span>4</span></span>
+</span></button>
+<button class="choice" type="button" data-choice aria-label="乙：第一行 64，第二行 28，结果 344" data-hint="乙忘了加进位：3 × 8 = 24 进 2，算完 3 × 2 = 6 还要加上 2，第一行应该是 84。">
+<span class="vcalc" style="--digits:3" aria-hidden="true">
+<span class="vrow"><span></span><span></span><span>2</span><span>8</span></span>
+<span class="vrow"><span>×</span><span></span><span>1</span><span>3</span></span>
+<span class="vline"></span>
+<span class="vrow"><span></span><span></span><span>6</span><span>4</span></span>
+<span class="vrow"><span></span><span>2</span><span>8</span><span></span></span>
+<span class="vline"></span>
+<span class="vrow"><span></span><span>3</span><span>4</span><span>4</span></span>
+</span></button>
+<button class="choice" type="button" data-choice aria-label="丙：第一行 84，第二行 48，结果 564" data-hint="丙在第二行又加了第一行的进位 2：1 × 2 = 2，不用再加，第二行应该是 28。">
+<span class="vcalc" style="--digits:3" aria-hidden="true">
+<span class="vrow"><span></span><span></span><span>2</span><span>8</span></span>
+<span class="vrow"><span>×</span><span></span><span>1</span><span>3</span></span>
+<span class="vline"></span>
+<span class="vrow"><span></span><span></span><span>8</span><span>4</span></span>
+<span class="vrow"><span></span><span>4</span><span>8</span><span></span></span>
+<span class="vline"></span>
+<span class="vrow"><span></span><span>5</span><span>6</span><span>4</span></span>
+</span></button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+<article class="quiz-card" data-quiz data-quiz-id="own-carry" data-checkpoint data-checkpoint-id="quiz-own-carry">
+<p class="quiz-prompt">算 39 × 24 的第二行：2 × 9 = 18，写 8，进 1。接着 2 × 3 = 6，下一步是？</p>
+<div class="choice-grid three">
+<button class="choice" type="button" data-choice data-hint="3 是第一行 4 × 9 = 36 留下的进位，第一行用完已经划掉了，第二行不能再加。">6 + 3 = 9</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！第二行只加自己的进位 1，得 7。第二行写 78，末位对齐十位，表示 780。">6 + 1 = 7</button>
+<button class="choice" type="button" data-choice data-hint="2 × 9 = 18 刚刚进了 1，乘完 2 × 3 要马上加上它。">6 + 0 = 6</button>
+</div>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</article>
+</div>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">05 · 练习</span>
+<h2>一步一步管好进位</h2>
+<p>每空填一个数。先在纸上列竖式，进位写小，用完划掉。</p>
+<form data-mastery-stage data-milestone-id="practice" data-checkpoint data-checkpoint-id="practice" data-hint="进位写小，乘完下一位马上加上；第二行用十位上的数去乘，只加这一行自己的进位，末位对齐十位。" data-success="这组都对了！接下来合上提示，用新题独立检查。">
+<p class="mini-label">第一题：26 × 13</p>
+<div class="exercise"><label for="practice-1">1. 个位去乘：26 × 3 = <input class="blank" id="practice-1" name="practice-1" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="练习第1空" data-correct="78"></label></div>
+<div class="exercise"><label for="practice-2">2. 十位去乘：26 × 10 = <input class="blank" id="practice-2" name="practice-2" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="练习第2空" data-correct="260"></label></div>
+<div class="exercise"><label for="practice-3">3. 所以 26 × 13 = <input class="blank" id="practice-3" name="practice-3" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="练习第3空" data-correct="338"></label></div>
+<p class="mini-label">第二题：35 × 24</p>
+<div class="exercise"><label for="practice-4">4. 4 × 5 = 20，个位写 0，进 <input class="blank" id="practice-4" name="practice-4" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="练习第4空" data-correct="2"></label></div>
+<div class="exercise"><label for="practice-5">5. 个位去乘：35 × 4 = <input class="blank" id="practice-5" name="practice-5" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="练习第5空" data-correct="140"></label></div>
+<div class="exercise"><label for="practice-6">6. 十位去乘：35 × 20 = <input class="blank" id="practice-6" name="practice-6" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="练习第6空" data-correct="700"></label></div>
+<div class="exercise"><label for="practice-7">7. 所以 35 × 24 = <input class="blank" id="practice-7" name="practice-7" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="练习第7空" data-correct="840"></label></div>
+<button class="primary-button" type="submit">检查练习</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<details>
+<summary>再给一个线索</summary>
+<p>第 5 空：4 × 5 = 20 写 0 进 2；4 × 3 = 12，马上加 2 得 14。第 6 空：先算 2 × 5 = 10，写 0 进 1；2 × 3 = 6，加 1 得 7，所以是 70 个十。</p>
+</details>
+<details>
+<summary>做完后核对思路</summary>
+<p>七空依次为 78、260、338、2、140、700、840。估一估：35 × 24 在 30 × 20 = 600 和 40 × 30 = 1200 之间，840 说得通。</p>
+</details>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">06 · 独立检查</span>
+<h2>合上提示，再试新题</h2>
+<p>先在纸上列竖式，再填答案。不看上面的讲解。</p>
+<form data-mastery-stage data-milestone-id="independent" data-checkpoint data-checkpoint-id="independent" data-hint="有错的空已经标出。先找是哪一行出问题：有没有忘加进位？有没有把上一行的进位带到这一行？第二行是不是从十位写起？" data-success="四空都对！最后，把理由讲给陪学者听。">
+<div class="exercise"><label for="independent-1">1. 47 × 23 = <input class="blank" id="independent-1" name="independent-1" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="独立题第1空" data-correct="1081"></label></div>
+<div class="exercise"><label for="independent-2">2. 58 × 16 = <input class="blank" id="independent-2" name="independent-2" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="独立题第2空" data-correct="928"></label></div>
+<div class="exercise"><label for="independent-3">3. 第 1 题的第二行，算完 2 × 4 后要加的进位是 <input class="blank" id="independent-3" name="independent-3" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="独立题第3空" data-correct="1"></label></div>
+<div class="exercise"><label for="independent-4">4. 64 × 35 = <input class="blank" id="independent-4" name="independent-4" type="text" inputmode="numeric" required autocomplete="off" spellcheck="false" aria-label="独立题第4空" data-correct="2240"></label></div>
+<button class="primary-button" type="submit">检查独立题</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<form class="retrieval-form spaced-top" data-teachback-form data-milestone-id="explanation" data-checkpoint data-checkpoint-id="explanation" data-hint="请先让孩子不看提示讲一遍，再由陪学者按下面两点核对后勾选。" data-success="讲清楚了！今天的目标完成。隔两三天用纸笔版 C 区再检查一次。">
+<div class="callout"><strong>讲给陪学者听：</strong>算 47 × 23 的第二行时，2 × 4 = 8 后为什么只加 1，不加第一行的进位 2？</div>
+<label class="check-row"><input type="checkbox" name="explained">孩子独立讲到两点：① 小 2 是第一行 3 × 7 = 21 留下的进位，已经加进 141 里、划掉了；② 第二行自己的进位来自 2 × 7 = 14，所以 2 × 4 = 8，加 1 得 9。</label>
+<button class="primary-button" type="submit">陪学者确认</button>
+<p class="feedback" data-feedback aria-live="polite"></p>
+</form>
+<details>
+<summary>做完后核对思路</summary>
+<p>四空依次为 1081、928、1、2240。47 × 23 = 141 + 940；58 × 16 = 348 + 580；64 × 35 = 320 + 1920。</p>
+</details>
+</section>
+
+<section class="lesson-section"><span class="section-kicker">07 · 反馈与下一步</span>
+<h2>错在哪一步，就回到哪一步</h2>
+<ul>
+<li><strong>忘了加进位</strong>（如 28 × 13 第一行写成 64）：回看视频第一行，说出“乘完马上加”。</li>
+<li><strong>加了别的行的进位</strong>（如第二行多加 2）：回看“别带错”一段，练习每行用完就划掉。</li>
+<li><strong>写下的数和进位颠倒</strong>（如 2 × 6 = 12 写 1 进 2）：写下的是个位上的数，进上去的是几个十。</li>
+<li><strong>第二行写错位</strong>：回到<a href="0001-two-digit-no-carry.html">第 1 课</a>，说出十位上的数表示几个十。</li>
+</ul>
+<p>四个独立题全对并且讲清理由，就可以进入<a href="0003-three-digit-by-two-digit.html">第 3 课：三位数乘两位数</a>。隔两三天，用<a href="../printable/0002-two-digit-with-carry.html">纸笔版的 C 区新题</a>再检查一次；整个单元的掌握标准见<a href="../reference/multiplication-quick-reference.html#mastery">速查卡</a>。</p>
+<p>有哪里没看懂，回来告诉教学助手：“我在第 2 课，卡在……”，并把你写的竖式拍照或抄下来。</p>
+<p class="source-note">推荐观看：国家中小学智慧教育平台<a href="https://basic.smartedu.cn/syncClassroom/classActivity?activityId=314bc375-a341-11ec-92ef-246e9675e50c">“两位数与两位数相乘”同步课（沪教版三年级下册）</a>，可能需要登录。陪学者选读：<a href="https://openstax.org/books/prealgebra-2e/pages/1-4-multiply-whole-numbers">OpenStax Prealgebra 2e §1.4 多位数竖式与部分积</a>；《义务教育数学课程标准（2022 年版）》附录例 8 用 14 × 12 = 14 × 10 + 14 × 2 说明竖式算理。核验日期：2026-10-09；动画、情境和题目为原创，英文材料不要求孩子阅读。</p>
+</section>
+</main>
+<footer class="lesson-footer">
+<p>本机只保存活动完成标记；不上传作答。先会解释，再进入下一课。</p><a href="0001-two-digit-no-carry.html">上一课：拆开乘，再相加</a> · <a href="../printable/0002-two-digit-with-carry.html">打开纸笔版</a> · <a href="../reference/multiplication-quick-reference.html">查看速查卡</a> · <a href="0003-three-digit-by-two-digit.html">下一课：三位数乘两位数</a>
+</footer>
+<div class="action-row screen-only">
+<button type="button" class="secondary-button" data-reset-progress>清除本课活动进度</button>
+</div>
+</div>
+</body>
+</html>
