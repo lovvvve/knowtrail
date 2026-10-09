@@ -61,16 +61,16 @@
 <div class="choice-grid three">
 <button class="choice" type="button" data-choice data-hint="太阳是傍晚从西边落下的。早上它从另一边出来，想一想“东升西落”。">西边</button>
 <button class="choice" type="button" data-choice data-correct="true" data-success="对！太阳东升西落。今天你会发现，月亮也是东升西落。">东边</button>
-<button class="choice" type="button" data-choice data-hint="在上海，太阳中午在南边天空最高，北边一直看不到它。早上它从哪边升起？">北边</button>
+<button class="choice" type="button" data-choice data-hint="北边不对。想一想“东升西落”：早上太阳从哪边升起？">北边</button>
 </div>
 <p class="feedback" data-feedback aria-live="polite"></p>
 </article>
 <article class="quiz-card" data-quiz data-quiz-id="diag-day8" data-checkpoint data-checkpoint-id="diag-day8">
 <p class="quiz-prompt">2. 农历初八前后，月亮是什么样子？</p>
 <div class="choice-grid moons">
-<button class="choice moon-choice" type="button" data-choice data-hint="这是左边一半亮，是下弦月，出现在后半个月。初八还在前半个月，亮面在右边。"><span class="moon-icon" data-moon="270"></span></button>
-<button class="choice moon-choice" type="button" data-choice data-hint="这是右边弯弯的一条，是蛾眉月，比初八早几天。到了初八，右边的亮面已经有一半了。"><span class="moon-icon" data-moon="45"></span></button>
-<button class="choice moon-choice" type="button" data-choice data-correct="true" data-success="对！初八前后是上弦月，右边一半亮。"><span class="moon-icon" data-moon="90"></span></button>
+<button class="choice moon-choice" type="button" data-choice data-hint="这是左边一半亮，是下弦月，出现在后半个月。初八还在前半个月，亮面在右边。"><span class="moon-icon" data-moon="270"></span><span>甲</span></button>
+<button class="choice moon-choice" type="button" data-choice data-hint="这是右边弯弯的一条，是蛾眉月，比初八早几天。到了初八，右边的亮面已经有一半了。"><span class="moon-icon" data-moon="45"></span><span>乙</span></button>
+<button class="choice moon-choice" type="button" data-choice data-correct="true" data-success="对！初八前后是上弦月，右边一半亮。"><span class="moon-icon" data-moon="90"></span><span>丙</span></button>
 </div>
 <p class="feedback" data-feedback aria-live="polite"></p>
 </article>
@@ -238,7 +238,7 @@
 <g class="vl rise" data-from="recap" data-until="recap" data-delay="2.6">
 <rect class="card" x="450" y="170" width="790" height="110" rx="22"/>
 <g transform="translate(515 225) scale(.45)"><g data-prop="moon" data-label="180"></g></g>
-<text class="card-text" x="580" y="242" font-size="44">十五前后：天黑后整夜都在</text>
+<text class="card-text" x="580" y="242" font-size="44">十五、十六前后：整夜都在</text>
 </g>
 <g class="vl rise" data-from="recap" data-until="recap" data-delay="5">
 <rect class="card" x="450" y="300" width="790" height="110" rx="22"/>
@@ -258,9 +258,9 @@
 <article class="quiz-card" data-quiz data-quiz-id="video-evening-23" data-checkpoint data-checkpoint-id="video-evening-23">
 <p class="quiz-prompt">视频暂停了：农历廿三，放学后的傍晚能看到月亮吗？</p>
 <div class="choice-grid three">
-<button class="choice" type="button" data-choice data-correct="true" data-success="对！廿三前后是下弦月，它半夜才从东边升起，傍晚还在地平线下面，要等到清晨去看。">不能，要等到清晨看</button>
-<button class="choice" type="button" data-choice data-hint="傍晚高挂在南边的是初八前后的上弦月。廿三已经是后半个月，月亮每天都晚升起一些，傍晚它升起来了吗？">能，在南边高高挂着</button>
-<button class="choice" type="button" data-choice data-hint="傍晚西边低处的是初三前后的蛾眉月。廿三是后半个月，月亮要很晚才升起。">能，在西边天空低处</button>
+<button class="choice" type="button" data-choice data-correct="true" data-success="对！廿三前后是下弦月，它半夜才从东边升起，傍晚还在地平线下面，要等到清晨去看。">不能，清晨才好找</button>
+<button class="choice" type="button" data-choice data-hint="傍晚高挂在南边的是初八前后的上弦月。廿三已经是后半个月，月亮每天都晚升起一些，傍晚它升起来了吗？">能，傍晚挂在南边</button>
+<button class="choice" type="button" data-choice data-hint="廿三的月亮并不是一整天都看不到：它半夜从东边升起，清晨还挂在南边天空。">不能，这天看不到</button>
 </div>
 <p class="feedback" data-feedback aria-live="polite"></p>
 <button class="primary-button spaced-top" type="button" data-video-continue hidden>继续播放 ▶</button>
@@ -287,7 +287,7 @@
 <li data-shot="later" data-duration="12" data-chapter="每天晚 50 分钟" data-pose="point">月亮每天大约晚升起 50 分钟。同样是傍晚 6 点，初七、初八、初九的月亮一天比一天靠东。</li>
 <li data-shot="crescent" data-duration="10" data-chapter="前半个月看傍晚" data-pose="point">农历初三前后，太阳刚落山，西边低处挂着一弯蛾眉月，亮的一边朝着太阳。</li>
 <li data-shot="quarter" data-duration="8" data-pose="point">农历初八前后，放学后的傍晚，上弦月高高挂在南边天空，半夜才落下。</li>
-<li data-shot="full" data-duration="11" data-chapter="满月整夜" data-pose="cheer">农历十五前后，太阳从西边落下，满月从东边升起，整夜都在天上。</li>
+<li data-shot="full" data-duration="11" data-chapter="满月整夜" data-pose="cheer">农历十五、十六前后，太阳从西边落下，满月从东边升起，整夜都在天上。</li>
 <li data-shot="ask" data-duration="6" data-pose="think" data-prompt="evening-23">那农历廿三呢？放学后的傍晚，你能看到月亮吗？</li>
 <li data-shot="morning" data-duration="11" data-chapter="后半个月看清晨" data-pose="point">傍晚找不到！廿三前后的下弦月半夜才升起，上学前的清晨高挂在南边。</li>
 <li data-shot="daytime" data-duration="9" data-pose="surprised">太阳升起以后，它还淡淡地挂在西边天空。原来白天也能看到月亮！</li>
@@ -306,7 +306,7 @@
 <p>月球每天绕地球往东走一小段，所以它每天都比前一天<strong>晚升起大约 50 分钟</strong>。它和太阳“拉开”的距离越来越大，出场的时间就从白天慢慢挪到了夜里：</p>
 <ul>
 <li><strong>前半个月</strong>：月亮跟在太阳后面不远。太阳落山时它还在天上，<strong>放学后的傍晚</strong>去看。</li>
-<li><strong>十五前后</strong>：月亮转到地球的另一边，和太阳正好相对。太阳落下，它就升起，<strong>天黑后整夜都在</strong>。</li>
+<li><strong>十五、十六前后</strong>：月亮转到地球的另一边，和太阳正好相对。太阳落下，它就升起，<strong>天黑后整夜都在</strong>。</li>
 <li><strong>后半个月</strong>：月亮要到深夜甚至半夜才升起，<strong>上学前的清晨</strong>去看。太阳升起后，它常常还淡淡地挂在西边天空。</li>
 <li><strong>初一前后</strong>：月亮和太阳同升同落，被阳光淹没，亮面又背着我们，<strong>几乎看不到</strong>。为什么亮面背着我们，见<a href="0002-half-always-lit.html">第 2 课</a>。</li>
 </ul>
@@ -316,8 +316,8 @@
 <caption class="sr-only">农历日期、月相和什么时候好找</caption>
 <thead><tr><th scope="col">农历日期（前后）</th><th scope="col">月相</th><th scope="col">什么时候好找</th><th scope="col">在哪边（拓展）</th></tr></thead>
 <tbody>
-<tr><td>初一</td><td><span class="moon-icon" data-moon="0"></span><br>新月</td><td>几乎看不到</td><td>和太阳在一起</td></tr>
-<tr><td>初二–初六</td><td><span class="moon-icon" data-moon="45"></span><br>蛾眉月</td><td>放学后的傍晚，不久就落下</td><td>西边低处</td></tr>
+<tr><td>初一前后（三十–初二）</td><td><span class="moon-icon" data-moon="0"></span><br>新月</td><td>几乎看不到</td><td>和太阳在一起</td></tr>
+<tr><td>初三–初六</td><td><span class="moon-icon" data-moon="45"></span><br>蛾眉月</td><td>放学后的傍晚，不久就落下</td><td>西边低处</td></tr>
 <tr><td>初八前后</td><td><span class="moon-icon" data-moon="90"></span><br>上弦月</td><td>下午到上半夜，傍晚最好找</td><td>傍晚在南边高处</td></tr>
 <tr><td>初十–十四</td><td><span class="moon-icon" data-moon="135"></span><br>凸月（越来越圆）</td><td>傍晚到后半夜</td><td>傍晚在东边</td></tr>
 <tr><td>十五、十六前后</td><td><span class="moon-icon" data-moon="180"></span><br>满月</td><td>天黑后整夜都在</td><td>傍晚从东边升起</td></tr>
@@ -382,8 +382,8 @@
 <article class="quiz-card" data-quiz data-quiz-id="when-full" data-checkpoint data-checkpoint-id="quiz-when-full">
 <p class="quiz-prompt">1. 满月什么时候能看到？</p>
 <div class="choice-grid three">
-<button class="choice" type="button" data-choice data-hint="清晨满月正要从西边落下，可它前一晚整夜都在天上。只在清晨，太少了。">只在上学前清晨</button>
-<button class="choice" type="button" data-choice data-hint="中午太阳在南边最高，满月却和太阳正好相对，这时它在地平线下面。">只在中午最亮时</button>
+<button class="choice" type="button" data-choice data-hint="清晨满月正要从西边落下，可它前一晚整夜都在天上。只说清晨，太少了。">清晨太阳出来前</button>
+<button class="choice" type="button" data-choice data-hint="中午太阳在南边最高，满月却和太阳正好相对，这时它在地平线下面。">中午太阳最高时</button>
 <button class="choice" type="button" data-choice data-correct="true" data-success="对！满月和太阳正好相对：太阳落山前后它从东边升起，天黑后整夜都在天上。">太阳落山后整夜</button>
 </div>
 <p class="feedback" data-feedback aria-live="polite"></p>
@@ -412,7 +412,7 @@
 <section class="lesson-section"><span class="section-kicker">07 · 练习</span>
 <h2>查日期，定时间</h2>
 <p>每题选一个最合适的时间。可以先想月相，再想它什么时候在天上；也可以用上面的天空时钟核对。</p>
-<form data-mastery-stage data-milestone-id="practice" data-checkpoint data-checkpoint-id="practice" data-hint="先判断是前半个月、十五前后、后半个月，还是初一前后，再对应时间：前半个月傍晚，十五前后整夜，后半个月清晨，初一前后几乎看不到。" data-success="这组都对了！接下来合上提示，用新题独立检查。">
+<form data-mastery-stage data-milestone-id="practice" data-checkpoint data-checkpoint-id="practice" data-hint="先判断是前半个月、十五、十六前后、后半个月，还是初一前后，再对应时间：前半个月傍晚，十五、十六前后整夜，后半个月清晨，初一前后几乎看不到。" data-success="这组都对了！接下来合上提示，用新题独立检查。">
 <div class="exercise"><label for="practice-1">1. 农历初四，想看月亮：
 <select id="practice-1" name="practice-1" required data-correct="放学后的傍晚"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
 <div class="exercise"><label for="practice-2">2. 农历廿六，想看月亮：
@@ -430,15 +430,15 @@
 </details>
 <details>
 <summary>做完后核对思路</summary>
-<p>四题依次为：放学后的傍晚（初四是蛾眉月）、上学前的清晨（廿六是残月）、天黑后整夜都在（十五前后是满月）、几乎看不到（初一是新月）。</p>
+<p>四题依次为：放学后的傍晚（初四是蛾眉月）、上学前的清晨（廿六是残月）、天黑后整夜都在（十五、十六前后是满月）、几乎看不到（初一是新月）。</p>
 </details>
 </section>
 
 <section class="lesson-section"><span class="section-kicker">08 · 独立检查</span>
 <h2>合上提示，再试新题</h2>
 <p>不看上面的讲解和天空时钟，自己判断。</p>
-<form data-mastery-stage data-milestone-id="independent" data-checkpoint data-checkpoint-id="independent" data-hint="有错的题已经标出。先说出这一天大约是什么月相，再想它是前半个月、十五前后、后半个月，还是初一前后。" data-success="四题都对！最后，把理由讲给陪学者听。">
-<div class="exercise"><label for="independent-1">1. 农历初六，想看月亮：
+<form data-mastery-stage data-milestone-id="independent" data-checkpoint data-checkpoint-id="independent" data-hint="有错的题已经标出。先说出这一天大约是什么月相，再想它是前半个月、十五、十六前后、后半个月，还是初一前后。" data-success="四题都对！最后，把理由讲给陪学者听。">
+<div class="exercise"><label for="independent-1">1. 农历初五，想看月亮：
 <select id="independent-1" name="independent-1" required data-correct="放学后的傍晚"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
 <div class="exercise"><label for="independent-2">2. 新月那一天，想看月亮：
 <select id="independent-2" name="independent-2" required data-correct="几乎看不到"><option value="">请选择</option><option>放学后的傍晚</option><option>上学前的清晨</option><option>天黑后整夜都在</option><option>几乎看不到</option></select></label></div>
@@ -457,7 +457,7 @@
 </form>
 <details>
 <summary>做完后核对思路</summary>
-<p>四题依次为：放学后的傍晚（初六是蛾眉月）、几乎看不到（新月和太阳同升同落）、上学前的清晨（廿三是下弦月）、天黑后整夜都在（十六是满月前后）。</p>
+<p>四题依次为：放学后的傍晚（初五是蛾眉月）、几乎看不到（新月和太阳同升同落）、上学前的清晨（廿三是下弦月）、天黑后整夜都在（十六是满月前后）。</p>
 </details>
 <div class="callout spaced-top"><strong>拓展（不计入掌握检查）：月亮在哪边？</strong>面朝南方，傍晚的蛾眉月在西边低处，上弦月在南边高处，满月刚从东边升起；清晨的下弦月在南边高处，残月在东边低处。去观察时可以把方向也记下来。</div>
 </section>
@@ -473,7 +473,7 @@
 <p>四个独立题全对并且讲清理由，三课就都学完了。隔两三天，不看提示完成三份纸笔版的 C 区：<a href="../printable/0001-moon-shape-diary.html">第 1 课</a>、<a href="../printable/0002-half-always-lit.html">第 2 课</a>、<a href="../printable/0003-when-to-find-the-moon.html">第 3 课</a>；整个单元的掌握标准见<a href="../reference/moon-phases-quick-reference.html#mastery">速查卡</a>。真实观察看天气，作为推荐练习，不作为掌握门槛。</p>
 <p>有哪里没看懂，回来告诉教学助手：“我在第 3 课，卡在……”，也可以把你的观察记录拍下来一起讨论。</p>
 <p class="source-note">推荐观看：国家中小学智慧教育平台<a href="https://basic.smartedu.cn/syncClassroom/classActivity?activityId=8bb5d63d-269b-436f-89bd-5e0b346246f4">“月相变化的规律”同步课（教科版三年级下册，旧版）</a>，微课约 14 分钟，可能需要登录；看完和陪学者定一个本周的观月计划。</p>
-<p class="source-note">陪学者选读：紫金山天文台<a href="http://www.pmo.cas.cn/xwdt2019/kpdt2019/202203/t20220317_6399980.html">《历书科普问题解答》</a>（初一是朔所在的日子，望多在十六、有时十七；上弦日太阳落山后半个月亮高挂天空，望日太阳西落时满月从东方升起，下弦日约午夜从东方升起）；中国数字科技馆<a href="https://www.cdstm.cn/museum/zphc/kxly/201903/t20190327_911543.html">月相科普</a>（满月整夜可见，下弦月只在下半夜出现，残月日出前不久从东方升起）；<a href="https://svs.gsfc.nasa.gov/5587/">NASA SVS 5587</a>（各月相在哪边可见，本课方位拓展的依据）；<a href="https://openstax.org/books/astronomy-2e/pages/4-5-phases-and-motions-of-the-moon">OpenStax Astronomy 2e §4.5</a>（月出每天平均推迟约 50 分钟、各月相出没时间）；<a href="https://www.rmg.co.uk/sites/default/files/import/media/pdf/KS2_Daytime_Moon_Viewing.pdf">Royal Museums Greenwich · 白天观察月亮</a>（观察前先提醒不直视太阳）；<a href="https://science.nasa.gov/eclipses/safety/">NASA · 观看太阳的安全</a>（普通墨镜再暗也不能用来看太阳）。核验日期：2026-10-10；动画、情境和题目为原创，英文材料不要求孩子阅读。</p>
+<p class="source-note">陪学者选读：紫金山天文台<a href="http://www.pmo.cas.cn/xwdt2019/kpdt2019/202203/t20220317_6399980.html">《历书科普问题解答》</a>（初一是朔所在的日子，望常在十五、十六，十六更多，有时十七；上弦日太阳落山后半个月亮高挂天空，望日太阳西落时满月从东方升起，下弦日约午夜从东方升起）；中国数字科技馆<a href="https://www.cdstm.cn/museum/zphc/kxly/201903/t20190327_911543.html">月相科普</a>（满月整夜可见，下弦月只在下半夜出现，残月日出前不久从东方升起）；<a href="https://svs.gsfc.nasa.gov/5587/">NASA SVS 5587</a>（各月相在哪边可见，本课方位拓展的依据）；<a href="https://openstax.org/books/astronomy-2e/pages/4-5-phases-and-motions-of-the-moon">OpenStax Astronomy 2e §4.5</a>（月出每天平均推迟约 50 分钟、各月相出没时间）；<a href="https://www.rmg.co.uk/sites/default/files/import/media/pdf/KS2_Daytime_Moon_Viewing.pdf">Royal Museums Greenwich · 白天观察月亮</a>（观察前先提醒不直视太阳）；<a href="https://science.nasa.gov/eclipses/safety/">NASA · 观看太阳的安全</a>（普通墨镜再暗也不能用来看太阳）。核验日期：2026-10-10；动画、情境和题目为原创，英文材料不要求孩子阅读。</p>
 </section>
 </main>
 <footer class="lesson-footer">
