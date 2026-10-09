@@ -30,6 +30,9 @@ body { background: #f6f3e8; }
 }
 .vcalc .ghost { color: #8a93a6; outline: 2px dashed #8a93a6; outline-offset: -2px; border-radius: 6px; }
 .vcalc .carry { display: inline-block; font-size: .5em; color: var(--accent); vertical-align: top; }
+/* A carry sits in the upper-right corner of the digit cell it will be added to. */
+.vrow > span { position: relative; }
+.vcalc .carry.corner { position: absolute; top: -.35em; right: .05em; line-height: 1; }
 .vcalc .struck { text-decoration: line-through 2px; }
 .vrow.ones > span:not(.note) { color: #a35400; }
 .vrow.tens > span:not(.note) { color: #1f5fa8; }
