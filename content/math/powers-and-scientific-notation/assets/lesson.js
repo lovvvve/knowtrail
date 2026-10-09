@@ -514,9 +514,10 @@
   }
 
   const lockMasteryForm = (form) => {
-    form.querySelectorAll("input[data-correct]").forEach((input) => {
+    form.querySelectorAll("input[data-correct], select[data-correct]").forEach((input) => {
       input.value = input.dataset.correct;
-      input.readOnly = true;
+      if (input.tagName === "SELECT") input.disabled = true;
+      else input.readOnly = true;
       input.setAttribute("aria-invalid", "false");
     });
     const submitButton = form.querySelector("button[type='submit']");
@@ -562,7 +563,7 @@
       event.preventDefault();
       if (state.milestones.includes(milestoneId)) return;
 
-      const inputs = [...form.querySelectorAll("input[data-correct]")];
+      const inputs = [...form.querySelectorAll("input[data-correct], select[data-correct]")];
       const normalizeAnswer = (value) => value.replace(/[\s,_，]/g, "").trim();
       const incorrect = inputs.filter(
         (input) => normalizeAnswer(input.value) !== normalizeAnswer(input.dataset.correct),

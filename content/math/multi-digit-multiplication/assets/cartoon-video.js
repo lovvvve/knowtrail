@@ -11,7 +11,9 @@
   //   The stage also gets data-shot, data-pose and past-<id> classes.
   // - A layer that moves never carries a transform attribute: position its
   //   children instead, so CSS transforms do not replace the placement.
-  // - [data-character] and [data-prop] placeholders are filled from CAST.
+  // - [data-character] and [data-prop] placeholders are filled from CAST, or
+  //   from window.KnowtrailVideoCast, which a unit script loaded earlier may
+  //   set to add its own characters and props.
 
   const cone = () => `
     <path d="M0,-24 C15,-24 19,0 0,24 C-19,0 -15,-24 0,-24 Z" fill="#8b5a2b" stroke="#5c3a1a" stroke-width="3"/>
@@ -127,8 +129,9 @@
     };
 
     stage.querySelectorAll("[data-character], [data-prop]").forEach((element) => {
-      const make = CAST[element.dataset.character || element.dataset.prop];
-      if (!make) throw new Error(`Unknown cast member: ${element.dataset.character || element.dataset.prop}`);
+      const name = element.dataset.character || element.dataset.prop;
+      const make = CAST[name] || window.KnowtrailVideoCast?.[name];
+      if (!make) throw new Error(`Unknown cast member: ${name}`);
       element.innerHTML = make(element.dataset.label);
     });
 
